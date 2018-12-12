@@ -1,1190 +1,426 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://localhost:4567/#introduction -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>API Reference</title>
+  <title>Introduction – API Reference</title>
 
-  <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
-  <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="javascripts/all.js" type="text/javascript"></script>
-
-  <script>
-    $(function() {
-      setupLanguages(["http"]);
-    });
-  </script>
+  <style>
+    .highlight table td { padding: 5px; }
+    .highlight table pre { margin: 0; }
+    .highlight .gh {
+      color: #999999;
+    }
+    .highlight .sr {
+      color: #f6aa11;
+    }
+    .highlight .go {
+      color: #888888;
+    }
+    .highlight .gp {
+      color: #555555;
+    }
+    .highlight .gs {
+    }
+    .highlight .gu {
+      color: #aaaaaa;
+    }
+    .highlight .nb {
+      color: #f6aa11;
+    }
+    .highlight .cm {
+      color: #75715e;
+    }
+    .highlight .cp {
+      color: #75715e;
+    }
+    .highlight .c1 {
+      color: #75715e;
+    }
+    .highlight .cs {
+      color: #75715e;
+    }
+    .highlight .c, .highlight .cd {
+      color: #75715e;
+    }
+    .highlight .err {
+      color: #960050;
+    }
+    .highlight .gr {
+      color: #960050;
+    }
+    .highlight .gt {
+      color: #960050;
+    }
+    .highlight .gd {
+      color: #49483e;
+    }
+    .highlight .gi {
+      color: #49483e;
+    }
+    .highlight .ge {
+      color: #49483e;
+    }
+    .highlight .kc {
+      color: #66d9ef;
+    }
+    .highlight .kd {
+      color: #66d9ef;
+    }
+    .highlight .kr {
+      color: #66d9ef;
+    }
+    .highlight .no {
+      color: #66d9ef;
+    }
+    .highlight .kt {
+      color: #66d9ef;
+    }
+    .highlight .mf {
+      color: #ae81ff;
+    }
+    .highlight .mh {
+      color: #ae81ff;
+    }
+    .highlight .il {
+      color: #ae81ff;
+    }
+    .highlight .mi {
+      color: #ae81ff;
+    }
+    .highlight .mo {
+      color: #ae81ff;
+    }
+    .highlight .m, .highlight .mb, .highlight .mx {
+      color: #ae81ff;
+    }
+    .highlight .sc {
+      color: #ae81ff;
+    }
+    .highlight .se {
+      color: #ae81ff;
+    }
+    .highlight .ss {
+      color: #ae81ff;
+    }
+    .highlight .sd {
+      color: #e6db74;
+    }
+    .highlight .s2 {
+      color: #e6db74;
+    }
+    .highlight .sb {
+      color: #e6db74;
+    }
+    .highlight .sh {
+      color: #e6db74;
+    }
+    .highlight .si {
+      color: #e6db74;
+    }
+    .highlight .sx {
+      color: #e6db74;
+    }
+    .highlight .s1 {
+      color: #e6db74;
+    }
+    .highlight .s {
+      color: #e6db74;
+    }
+    .highlight .na {
+      color: #a6e22e;
+    }
+    .highlight .nc {
+      color: #a6e22e;
+    }
+    .highlight .nd {
+      color: #a6e22e;
+    }
+    .highlight .ne {
+      color: #a6e22e;
+    }
+    .highlight .nf {
+      color: #a6e22e;
+    }
+    .highlight .vc {
+      color: #ffffff;
+    }
+    .highlight .nn {
+      color: #ffffff;
+    }
+    .highlight .nl {
+      color: #ffffff;
+    }
+    .highlight .ni {
+      color: #ffffff;
+    }
+    .highlight .bp {
+      color: #ffffff;
+    }
+    .highlight .vg {
+      color: #ffffff;
+    }
+    .highlight .vi {
+      color: #ffffff;
+    }
+    .highlight .nv {
+      color: #ffffff;
+    }
+    .highlight .w {
+      color: #ffffff;
+    }
+    .highlight {
+      color: #ffffff;
+    }
+    .highlight .n, .highlight .py, .highlight .nx {
+      color: #ffffff;
+    }
+    .highlight .ow {
+      color: #f92672;
+    }
+    .highlight .nt {
+      color: #f92672;
+    }
+    .highlight .k, .highlight .kv {
+      color: #f92672;
+    }
+    .highlight .kn {
+      color: #f92672;
+    }
+    .highlight .kp {
+      color: #f92672;
+    }
+    .highlight .o {
+      color: #f92672;
+    }
+  </style>
+  <link href="./stylesheets/screen.css" rel="stylesheet" media="screen">
+  <link href="./stylesheets/print.css" rel="stylesheet" media="print">
+  <script src="./javascripts/all.js"></script>
 </head>
 
-<body class="index">
-<a href="#" id="nav-button">
+<body class="index" data-languages="[&quot;http&quot;]">
+<a href="http://localhost:4567/#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" />
+        <img src="./images/navbar.png" alt="Navbar">
       </span>
 </a>
-<div class="tocify-wrapper">
-  <img src="images/logo.png" />
+<div class="toc-wrapper">
+  <img src="./images/logo.png" class="logo" alt="Logo">
   <div class="lang-selector">
-    <a href="#" data-language-name="http">http</a>
+    <a href="http://localhost:4567/#" data-language-name="http" class="active">http</a>
   </div>
   <div class="search">
     <input type="text" class="search" id="input-search" placeholder="Search">
   </div>
   <ul class="search-results"></ul>
-  <div id="toc">
-  </div>
-  <ul class="toc-footer">
-    <li><a href='https://github.com/GreenNerd/ideaegg-api/issues'>Raise a question</a></li>
+  <ul id="toc" class="toc-list-h1">
+    <li>
+      <a href="http://localhost:4567/#introduction" class="toc-h1 toc-link active" data-title="Introduction">Introduction</a>
+    </li>
+    <li>
+      <a href="http://localhost:4567/#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+    </li>
+    <li>
+      <a href="http://localhost:4567/#pagination" class="toc-h1 toc-link" data-title="Pagination">Pagination</a>
+    </li>
+    <li>
+      <a href="http://localhost:4567/#wechat-client" class="toc-h1 toc-link" data-title="Wechat Client">Wechat Client</a>
+      <ul class="toc-list-h2">
+        <li>
+          <a href="http://localhost:4567/#access_token" class="toc-h2 toc-link" data-title="access_token">access_token</a>
+        </li>
+        <li>
+          <a href="http://localhost:4567/#jsapi_ticket" class="toc-h2 toc-link" data-title="jsapi_ticket">jsapi_ticket</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="http://localhost:4567/#pushes" class="toc-h1 toc-link" data-title="Pushes">Pushes</a>
+      <ul class="toc-list-h2">
+        <li>
+          <a href="http://localhost:4567/#14a8535075" class="toc-h2 toc-link" data-title="微信推送">微信推送</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="http://localhost:4567/#flows" class="toc-h1 toc-link" data-title="Flows">Flows</a>
+      <ul class="toc-list-h2">
+        <li>
+          <a href="http://localhost:4567/#155570b4f1" class="toc-h2 toc-link" data-title="创建组织流程">创建组织流程</a>
+        </li>
+        <li>
+          <a href="http://localhost:4567/#abb5975e52" class="toc-h2 toc-link" data-title="获取发起的流程列表">获取发起的流程列表</a>
+        </li>
+        <li>
+          <a href="http://localhost:4567/#moment" class="toc-h2 toc-link" data-title="获取某条流程的所有Moment">获取某条流程的所有Moment</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="http://localhost:4567/#users" class="toc-h1 toc-link" data-title="Users">Users</a>
+      <ul class="toc-list-h2">
+        <li>
+          <a href="http://localhost:4567/#6d47866b22" class="toc-h2 toc-link" data-title="所在组织">所在组织</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="http://localhost:4567/#organizations" class="toc-h1 toc-link" data-title="Organizations">Organizations</a>
+      <ul class="toc-list-h2">
+        <li>
+          <a href="http://localhost:4567/#cb9cf88fe7" class="toc-h2 toc-link" data-title="所有组织">所有组织</a>
+        </li>
+        <li>
+          <a href="http://localhost:4567/#c8c51b76c7" class="toc-h2 toc-link" data-title="顶级组织">顶级组织</a>
+        </li>
+        <li>
+          <a href="http://localhost:4567/#cda11de7f2" class="toc-h2 toc-link" data-title="子代组织">子代组织</a>
+        </li>
+        <li>
+          <a href="http://localhost:4567/#02e4569f06" class="toc-h2 toc-link" data-title="组织成员">组织成员</a>
+        </li>
+        <li>
+          <a href="http://localhost:4567/#92cfa6d383" class="toc-h2 toc-link" data-title="创建组织">创建组织</a>
+        </li>
+        <li>
+          <a href="http://localhost:4567/#66dd10a168" class="toc-h2 toc-link" data-title="创建组织成员">创建组织成员</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="http://localhost:4567/#forms" class="toc-h1 toc-link" data-title="Forms">Forms</a>
+      <ul class="toc-list-h2">
+        <li>
+          <a href="http://localhost:4567/#1de85d87d5" class="toc-h2 toc-link" data-title="表单信息">表单信息</a>
+        </li>
+        <li>
+          <a href="http://localhost:4567/#52dced31b8" class="toc-h2 toc-link" data-title="表单数据">表单数据</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="http://localhost:4567/#attachments" class="toc-h1 toc-link" data-title="Attachments">Attachments</a>
+      <ul class="toc-list-h2">
+        <li>
+          <a href="http://localhost:4567/#711363c424" class="toc-h2 toc-link" data-title="查询">查询</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="http://localhost:4567/#column-explanation" class="toc-h1 toc-link" data-title="Column Explanation">Column Explanation</a>
+      <ul class="toc-list-h2">
+        <li>
+          <a href="http://localhost:4567/#7dbb085c42" class="toc-h2 toc-link" data-title="数据库表解释">数据库表解释</a>
+        </li>
+        <li>
+          <a href="http://localhost:4567/#41e10bfd0d" class="toc-h2 toc-link" data-title="字段解释">字段解释</a>
+        </li>
+        <li>
+          <a href="http://localhost:4567/#2574b30335" class="toc-h2 toc-link" data-title="流程状态解释">流程状态解释</a>
+        </li>
+        <li>
+          <a href="http://localhost:4567/#response-cached_values" class="toc-h2 toc-link" data-title="Response cached_values 说明">Response cached_values 说明</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="http://localhost:4567/#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+    </li>
   </ul>
 </div>
 <div class="page-wrapper">
   <div class="dark-box"></div>
   <div class="content">
     <h1 id="introduction">Introduction</h1>
+    <p>Welcome to the Skylark API!</p>
 
-    <p>Welcome to the API! If you find someting wrong, you can open a issue on the <a href="https://github.com/GreenNerd/ideaegg-api/issues">github</a>.</p>
-
-    <aside class="notice">
-      <li>The API uses JSON to serialize data. You <strong>don&rsquo;t need</strong> to specify <strong>.json</strong> at the end of API URL.</li>
-      <li>The API in this article is version <strong>2</strong></li>
-      <li>API requests <strong>MUST</strong> be prefixed with <strong>api</strong> and the API <strong>version</strong>.</li>
-      <li>All exmaples in this article authenticate via header</li>
-    </aside>
-
-    <h1 id="explain">Explain</h1>
-
-    <h2 id="authentication">Authentication</h2>
-
-    <p>Almost all API requests require authentication. You need to pass a <code class="prettyprint">private_token</code> parameter by URL or header. If passed as header, the header name must be “PRIVATE-TOKEN” (capital and with dash instead of underscore).</p>
-
-    <p>If no, or an invalid, <code class="prettyprint">private_token</code> is provided then an error message will be returned with status code 401:</p>
-
-    <p><code class="prettyprint">{ &quot;message&quot;: &quot;401 Unauthorized&quot; }</code></p>
-
-    <p>Example of a valid API request:</p>
-
-    <p><code class="prettyprint">GET http://beta.ideaegg.me/api/v2/ideas?private_token=QVy1PB7sTxfy4pqfZM1U</code></p>
-
-    <p>Example for a valid API request using curl and authentication via header:</p>
-
-    <p><code class="prettyprint">curl --header &quot;PRIVATE-TOKEN: QVy1PB7sTxfy4pqfZM1U&quot; &quot;http://beta.ideaegg.me/api/v2/ideas&quot;</code></p>
-
-    <h2 id="pagination">Pagination</h2>
-    <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/api/v1/ideas?page=2&amp;per_page=10</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-
-</code></pre>
-
-    <p>When listing resources you can pass the following parameters:</p>
+    <p>域名：</p>
 
     <ul>
-      <li>  <code class="prettyprint">page</code> (default: <code class="prettyprint">1</code>) - page number</li>
-      <li>  <code class="prettyprint">per_page</code> (default: <code class="prettyprint">24</code>, max: <code class="prettyprint">100</code>) - number of items to list per page</li>
+      <li>测试：https://beta.skylarkly.com</li>
+      <li>正式：https://skylarkly.com</li>
     </ul>
 
-    <h1 id="sessions">Sessions</h1>
-
-    <h2 id="sign-up">Sign up</h2>
-
-    <p>Sign up to register new user</p>
-    <pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/sign_up</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john_smith"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@example.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1234"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"password_confirmation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1234"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john_smith"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@example.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john_smith"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"private_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dd34asd13as"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-05-23T08:00:58Z"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">POST /sign_up</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>username</td>
-      <td>string</td>
-      <td><strong>Required</strong>.The username of user</td>
-    </tr>
-    <tr>
-      <td>email</td>
-      <td>string</td>
-      <td><strong>Required</strong>.The email of user</td>
-    </tr>
-    <tr>
-      <td>password</td>
-      <td>string</td>
-      <td><strong>Required</strong>.User password</td>
-    </tr>
-    <tr>
-      <td>password_confirmation</td>
-      <td>string</td>
-      <td><strong>Required</strong>. User password confirmation</td>
-    </tr>
-    </tbody></table>
-
-    <h2 id="sign-in">Sign in</h2>
-
-    <p>Sign in to get private token</p>
-    <pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/sign_in</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@example.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1234"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john_smith"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@example.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john_smith"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"private_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dd34asd13as"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-05-23T08:00:58Z"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">POST /sign_in</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>login</td>
-      <td>string</td>
-      <td><strong>Required</strong>.The login of user: username or email</td>
-    </tr>
-    <tr>
-      <td>password</td>
-      <td>string</td>
-      <td><strong>Required</strong>.Valid password</td>
-    </tr>
-    </tbody></table>
-
-    <h2 id="sign-in-with-wechat">Sign in with wechat</h2>
-    <pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/sign_in_with/wechat</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_uid"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41b7b2"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41b7b2@ideaegg.me"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41b7b2"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.test.com/test.png"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13800000000"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41b7b2"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41b7b2@ideaegg.me"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41b7b2"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"private_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CFRcLE-N9YxgpFxKpngz"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T14:20:57.024Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.test.com/test.png"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13800000000"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">POST /sign_in_with/wechat</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>uid</td>
-      <td>string</td>
-      <td><strong>Required</strong>.The openid of wechat</td>
-    </tr>
-    <tr>
-      <td>username</td>
-      <td>string</td>
-      <td><strong>Optional</strong>. The username of user.if no, the endpoint will generates one</td>
-    </tr>
-    <tr>
-      <td>email</td>
-      <td>string</td>
-      <td><strong>Optional</strong>. The email of user.if no, the endpoint will generates one</td>
-    </tr>
-    <tr>
-      <td>avatar</td>
-      <td>string</td>
-      <td><strong>Optional</strong>. The avatar of user.</td>
-    </tr>
-    <tr>
-      <td>fullname</td>
-      <td>string</td>
-      <td><strong>Optional</strong>. The fullname of user.if no, the endpoint will generates one according to username</td>
-    </tr>
-    <tr>
-      <td>phone_number</td>
-      <td>string</td>
-      <td><strong>Optional</strong>. The phone_number of user.</td>
-    </tr>
-    </tbody></table>
-
-    <h2 id="reset-password">Reset password</h2>
-
-    <p>Reset password by email if the user forgets password</p>
-    <pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/reset_password</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@qq.com"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">OK</span>
-
-</code></pre>
-
-    <p><code class="prettyprint">POST /reset_password</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>email</td>
-      <td>string</td>
-      <td><strong>Required</strong>. Email of the user</td>
-    </tr>
-    </tbody></table>
-
-    <h2 id="sign-up-temporarily">Sign up temporarily</h2>
-
-    <p>A key to log in</p>
-    <pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/sign_up_temporarily`</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-
-</code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0c60b755"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0c60b755@ideaegg.me"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0c60b755"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"private_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"focmQrCFdk9DJHx9KvdL"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-30T05:28:58.421Z"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-    <p><code class="prettyprint">POST /sign_up_temporarily</code></p>
-
-    <p><strong>Parameters</strong></p>
+    <p><strong>注</strong>：</p>
 
     <ul>
-      <li>None</li>
+      <li>所有的开发对接工作在Beta https://beta.skylarkly.com 上完成，部署时会给线上环境的配置</li>
     </ul>
+    <h1 id="authentication">Authentication</h1>
+    <p>1、创建一个ApiApplication，获得<code>appid</code>和<code>appsecret</code>（由我们提供）</p>
 
-    <h1 id="ideas">Ideas</h1>
+    <p>2、获得Namespace的id（由我们提供）</p>
 
-    <h2 id="list-ideas">List ideas</h2>
+    <p>3、构建Authorization header</p>
 
-    <p>Get a list of ideas by the authenticated user.</p>
-    <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/ideas</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+    <p><code>header</code>值的形式：<code>appid</code>:<code>encoded_data</code></p>
 
+    <p><code>appid</code>：为第一步获取到的<code>appid</code></p>
+
+    <p><code>encoded_data</code>：以<code>appsecret</code>为key，用JWT的HS256进行加密，加密payload为<code>{"namespace_id":id}</code>（id为Integer）</p>
+
+    <p>示例：</p>
+
+    <p><code>appid: 56dc47367f8c775cf2318aa29345af558ad8aa2835bc3cc1d4416abfa94bd721</code></p>
+
+    <p><code>appsecret: 7bb73122837c4befb9c6593287f73a5e915415fe29f5aeb182717b66e873e96b</code></p>
+
+    <p><code>namespace_id: 1</code></p>
+
+    <p>JWT的</p>
+
+    <p>HEADER为：<code>{"typ":"JWT","alg":"HS256"}</code>
+      PAYLOAD为：<code>{"namespace_id":1}</code></p>
+
+    <p>计算出<code>encoded_data</code>为：</p>
+
+    <p><code>eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lc3BhY2VfaWQiOjF9.z-RcFpDiYBXAO8i88M_x1JpJRr6CDMo8sb1rU6dw-0E</code></p>
+
+    <p>最终构建出<code>Authorization</code> header的值为： </p>
+
+    <p><code>56dc47367f8c775cf2318aa29345af558ad8aa2835bc3cc1d4416abfa94bd721:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lc3BhY2VfaWQiOjF9.z-RcFpDiYBXAO8i88M_x1JpJRr6CDMo8sb1rU6dw-0E</code></p>
+
+    <p>可以用jwt.io进行测试</p>
+
+    <p>实际使用中，处于安全的考虑，最好在payload中加入过期时间，如：</p>
+
+    <p><code>{"namespace_id":1,"exp":1535553256}</code></p>
+    <h1 id="pagination">Pagination</h1>
+    <ul>
+      <li>参数
+
+        <ul>
+          <li><code>per_page</code> 每页多少个，默认<code>24</code>，范围<code>1~100</code></li>
+          <li><code>page</code> 页数</li>
+        </ul></li>
+      <li>接口返回 Header (<strong>如果返回有以下Header，表示数据有分页</strong>)
+
+        <ul>
+          <li>X-SLP-Current-Page: 当前页数</li>
+          <li>X-SLP-Total-Pages: 总页数</li>
+          <li>X-SLP-Total-Count: 总个数</li>
+        </ul></li>
+      <li>例：<code>GET /api/v4/yaw/flows/:id/journeys?per_page=30&amp;page=3</code></li>
+    </ul>
+    <h1 id="wechat-client">Wechat Client</h1>
+    <p>注：</p>
+
+    <ul>
+      <li>access_token和jsapi_ticket都是在过期时间之前，可以一直使用，请求得到后而缓存之</li>
+      <li>不要用access_token去微信端请求jsapi_ticket，jsapi_ticket通过我们提供的接口获取</li>
+    </ul>
+    <h2 id="access_token">access_token</h2><pre class="highlight http tab-http" style=""><code><span class="nf">GET</span> <span class="nn">/api/v4/wechat_clients/access_token</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+
+</code></pre><pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">{</span>
+<span class="s">  "access_token": "15_2FkbrFbJuemSy3ANqLmHNu65bpflFlORFTO8tqnvw5a1C0EhF-nfGAvmRhjHqX9-bc8yWqk_2ezUfINwwGLvisa5kgrLQzOKP1rN6SxTixiDklu1fA3UK0GsO_a5nmrkfo_B44xcvtpEj78sVMKcAIAEVT",</span>
+<span class="s">  "expired_at": "1541041188" // 过期的 unix 时间戳</span>
+<span class="s">}</span>
 </code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Link</span><span class="p">:</span> <span class="s">&lt;http://localhost:3000/api/v2/ideas?page=1&amp;per_page=24&gt;;rel="first",</span>
-<span class="s">      &lt;http://localhost:3000/api/v2/ideas?page=1&amp;per_page=24&gt;; rel="last"</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-title"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cover"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-summary"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-content"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"content_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;test-content&lt;/p&gt;\ "</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"stars_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"votes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8ac89167"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8ac89167@ideaegg.me"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8ac89167"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T02:50:30.447Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://test_image/test.png"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sirloin leberkas doner pork loin strip steak."</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**World**"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"content_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;&lt;strong&gt;World&lt;/strong&gt;&lt;/p&gt;\ "</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"stars_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"votes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john1@ideaegg.me"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T02:20:40.292Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag2"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">GET /ideas</code> or <code class="prettyprint">GET /ideas?tag=foo</code></p>
-
-    <p><strong>parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>tag</td>
-      <td>string</td>
-      <td><strong>Optional.</strong>Inquire ideas by tag</td>
-    </tr>
-    </tbody></table>
-
-    <h2 id="get-an-idea-by-id">Get an idea by id</h2>
-
-    <p>Get a specific idea, identified by idea ID.</p>
-    <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/ideas/1</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-
-</code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://test_image/test.png"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Turkey doner bacon capicola salami strip steak."</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**World**"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;&lt;strong&gt;World&lt;/strong&gt;&lt;/p&gt;\\\n"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"stars_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"votes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"starred"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"voted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john1@ideaegg.me"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-09T01:20:55.119Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag2"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">GET /ideas/:id</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>id</td>
-      <td>integer</td>
-      <td><strong>Required.</strong>The id of an idea</td>
-    </tr>
-    </tbody></table>
-
-    <h2 id="create-idea">Create idea</h2>
-
-    <p>Creates a new idea owned by the authenticated user.</p>
-    <pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/ideas</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-title"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-summary"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-content"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://qiniu.com/test"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">created</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-title"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://qiniu.com/test"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-summary"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-content"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;test-content&lt;/p&gt;\ "</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"stars_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"votes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8ac89167"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8ac89167@ideaegg.me"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8ac89167"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T02:50:30.447Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">POST /ideas</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>title</td>
-      <td>string</td>
-      <td><strong>Required.</strong> new idea title</td>
-    </tr>
-    <tr>
-      <td>content</td>
-      <td>string</td>
-      <td><strong>Required.</strong> new idea content</td>
-    </tr>
-    <tr>
-      <td>summary</td>
-      <td>string</td>
-      <td><strong>Required.</strong> new idea summary</td>
-    </tr>
-    <tr>
-      <td>cover</td>
-      <td>string</td>
-      <td><strong>Optional.</strong> new idea cover</td>
-    </tr>
-    <tr>
-      <td>tag</td>
-      <td>string</td>
-      <td><strong>Optional.</strong> add tags for the idea. eg. “tag1,tag2”</td>
-    </tr>
-    </tbody></table>
-
-    <h2 id="update-idea">Update idea</h2>
-
-    <p>Update an idea’s title or content owned by the authenticated user.</p>
-    <pre class="highlight http"><code><span class="nf">PUT</span> <span class="nn">/ideas/1</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-title2"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-summary2"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-content2"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://qiniu.com/test2"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-title2"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://qiniu.com/test2"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-summary2"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-content2"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;test-content2&lt;/p&gt;\n "</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"stars_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"votes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john1@ideaegg.me"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T02:20:40.292Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag2"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">PUT /ideas/:id</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>id</td>
-      <td>integer</td>
-      <td><strong>Required.</strong> id of the idea</td>
-    </tr>
-    <tr>
-      <td>title</td>
-      <td>string</td>
-      <td><strong>Required.</strong> new title</td>
-    </tr>
-    <tr>
-      <td>content</td>
-      <td>string</td>
-      <td><strong>Required.</strong> new content</td>
-    </tr>
-    <tr>
-      <td>summary</td>
-      <td>string</td>
-      <td><strong>Required.</strong> new summary</td>
-    </tr>
-    <tr>
-      <td>cover</td>
-      <td>string</td>
-      <td><strong>Optional.</strong> new cover</td>
-    </tr>
-    </tbody></table>
-
-    <h2 id="delete-idea">Delete idea</h2>
-
-    <p>Delete an idea owned by the authenticated user.</p>
-    <pre class="highlight http"><code><span class="nf">DELETE</span> <span class="nn">/ideas/4</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-
-</code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">no content</span>
-
-</code></pre>
-
-    <p><code class="prettyprint">DELETE /ideas/:id</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>id</td>
-      <td>integer</td>
-      <td><strong>Required.</strong> id of the idea</td>
-    </tr>
-    </tbody></table>
-
-    <h2 id="like-idea">Like idea</h2>
-
-    <p>Like an idea by the authenticated user.</p>
-    <pre class="highlight http"><code><span class="nf">PUT</span> <span class="nn">/ideas/1/vote</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-
-</code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://test_image/test.png"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sirloin leberkas doner pork loin strip steak."</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**World**"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;&lt;strong&gt;World&lt;/strong&gt;&lt;/p&gt;\ "</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"stars_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"votes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john1@ideaegg.me"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T02:20:40.292Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag2"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">PUT /ideas/:id/vote</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>id</td>
-      <td>integer</td>
-      <td><strong>Required.</strong> id of the idea</td>
-    </tr>
-    </tbody></table>
-
-    <h2 id="unlike-idea">Unlike idea</h2>
-
-    <p>Unlike an idea by the authenticated user.</p>
-    <pre class="highlight http"><code><span class="nf">DELETE</span> <span class="nn">/ideas/1/vote</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-
-</code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://test_image/test.png"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sirloin leberkas doner pork loin strip steak."</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**World**"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;&lt;strong&gt;World&lt;/strong&gt;&lt;/p&gt;\ "</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"stars_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"votes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john1@ideaegg.me"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T02:20:40.292Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag2"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">DELETE /ideas/:id/vote</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>id</td>
-      <td>integer</td>
-      <td><strong>Required.</strong> id of the idea</td>
-    </tr>
-    </tbody></table>
-
-    <h2 id="star-idea">Star idea</h2>
-
-    <p>Star an idea by the authenticated user.</p>
-    <pre class="highlight http"><code><span class="nf">PUT</span> <span class="nn">/ideas/1/star</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-
-</code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="w">  </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://test_image/test.png"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sirloin leberkas doner pork loin strip steak."</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**World**"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;&lt;strong&gt;World&lt;/strong&gt;&lt;/p&gt;\ "</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"stars_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"votes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john1@ideaegg.me"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T02:20:40.292Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag2"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">PUT /ideas/:id/star</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>id</td>
-      <td>integer</td>
-      <td><strong>Required.</strong> id of the idea</td>
-    </tr>
-    </tbody></table>
-
-    <h2 id="unstar-idea">Unstar idea</h2>
-
-    <p>Unstar an idea by the authenticated user.</p>
-    <pre class="highlight http"><code><span class="nf">DELETE</span> <span class="nn">/ideas/1/star</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-
-</code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://test_image/test.png"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sirloin leberkas doner pork loin strip steak."</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**World**"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;&lt;strong&gt;World&lt;/strong&gt;&lt;/p&gt;\ "</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"stars_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"votes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john1@ideaegg.me"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T02:20:40.292Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag2"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">DELETE /ideas/:id/star</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>id</td>
-      <td>integer</td>
-      <td><strong>Required.</strong> id of the idea</td>
-    </tr>
-    </tbody></table>
-
-    <h2 id="tag-idea">Tag idea</h2>
-
-    <p>Tag an idea by the authenticated user.</p>
-    <pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/ideas/8/tags</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag1, tag2"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test2"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag2"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">POST /ideas/:id/tags</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>id</td>
-      <td>integer</td>
-      <td><strong>Required.</strong> id of the idea</td>
-    </tr>
-    <tr>
-      <td>tag</td>
-      <td>string</td>
-      <td><strong>Required.</strong> tags, splitted by ’,’ such as ‘software’ or &lsquo;software, children’</td>
-    </tr>
-    </tbody></table>
-
-    <h2 id="untag-idea">Untag idea</h2>
-
-    <p>Untag an idea by the authenticated user.</p>
-    <pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/ideas/8/untags</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag1, tag2"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test2"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">POST /ideas/:id/untags</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>id</td>
-      <td>integer</td>
-      <td><strong>Required.</strong> id of the idea</td>
-    </tr>
-    <tr>
-      <td>tag</td>
-      <td>string</td>
-      <td><strong>Required.</strong> tags, splitted by ’,’ such as &#39;software’ or &#39;software, children’</td>
-    </tr>
-    </tbody></table>
-
-    <h2 id="get-a-idea’s-comments">Get a idea’s comments</h2>
-
-    <p>Return the comments ordered by created time</p>
-    <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/ideas/1/comments</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-
-</code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-<span class="na">Link</span><span class="p">:</span> <span class="s">&lt;http://localhost:3000/api/v2/ideas/1/comments?page=1&amp;per_page=24&gt;; rel="first",</span>
-<span class="s">    &lt;http://localhost:3000/api/v2/ideas/1/comments?page=1&amp;per_page=24&gt;; rel="last"</span>
-
-<span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"body_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/p&gt;\ "</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T02:20:54.174Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"idea_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john1@ideaegg.me"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T02:20:40.292Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">GET /ideas/:id/comments</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>id</td>
-      <td>integer</td>
-      <td><strong>Required.</strong> id of the idea</td>
-    </tr>
-    </tbody></table>
-
-    <h2 id="make-a-comment-on-the-idea">Make a comment on the idea</h2>
-    <pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/ideas/1/comments</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"this is a body"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"body_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;test&lt;/p&gt;\ "</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-08T01:15:58.530Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"idea_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8ac89167"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8ac89167@ideaegg.me"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8ac89167"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T02:50:30.447Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">POST /ideas/:id/comments</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <table><thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead><tbody>
-    <tr>
-      <td>id</td>
-      <td>integer</td>
-      <td><strong>Required.</strong> id of the idea</td>
-    </tr>
-    <tr>
-      <td>body</td>
-      <td>string</td>
-      <td><strong>Required.</strong> content of the comment</td>
-    </tr>
-    </tbody></table>
-
-    <h1 id="users">Users</h1>
-
-    <h2 id="get-current-user">Get current user</h2>
-
-    <p>Get self user</p>
-    <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/user</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-
-</code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testtest"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@qq.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testtest"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-05-23T01:27:56.015Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"private_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WwUD85zhd_kMEurVu7SE"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">GET /user</code></p>
+    <p><code>GET /api/v4/wechat_clients/access_token</code></p>
 
     <p><strong>Parameters</strong></p>
 
@@ -1192,38 +428,60 @@
       <li>  None</li>
     </ul>
 
-    <h2 id="update-user">Update user</h2>
+    <p><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140183">微信文档</a></p>
+    <h2 id="jsapi_ticket">jsapi_ticket</h2><pre class="highlight http tab-http" style=""><code><span class="nf">GET</span> <span class="nn">/api/v4/wechat_clients/jsapi_ticket</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 
-    <p>Update a user’s avatar, fullname or phone_number by the authenticated user.</p>
-    <pre class="highlight http"><code><span class="nf">PUT</span> <span class="nn">/user</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre><pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">{</span>
+<span class="s">  "ticket": "sM4AOVdWfPE4DxkXGEs8VAT3lleStXwJQ-0K5TVdAa6VYKz9sECvxATXHT4fR5Vcqy8B4XnR3_fiV-xuSIWfjQ",</span>
+<span class="s">  "expired_at": "1535715059" // 过期的 unix 时间戳</span>
+<span class="s">}</span>
+</code></pre>
+    <p><code>GET /api/v4/wechat_clients/jsapi_ticket</code></p>
 
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_email@qq.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-fullname"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://qiniu.com/test"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13800000000"</span><span class="w">
-</span><span class="p">}</span><span class="w">
+    <p><strong>Parameters</strong></p>
 
-</span></code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+    <ul>
+      <li>  None</li>
+    </ul>
+    <h1 id="pushes">Pushes</h1><h2 id="14a8535075">微信推送</h2><pre class="highlight http tab-http" style=""><code><span class="nf">POST</span> <span class="nn">/api/v4/pushes/wechat</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testtest"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_email@qq.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-fullname"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-05-23T01:27:56.015Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13800000000"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://qiniu.com/test"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"private_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WwUD85zhd_kMEurVu7SE"</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</code></pre><pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">{</span>
+<span class="s">  "title":"Happy Day",</span>
+<span class="s">  "description":"Is Really A Happy Day",</span>
+<span class="s">  "url":"URL",</span>
+<span class="s">  "picurl":"PIC_URL"</span>
+<span class="s">}</span>
 
-</span></code></pre>
+</code></pre><h3 id="news_entity">news_entity 结构</h3>
+    <p>结构固定，以下4个key都是必须的，具体意思参考微信<a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140547">微信客服消息</a></p>
+    <pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">{</span>
+<span class="s">  "template_id": "7L5ZG7D0VtqOnKp07bskkJ7XA7veVqIO2VYeY3aYLtY",</span>
+<span class="s">  "url": "http://weixin.qq.com/download",</span>
+<span class="s">  "data": {</span>
+<span class="s">    "first": {</span>
+<span class="s">      "value": "恭喜你购买成功！",</span>
+<span class="s">      "color": "#173177"</span>
+<span class="s">    },</span>
+<span class="s">    "keyword1": {</span>
+<span class="s">      "value": "巧克力",</span>
+<span class="s">      "color": "#173177"</span>
+<span class="s">    },</span>
+<span class="s">    "keyword2": {</span>
+<span class="s">      "value": "39.8元",</span>
+<span class="s">      "color": "#173177"</span>
+<span class="s">    },</span>
+<span class="s">    "remark": {</span>
+<span class="s">      "value": "欢迎再次购买！",</span>
+<span class="s">      "color": "#173177"</span>
+<span class="s">    }</span>
+<span class="s">  }</span>
+<span class="s">}</span>
 
-    <p><code class="prettyprint">PUT /user</code></p>
+</code></pre><h3 id="template_entity">template_entity 结构</h3>
+    <p>结构固定，但data的实际结构会根据模板而改变，具体意思参考<a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140547">微信客服消息</a></p>
 
     <p><strong>Parameters</strong></p>
 
@@ -1235,283 +493,228 @@
     </tr>
     </thead><tbody>
     <tr>
-      <td>email</td>
-      <td>string</td>
-      <td><strong>Required.</strong> new email</td>
+      <td>openids</td>
+      <td>Array</td>
+      <td>Required 接收用户的openid的集合</td>
     </tr>
     <tr>
-      <td>fullname</td>
-      <td>string</td>
-      <td><strong>Required.</strong> new fullname</td>
+      <td>news_entity</td>
+      <td>Object</td>
+      <td><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140547">微信客服消息</a></td>
     </tr>
     <tr>
-      <td>phone_number</td>
-      <td>string</td>
-      <td><strong>Optional.</strong> phone number</td>
-    </tr>
-    <tr>
-      <td>avatar</td>
-      <td>string</td>
-      <td><strong>Optional.</strong> avatar url</td>
+      <td>template_entity</td>
+      <td>Object</td>
+      <td><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140547">微信客服消息</a></td>
     </tr>
     </tbody></table>
 
-    <h2 id="follow-user">Follow user</h2>
+    <p><code>news_entity</code>、<code>template_entity</code> 两者必须有一个。如果都存在，微信推送会先尝试客服消息，当客服消息失败时，再尝试模板消息</p>
+    <h3 id="response">Response</h3>
+    <p><code>Status: 200 OK</code></p>
 
-    <p>Follow another user by the authenticated user.</p>
-    <pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/users/2/follow</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+    <p><strong>no body</strong></p>
+    <h1 id="flows">Flows</h1><h2 id="155570b4f1">创建组织流程</h2><pre class="highlight http tab-http" style=""><code><span class="nf">GET</span> <span class="nn">/api/v4/yaw/flows/8</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">{</span>
+<span class="s">  "id":8,</span>
+<span class="s">  "title":"简单流程",</span>
+<span class="s">  "fields":[</span>
+<span class="s">    {</span>
+<span class="s">      "id":38761,</span>
+<span class="s">      "title":"别填",</span>
+<span class="s">      "description":null</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">      "id":38806,</span>
+<span class="s">      "title":"明细清单",</span>
+<span class="s">      "description":null</span>
+<span class="s">    }</span>
+<span class="s">  ],</span>
+<span class="s">  "vertices":[</span>
+<span class="s">    {</span>
+<span class="s">      "id":78,</span>
+<span class="s">      "name":"开始节点",</span>
+<span class="s">      "type":"YetAnotherWorkflow::Vertex::Initial"</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">      "id":80,</span>
+<span class="s">      "name":"流程节点3",</span>
+<span class="s">      "type":"YetAnotherWorkflow::Vertex::Normal"</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">      "id":79,</span>
+<span class="s">      "name":"结束节点",</span>
+<span class="s">      "type":"YetAnotherWorkflow::Vertex::Final"</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">      "id":90,</span>
+<span class="s">      "name":"流程节点2",</span>
+<span class="s">      "type":"YetAnotherWorkflow::Vertex::Normal"</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">      "id":91,</span>
+<span class="s">      "name":"流程节点1",</span>
+<span class="s">      "type":"YetAnotherWorkflow::Vertex::Normal"</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">      "id":113,</span>
+<span class="s">      "name":"开始节点",</span>
+<span class="s">      "type":"YetAnotherWorkflow::Vertex::Initial"</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">      "id":114,</span>
+<span class="s">      "name":"结束节点",</span>
+<span class="s">      "type":"YetAnotherWorkflow::Vertex::Final"</span>
+<span class="s">    }</span>
+<span class="s">  ],</span>
+<span class="s">  "edges":[</span>
+<span class="s">    {</span>
+<span class="s">      "id":101,</span>
+<span class="s">      "from_vertex_id":78,</span>
+<span class="s">      "to_vertex_id":91</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">      "id":92,</span>
+<span class="s">      "from_vertex_id":80,</span>
+<span class="s">      "to_vertex_id":79</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">      "id":103,</span>
+<span class="s">      "from_vertex_id":90,</span>
+<span class="s">      "to_vertex_id":80</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">      "id":102,</span>
+<span class="s">      "from_vertex_id":91,</span>
+<span class="s">      "to_vertex_id":90</span>
+<span class="s">    }</span>
+<span class="s">  ]</span>
+<span class="s">}</span>
 
 </code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
+    <p><code>GET /api/v4/yaw/flows/:id</code></p>
 
-</code></pre>
-
-    <p><code class="prettyprint">POST /users/:id/follow</code></p>
+    <p><strong>Parameters</strong></p>
 
     <table><thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
+      <th>Comments</th>
     </tr>
     </thead><tbody>
     <tr>
       <td>id</td>
       <td>integer</td>
-      <td><strong>Required.</strong> The id of a user that will be followed</td>
+      <td>流程id</td>
+      <td></td>
     </tr>
     </tbody></table>
+    <h2 id="abb5975e52">获取发起的流程列表</h2><pre class="highlight http tab-http" style=""><code><span class="nf">GET</span> <span class="nn">/api/v4/yaw/flows/110/journeys</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
 
-    <h2 id="unfollow-user">Unfollow user</h2>
-
-    <p>Unfollow another user by the authenticated user.</p>
-    <pre class="highlight http"><code><span class="nf">DELETE</span> <span class="nn">/users/2/follow</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-
+</code></pre><pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">X-SLP-Current-Page</span><span class="p">:</span> <span class="s">1</span>
+<span class="na">X-SLP-Total-Pages</span><span class="p">:</span> <span class="s">29</span>
+<span class="na">X-SLP-Total-Count</span><span class="p">:</span> <span class="s">2</span>
+<span class="s">[</span>
+<span class="s">  {</span>
+<span class="s">    "id":110,</span>
+<span class="s">    "sn":"820180503184630000029",</span>
+<span class="s">    "status":"processing",</span>
+<span class="s">    "current_duration_threshold":null,</span>
+<span class="s">    "created_at":"2018-06-06T15:39:10.532+08:00",</span>
+<span class="s">    "updated_at":"2018-06-06T15:39:10.532+08:00",</span>
+<span class="s">    "current_vertex_id":91,</span>
+<span class="s">    "reviewer_vertex_ids":[</span>
+<span class="s">      78</span>
+<span class="s">    ],</span>
+<span class="s">    "response":{</span>
+<span class="s">      "id":548288,</span>
+<span class="s">      "cached_values":{</span>
+<span class="s">        "38761":{</span>
+<span class="s">          "value":[</span>
+<span class="s">            "123123123"</span>
+<span class="s">          ],</span>
+<span class="s">          "text_value":[</span>
+<span class="s">            "123123123"</span>
+<span class="s">          ],</span>
+<span class="s">          "exported_value":[</span>
+<span class="s">            "123123123"</span>
+<span class="s">          ]</span>
+<span class="s">        }</span>
+<span class="s">      }</span>
+<span class="s">    },</span>
+<span class="s">    "user":{</span>
+<span class="s">      "id":17013,</span>
+<span class="s">      "name":"aaaa",</span>
+<span class="s">      "identifier":"12345",</span>
+<span class="s">      "headimgurl":"/non-digested-assets/avatars/default.png"</span>
+<span class="s">    }</span>
+<span class="s">  },</span>
+<span class="s">  ...</span>
+<span class="s">]</span>
 </code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
+    <p><code>GET /api/v4/yaw/flows/:id/journeys</code></p>
 
-</code></pre>
-
-    <p><code class="prettyprint">DELETE /users/:id/follow</code></p>
+    <p><strong>Parameters</strong></p>
 
     <table><thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
+      <th>Comments</th>
     </tr>
     </thead><tbody>
     <tr>
       <td>id</td>
       <td>integer</td>
-      <td><strong>Required.</strong> The id of a user that will be unfollowed</td>
+      <td>流程id</td>
+      <td></td>
     </tr>
     </tbody></table>
+    <h2 id="moment">获取某条流程的所有Moment</h2><pre class="highlight http tab-http" style=""><code><span class="err">GET /api/v4/yaw/journeys/392/moments
+Authorization: your_authorization
 
-    <h2 id="get-my-ideas">Get my ideas</h2>
-
-    <p>Get current user’s ideas.</p>
-    <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/user/ideas/created</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOken</span><span class="p">:</span> <span class="s">your_private_token</span>
-
+</span></code></pre><pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">[</span>
+<span class="s">  {</span>
+<span class="s">    "id": 392,</span>
+<span class="s">    "status": "proposed",</span>
+<span class="s">    "comment": null,</span>
+<span class="s">    "esignature": "data:image/png;base64,something",</span>
+<span class="s">    "created_at": "2018-06-29T15:09:31.835+08:00",</span>
+<span class="s">    "updated_at": "2018-06-29T15:09:31.835+08:00",</span>
+<span class="s">    "vertex_id": 168,</span>
+<span class="s">    "user": {</span>
+<span class="s">      "id": 127057,</span>
+<span class="s">      "name": "cacao",</span>
+<span class="s">      "identifier": null,</span>
+<span class="s">      "headimgurl": "/non-digested-assets/avatars/default.png"</span>
+<span class="s">    }</span>
+<span class="s">  },</span>
+<span class="s">  {</span>
+<span class="s">    "id": 393,</span>
+<span class="s">    "status": "approved",</span>
+<span class="s">    "comment": "",</span>
+<span class="s">    "esignature": "data:image/png;base64,something",</span>
+<span class="s">    "created_at": "2018-06-29T15:09:46.297+08:00",</span>
+<span class="s">    "updated_at": "2018-06-29T15:09:46.297+08:00",</span>
+<span class="s">    "vertex_id": 170,</span>
+<span class="s">    "user": {</span>
+<span class="s">      "id": 127057,</span>
+<span class="s">      "name": "cacao",</span>
+<span class="s">      "identifier": null,</span>
+<span class="s">      "headimgurl": "/non-digested-assets/avatars/default.png"</span>
+<span class="s">    }</span>
+<span class="s">  }</span>
+<span class="s">]</span>
 </code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-<span class="na">Link</span><span class="p">:</span> <span class="s">&lt;http://localhost:3000/api/v2/user/ideas/created?page=1&amp;per_page=24&gt;; rel="first",</span>
-<span class="s">      &lt;http://localhost:3000/api/v2/user/ideas/created?page=1&amp;per_page=24&gt;; rel="last"</span>
-
-<span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-title"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cover"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-summary"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-content"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"stars_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"votes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8ac89167"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8ac89167@ideaegg.me"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8ac89167"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T02:50:30.447Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test2"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">GET /user/ideas/voted</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <ul>
-      <li>  None</li>
-    </ul>
-
-    <h2 id="get-my-liked-ideas">Get my liked ideas</h2>
-
-    <p>Get current user’s liked ideas.</p>
-    <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/user/ideas/voted</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PROVIATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-
-</code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-<span class="na">Link</span><span class="p">:</span> <span class="s">&lt;http://localhost:3000/api/v2/user/ideas/voted?page=1&amp;per_page=24&gt;; rel="first",</span>
-<span class="s">      &lt;http://localhost:3000/api/v2/user/ideas/voted?page=1&amp;per_page=24&gt;; rel="last"</span>
-
-<span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://test_image/test.png"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sirloin leberkas doner pork loin strip steak."</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**World**"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"content_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;&lt;strong&gt;World&lt;/strong&gt;&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"stars_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"votes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john1@ideaegg.me"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T02:20:40.292Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag2"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">GET /user/ideas/voted</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <ul>
-      <li>  None</li>
-    </ul>
-
-    <h2 id="get-my-starred-ideas">Get my starred ideas</h2>
-
-    <p>Get current user’s starred ideas.</p>
-    <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/user/ideas/starred</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PROVIATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-
-</code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-<span class="na">Link</span><span class="p">:</span> <span class="s">&lt;http://localhost:3000/api/v2/user/ideas/starred?page=1&amp;per_page=24&gt;; rel="first",</span>
-<span class="s">      &lt;http://localhost:3000/api/v2/user/ideas/starred?page=1&amp;per_page=24&gt;; rel="last"</span>
-
-<span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://test_image/test.png"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sirloin leberkas doner pork loin strip steak."</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**World**"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"content_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;&lt;strong&gt;World&lt;/strong&gt;&lt;/p&gt;"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"stars_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"votes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john1@ideaegg.me"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T02:20:40.292Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag2"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">GET /user/ideas/starred</code></p>
-
-    <p><strong>Parameters</strong></p>
-
-    <ul>
-      <li>  None</li>
-    </ul>
-
-    <h2 id="modify-password">Modify password</h2>
-
-    <p>modify password by current password</p>
-    <pre class="highlight http"><code><span class="nf">PUT</span> <span class="nn">/user/password</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"current_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_password"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_password"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"password_confirmation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_password"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testtest"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@qq.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testtest"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-05-23T01:27:56.015Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"private_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WwUD85zhd_kMEurVu7SE"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">PUT /user/password</code></p>
-
     <p><strong>Parameters</strong></p>
 
     <table><thead>
@@ -1519,122 +722,384 @@
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
+      <th>Comments</th>
     </tr>
     </thead><tbody>
     <tr>
-      <td>current_password</td>
-      <td>string</td>
-      <td><strong>Required.</strong> currnet password of the user</td>
-    </tr>
-    <tr>
-      <td>password</td>
-      <td>string</td>
-      <td><strong>Required.</strong> new password of the user</td>
-    </tr>
-    <tr>
-      <td>password_confirmation</td>
-      <td>string</td>
-      <td><strong>Required.</strong> new password confirmation</td>
+      <td>id</td>
+      <td>integer</td>
+      <td>流程id</td>
+      <td></td>
     </tr>
     </tbody></table>
+    <h1 id="users">Users</h1><h2 id="6d47866b22">所在组织</h2><pre class="highlight http tab-http" style=""><code><span class="nf">GET</span> <span class="nn">/api/v4/users/14473/organizations</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+<span class="s">{</span>
+<span class="s">  "name": "name",</span>
+<span class="s">  "description": "description",</span>
+<span class="s">  "application_strategy": "must_approved",</span>
+<span class="s">  "founder_id": 3,</span>
+<span class="s">  "patent_id": 13</span>
+<span class="s">}</span>
 
-    <h1 id="tags">Tags</h1>
-
-    <h2 id="list-tags">List tags</h2>
-
-    <p>Paging list the tags ordered by number of use</p>
-    <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/tags</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-
+</code></pre><pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">[</span>
+<span class="s">  {</span>
+<span class="s">    "id": 14473,</span>
+<span class="s">    "name": "child_1",</span>
+<span class="s">    "description": "",</span>
+<span class="s">    "description_text": "",</span>
+<span class="s">    "created_at": "2017-04-18T16:33:07.408+08:00",</span>
+<span class="s">    "updated_at": "2017-12-06T17:52:27.556+08:00",</span>
+<span class="s">    "children_count": 1,</span>
+<span class="s">    "parent_id": 14472,</span>
+<span class="s">    "ancestry": "14472"</span>
+<span class="s">  },</span>
+<span class="s">  {</span>
+<span class="s">    "id": 1935,</span>
+<span class="s">    "name": "测试组织",</span>
+<span class="s">    "description": "&lt;p&gt;aaa&lt;/p&gt;",</span>
+<span class="s">    "description_text": "aaa",</span>
+<span class="s">    "created_at": "2015-05-25T15:58:45.083+08:00",</span>
+<span class="s">    "updated_at": "2018-04-06T15:37:24.712+08:00",</span>
+<span class="s">    "children_count": 2,</span>
+<span class="s">    "parent_id": null,</span>
+<span class="s">    "ancestry": null</span>
+<span class="s">  },</span>
+<span class="s">  ...</span>
+<span class="s">]</span>
 </code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Link</span><span class="p">:</span> <span class="s">&lt;http://localhost:3000/api/v2/tags?page=1&amp;per_page=24&gt;; rel="first",</span>
-<span class="s">      &lt;http://localhost:3000/api/v2/tags?page=1&amp;per_page=24&gt;; rel="last"</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+    <p><code>GET /api/v4/users/:id/organizations</code></p>
 
-<span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag2"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-
-    <p><code class="prettyprint">GET /tags</code></p>
-
-    <p><strong>parameters</strong></p>
-
-    <ul>
-      <li>None</li>
-    </ul>
-
-    <h2 id="query-tags">Query tags</h2>
-
-    <p>query tags by the name, results will be paging listed</p>
-    <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/tags/query?name=tag1</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
-
-</code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Link</span><span class="p">:</span> <span class="s">&lt;http://localhost:3000/api/v2/tags/query?page=1&amp;per_page=24&gt;; rel="first",</span>
-<span class="s">      &lt;http://localhost:3000/api/v2/tags/query?page=1&amp;per_page=24&gt;; rel="last"</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-
-    <p><code class="prettyprint">GET /tags/query</code></p>
-
-    <p><strong>parameters</strong></p>
+    <p><strong>Parameters</strong></p>
 
     <table><thead>
     <tr>
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
+      <th>Comments</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+      <td>id</td>
+      <td>integer</td>
+      <td>用户id</td>
+      <td></td>
+    </tr>
+    </tbody></table>
+    <h1 id="organizations">Organizations</h1><h2 id="cb9cf88fe7">所有组织</h2><pre class="highlight http tab-http" style=""><code><span class="nf">GET</span> <span class="nn">/api/v4/organizations</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">X-SLP-Current-Page</span><span class="p">:</span> <span class="s">1</span>
+<span class="na">X-SLP-Total-Pages</span><span class="p">:</span> <span class="s">1</span>
+<span class="na">X-SLP-Total-Count</span><span class="p">:</span> <span class="s">4</span>
+<span class="s">[</span>
+<span class="s">  {</span>
+<span class="s">    "id": 14516,</span>
+<span class="s">    "name": "第一个组织",</span>
+<span class="s">    "description": "您可以根据需要更改名字及描述，或者删除组织",</span>
+<span class="s">    "description_text": "您可以根据需要更改名字及描述，或者删除组织",</span>
+<span class="s">    "created_at": "2017-12-25T16:06:13.111+08:00",</span>
+<span class="s">    "updated_at": "2018-08-14T10:00:49.663+08:00",</span>
+<span class="s">    "children_count": 2,</span>
+<span class="s">    "parent_id": null,</span>
+<span class="s">    "ancestry": null</span>
+<span class="s">  },</span>
+<span class="s">  {</span>
+<span class="s">    "id": 15113,</span>
+<span class="s">    "name": "组织_a",</span>
+<span class="s">    "description": "",</span>
+<span class="s">    "description_text": "",</span>
+<span class="s">    "created_at": "2018-08-14T10:00:29.691+08:00",</span>
+<span class="s">    "updated_at": "2018-08-14T10:00:40.625+08:00",</span>
+<span class="s">    "children_count": 1,</span>
+<span class="s">    "parent_id": 14516,</span>
+<span class="s">    "ancestry": "14516"</span>
+<span class="s">  },</span>
+<span class="s">  {</span>
+<span class="s">    "id": 15114,</span>
+<span class="s">    "name": "组织_a_a",</span>
+<span class="s">    "description": "",</span>
+<span class="s">    "description_text": "",</span>
+<span class="s">    "created_at": "2018-08-14T10:00:40.624+08:00",</span>
+<span class="s">    "updated_at": "2018-08-14T10:00:40.624+08:00",</span>
+<span class="s">    "children_count": 0,</span>
+<span class="s">    "parent_id": 15113,</span>
+<span class="s">    "ancestry": "14516/15113"</span>
+<span class="s">  },</span>
+<span class="s">  {</span>
+<span class="s">    "id": 15115,</span>
+<span class="s">    "name": "组织_b",</span>
+<span class="s">    "description": "",</span>
+<span class="s">    "description_text": "",</span>
+<span class="s">    "created_at": "2018-08-14T10:00:49.660+08:00",</span>
+<span class="s">    "updated_at": "2018-08-14T10:00:49.660+08:00",</span>
+<span class="s">    "children_count": 0,</span>
+<span class="s">    "parent_id": 14516,</span>
+<span class="s">    "ancestry": "14516"</span>
+<span class="s">  }</span>
+<span class="s">]</span>
+
+</code></pre>
+    <p><code>GET /api/v4/organizations</code></p>
+
+    <p><strong>Parameters</strong></p>
+
+    <ul>
+      <li>  None</li>
+    </ul>
+    <h2 id="c8c51b76c7">顶级组织</h2><pre class="highlight http tab-http" style=""><code><span class="nf">GET</span> <span class="nn">/api/v4/organizations/roots</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">X-SLP-Current-Page</span><span class="p">:</span> <span class="s">1</span>
+<span class="na">X-SLP-Total-Pages</span><span class="p">:</span> <span class="s">1</span>
+<span class="na">X-SLP-Total-Count</span><span class="p">:</span> <span class="s">1</span>
+
+[
+  {
+    "id": 14516,
+    "name": "第一个组织",
+    "description": "您可以根据需要更改名字及描述，或者删除组织",
+    "description_text": "您可以根据需要更改名字及描述，或者删除组织",
+    "created_at": "2017-12-25T16:06:13.111+08:00",
+    "updated_at": "2018-08-14T10:00:49.663+08:00",
+    "children_count": 2,
+    "parent_id": null,
+    "ancestry": null
+  }
+]
+
+</code></pre>
+    <p><code>GET /api/v4/organizations/roots</code></p>
+
+    <p><strong>Parameters</strong></p>
+
+    <ul>
+      <li>  None</li>
+    </ul>
+    <h2 id="cda11de7f2">子代组织</h2><pre class="highlight http tab-http" style=""><code><span class="nf">GET</span> <span class="nn">/api/v4/organizations/15113/children</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">X-SLP-Current-Page</span><span class="p">:</span> <span class="s">1</span>
+<span class="na">X-SLP-Total-Pages</span><span class="p">:</span> <span class="s">1</span>
+<span class="na">X-SLP-Total-Count</span><span class="p">:</span> <span class="s">2</span>
+<span class="s">[</span>
+<span class="s">  {</span>
+<span class="s">    "id": 15113,</span>
+<span class="s">    "name": "组织_a",</span>
+<span class="s">    "description": "",</span>
+<span class="s">    "description_text": "",</span>
+<span class="s">    "created_at": "2018-08-14T10:00:29.691+08:00",</span>
+<span class="s">    "updated_at": "2018-08-14T10:00:40.625+08:00",</span>
+<span class="s">    "children_count": 1,</span>
+<span class="s">    "parent_id": 14516,</span>
+<span class="s">    "ancestry": "14516"</span>
+<span class="s">  },</span>
+<span class="s">  {</span>
+<span class="s">    "id": 15115,</span>
+<span class="s">    "name": "组织_b",</span>
+<span class="s">    "description": "",</span>
+<span class="s">    "description_text": "",</span>
+<span class="s">    "created_at": "2018-08-14T10:00:49.660+08:00",</span>
+<span class="s">    "updated_at": "2018-08-14T10:00:49.660+08:00",</span>
+<span class="s">    "children_count": 0,</span>
+<span class="s">    "parent_id": 14516,</span>
+<span class="s">    "ancestry": "14516"</span>
+<span class="s">  }</span>
+<span class="s">]</span>
+
+</code></pre>
+    <p><code>GET /api/v4/organizations/:id/children</code></p>
+
+    <p><strong>Parameters</strong></p>
+
+    <table><thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Comments</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+      <td>id</td>
+      <td>integer</td>
+      <td>父级组织id</td>
+      <td></td>
+    </tr>
+    </tbody></table>
+    <h2 id="02e4569f06">组织成员</h2><pre class="highlight http tab-http" style=""><code><span class="nf">GET</span> <span class="nn">/api/v4/organizations/127059/members</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">X-SLP-Current-Page</span><span class="p">:</span> <span class="s">1</span>
+<span class="na">X-SLP-Total-Pages</span><span class="p">:</span> <span class="s">1</span>
+<span class="na">X-SLP-Total-Count</span><span class="p">:</span> <span class="s">3</span>
+<span class="s">[</span>
+<span class="s">  {</span>
+<span class="s">    "id": 127059,</span>
+<span class="s">    "name": "user_a",</span>
+<span class="s">    "nickname": null,</span>
+<span class="s">    "sex": null,</span>
+<span class="s">    "phone": null,</span>
+<span class="s">    "identifier": "user_a",</span>
+<span class="s">    "openid": null,</span>
+<span class="s">    "created_at": "2018-08-14T10:10:19.434+08:00",</span>
+<span class="s">    "updated_at": "2018-08-14T10:10:19.434+08:00",</span>
+<span class="s">    "headimgurl": "/non-digested-assets/avatars/default_96.png"</span>
+<span class="s">  },</span>
+<span class="s">  {</span>
+<span class="s">    "id": 127060,</span>
+<span class="s">    "name": "user_b",</span>
+<span class="s">    "nickname": null,</span>
+<span class="s">    "sex": null,</span>
+<span class="s">    "phone": null,</span>
+<span class="s">    "identifier": "user_b",</span>
+<span class="s">    "openid": null,</span>
+<span class="s">    "created_at": "2018-08-14T10:10:24.671+08:00",</span>
+<span class="s">    "updated_at": "2018-08-14T10:10:24.671+08:00",</span>
+<span class="s">    "headimgurl": "/non-digested-assets/avatars/default_96.png"</span>
+<span class="s">  },</span>
+<span class="s">  {</span>
+<span class="s">    "id": 127061,</span>
+<span class="s">    "name": "user_c",</span>
+<span class="s">    "nickname": null,</span>
+<span class="s">    "sex": null,</span>
+<span class="s">    "phone": null,</span>
+<span class="s">    "identifier": "user_c",</span>
+<span class="s">    "openid": null,</span>
+<span class="s">    "created_at": "2018-08-14T10:10:29.831+08:00",</span>
+<span class="s">    "updated_at": "2018-08-14T10:10:29.831+08:00",</span>
+<span class="s">    "headimgurl": "/non-digested-assets/avatars/default_96.png"</span>
+<span class="s">  }</span>
+<span class="s">]</span>
+
+</code></pre>
+    <p><code>GET /api/v4/organizations/:id/members</code></p>
+
+    <p><strong>Parameters</strong></p>
+
+    <table><thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Comments</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+      <td>id</td>
+      <td>integer</td>
+      <td>组织id</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>with_descendants</td>
+      <td>string</td>
+      <td>Optional 传任意值，代表包含子孙后代组织的成员</td>
+      <td></td>
+    </tr>
+    </tbody></table>
+    <h2 id="92cfa6d383">创建组织</h2><pre class="highlight http tab-http" style=""><code><span class="nf">POST</span> <span class="nn">/api/v4/organizations/</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="s">{</span>
+<span class="s">  "name": "name",</span>
+<span class="s">  "description": "description",</span>
+<span class="s">  "application_strategy": "must_approved",</span>
+<span class="s">  "founder_id": 3,</span>
+<span class="s">  "patent_id": 13</span>
+<span class="s">}</span>
+
+</code></pre><pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="s">{</span>
+<span class="s">  "id": 25,</span>
+<span class="s">  "name": "name",</span>
+<span class="s">  "description": "description",</span>
+<span class="s">  "description_text": "description",</span>
+<span class="s">  "created_at": "2018-12-06T10:35:35.203+08:00",</span>
+<span class="s">  "updated_at": "2018-12-06T10:35:35.203+08:00",</span>
+<span class="s">  "children_count": 0,</span>
+<span class="s">  "parent_id": "13",</span>
+<span class="s">  "ancestry": "abc",</span>
+<span class="s">  "application_strategy": "must_approved"</span>
+<span class="s">}</span>
+
+</code></pre>
+    <p><code>POST /api/v4/organizations/</code></p>
+
+    <p><strong>Parameters</strong></p>
+
+    <table><thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Comments</th>
     </tr>
     </thead><tbody>
     <tr>
       <td>name</td>
       <td>string</td>
-      <td><strong>Required.</strong> name of the tag</td>
+      <td>名字</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>string</td>
+      <td>描述</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>application_strategy</td>
+      <td>string</td>
+      <td>审核状态</td>
+      <td>[:must_approved, :auto_approved, :closed]</td>
+    </tr>
+    <tr>
+      <td>founder_id</td>
+      <td>integer</td>
+      <td>创建者id</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>patent_id</td>
+      <td>integer</td>
+      <td>父级组织id</td>
+      <td>创建顶级组织时不需要</td>
     </tr>
     </tbody></table>
-
-    <h1 id="markdown">Markdown</h1>
-
-    <h2 id="convert-markdown-into-html">Convert markdown into html</h2>
-    <pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/markdown/preview</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+    <h2 id="66dd10a168">创建组织成员</h2><pre class="highlight http tab-http" style=""><code><span class="nf">POST</span> <span class="nn">/api/v4/organizations/20/members</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"## title"</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jack"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jack_123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10086100101"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
+</span></code></pre><pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="s">{</span>
+<span class="s">  "id": 20,</span>
+<span class="s">  "name": "jack",</span>
+<span class="s">  "nickname": null,</span>
+<span class="s">  "sex": null,</span>
+<span class="s">  "phone": "10086100101",</span>
+<span class="s">  "identifier": "jack_123",</span>
+<span class="s">  "openid": null,</span>
+<span class="s">  "created_at": "2018-12-06T10:54:34.901+08:00",</span>
+<span class="s">  "updated_at": "2018-12-06T10:54:34.901+08:00"</span>
+<span class="s">}</span>
 
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;h2&gt;title&lt;/h2&gt;\n"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-
-    <p><code class="prettyprint">POST /markdown/preview</code></p>
+</code></pre>
+    <p><code>POST /api/v4/organizations/</code></p>
 
     <p><strong>Parameters</strong></p>
 
@@ -1643,54 +1108,479 @@
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
+      <th>Comments</th>
     </tr>
     </thead><tbody>
     <tr>
-      <td>content</td>
+      <td>name</td>
       <td>string</td>
-      <td><strong>Required.</strong> the content that is converted into html</td>
+      <td>名字</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>identifier</td>
+      <td>string</td>
+      <td>识别码</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td>string</td>
+      <td>电话号码</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>organization_id</td>
+      <td>integer</td>
+      <td>组织id</td>
+      <td></td>
     </tr>
     </tbody></table>
+    <h1 id="forms">Forms</h1><h2 id="1de85d87d5">表单信息</h2><pre class="highlight http tab-http" style=""><code><span class="nf">GET</span> <span class="nn">/api/v4/forms/3987</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
 
-    <h1 id="feedback">Feedback</h1>
+</code></pre><pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">{</span>
+<span class="s">  "id":3987,</span>
+<span class="s">  "title":"这是一个表单",</span>
+<span class="s">  "description":"&lt;p&gt;哈哈&lt;/p&gt;",</span>
+<span class="s">  "created_at":"2018-02-08T15:32:02.921+08:00",</span>
+<span class="s">  "updated_at":"2018-05-21T22:07:51.748+08:00",</span>
+<span class="s">  "status":"published",</span>
+<span class="s">  "fields":[</span>
+<span class="s">    {</span>
+<span class="s">      "id":38664,</span>
+<span class="s">      "title":"文本",</span>
+<span class="s">      "description":"",</span>
+<span class="s">      "type":"Field::TextField",</span>
+<span class="s">      "position":0,</span>
+<span class="s">      "validations":[</span>
+<span class="s">        "presence"</span>
+<span class="s">      ],</span>
+<span class="s">      "other_option":null,</span>
+<span class="s">      "visibility":"public_visibility",</span>
+<span class="s">      "marked":false,</span>
+<span class="s">      "settings":{</span>
+<span class="s">        "layout":"block",</span>
+<span class="s">        "other_option_settings":{</span>
+<span class="s">          "limit":{</span>
 
-    <h2 id="create-a-feedback">create a feedback</h2>
-    <pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/products/1/feedbacks</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+          }
+        },
+        "length_limit":{
 
-{
-  "body": "this is a body",
-  "stars": 5,
-  "images": [
-    "www.baidu.com/picture.png",
-    " www.test.com/image.png"
-  ],
-  "contact": "xx@qq.com",
-  "anonymous": false
+        }
+      },
+      "detail_id":null
+    },
+    {
+      "id":38665,
+      "title":"段落",
+      "description":"",
+      "type":"Field::TextArea",
+      "position":1,
+      "validations":[
+        "presence"
+      ],
+      "other_option":null,
+      "visibility":"public_visibility",
+      "marked":false,
+      "settings":{
+        "layout":"block",
+        "other_option_settings":{
+          "limit":{
+
+          }
+        },
+        "length_limit":{
+
+        }
+      },
+      "detail_id":null
+    },
+    {
+      "id":38663,
+      "title":"未命名标题",
+      "description":"",
+      "type":"Field::TextField",
+      "position":2,
+      "validations":[
+
+      ],
+      "other_option":null,
+      "visibility":"public_visibility",
+      "marked":false,
+      "settings":{
+        "layout":"block",
+        "other_option_settings":{
+          "limit":{
+
+          }
+        },
+        "length_limit":{
+
+        }
+      },
+      "detail_id":null
+    },
+    {
+      "id":38666,
+      "title":"章节",
+      "description":"&lt;p&gt;章节细节&lt;/p&gt;",
+      "type":"Field::SectionBreak",
+      "position":3,
+      "validations":[
+
+      ],
+      "other_option":null,
+      "visibility":"public_visibility",
+      "marked":false,
+      "settings":{
+        "layout":"block",
+        "other_option_settings":{
+          "limit":{
+
+          }
+        },
+        "length_limit":{
+
+        }
+      },
+      "detail_id":null
+    },
+    {
+      "id":38667,
+      "title":"整数",
+      "description":"",
+      "type":"Field::Integer",
+      "position":4,
+      "validations":[
+
+      ],
+      "other_option":null,
+      "visibility":"public_visibility",
+      "marked":false,
+      "settings":{
+        "layout":"block",
+        "other_option_settings":{
+          "limit":{
+
+          }
+        },
+        "length_limit":{
+
+        }
+      },
+      "detail_id":null
+    },
+    {
+      "id":38668,
+      "title":"日期时间",
+      "description":"",
+      "type":"Field::DateTime",
+      "position":5,
+      "validations":[
+
+      ],
+      "other_option":null,
+      "visibility":"public_visibility",
+      "marked":false,
+      "settings":{
+        "layout":"block",
+        "input_type":"datetime-local",
+        "other_option_settings":{
+          "limit":{
+
+          }
+        },
+        "length_limit":{
+
+        }
+      },
+      "detail_id":null
+    },
+    {
+      "id":38669,
+      "title":"单选",
+      "description":"",
+      "type":"Field::RadioButton",
+      "position":6,
+      "validations":[
+
+      ],
+      "other_option":"其他",
+      "visibility":"public_visibility",
+      "marked":false,
+      "settings":{
+        "layout":"list",
+        "other_option_settings":{
+          "limit":{
+
+          }
+        },
+        "length_limit":{
+
+        }
+      },
+      "detail_id":null,
+      "options":[
+        {
+          "id":31826,
+          "value":"4",
+          "settings":{
+            "limit_settings":{
+
+            }
+          },
+          "position":0
+        }
+      ]
+    },
+    {
+      "id":38670,
+      "title":"多选",
+      "description":"",
+      "type":"Field::CheckBox",
+      "position":7,
+      "validations":[
+        "presence"
+      ],
+      "other_option":"其他",
+      "visibility":"public_visibility",
+      "marked":false,
+      "settings":{
+        "layout":"list",
+        "other_option_settings":{
+          "limit":{
+
+          }
+        },
+        "length_limit":{
+
+        }
+      },
+      "detail_id":null,
+      "options":[
+        {
+          "id":31827,
+          "value":"4",
+          "settings":{
+            "limit_settings":{
+
+            }
+          },
+          "position":1518075122
+        }
+      ]
+    },
+    {
+      "id":38671,
+      "title":"文件上传",
+      "description":"",
+      "type":"Field::File",
+      "position":8,
+      "validations":[
+
+      ],
+      "other_option":null,
+      "visibility":"public_visibility",
+      "marked":false,
+      "settings":{
+        "layout":"block",
+        "other_option_settings":{
+          "limit":{
+
+          }
+        },
+        "length_limit":{
+
+        }
+      },
+      "detail_id":null
+    },
+    {
+      "id":38672,
+      "title":"级联选择",
+      "description":"",
+      "type":"Field::CascadedSelect",
+      "position":9,
+      "validations":[
+        "presence"
+      ],
+      "other_option":null,
+      "visibility":"public_visibility",
+      "marked":false,
+      "settings":{
+        "layout":"block",
+        "other_option_settings":{
+          "limit":{
+
+          }
+        },
+        "length_limit":{
+
+        }
+      },
+      "detail_id":null
+    },
+    {
+      "id":38673,
+      "title":"组织",
+      "description":"",
+      "type":"Field::Organization",
+      "position":10,
+      "validations":[
+        "presence"
+      ],
+      "other_option":null,
+      "visibility":"public_visibility",
+      "marked":false,
+      "settings":{
+        "layout":"block",
+        "other_option_settings":{
+          "limit":{
+
+          }
+        },
+        "length_limit":{
+
+        }
+      },
+      "detail_id":null
+    },
+    {
+      "id":38674,
+      "title":"评分",
+      "description":"",
+      "type":"Field::Rating",
+      "position":11,
+      "validations":[
+        "presence"
+      ],
+      "other_option":null,
+      "visibility":"public_visibility",
+      "marked":false,
+      "settings":{
+        "layout":"block",
+        "other_option_settings":{
+          "limit":{
+
+          }
+        },
+        "length_limit":{
+
+        }
+      },
+      "detail_id":null
+    },
+    {
+      "id":38675,
+      "title":"地理位置",
+      "description":"",
+      "type":"Field::Location",
+      "position":12,
+      "validations":[
+
+      ],
+      "other_option":null,
+      "visibility":"public_visibility",
+      "marked":false,
+      "settings":{
+        "layout":"block",
+        "other_option_settings":{
+          "limit":{
+
+          }
+        },
+        "length_limit":{
+
+        }
+      },
+      "detail_id":null
+    },
+    {
+      "id":38676,
+      "title":"明细",
+      "description":"呵呵",
+      "type":"Field::Detail",
+      "position":13,
+      "validations":[
+
+      ],
+      "other_option":null,
+      "visibility":"public_visibility",
+      "marked":false,
+      "settings":{
+        "layout":"block",
+        "button_name":"添加菜单",
+        "other_option_settings":{
+          "limit":{
+
+          }
+        },
+        "length_limit":{
+
+        }
+      },
+      "detail_id":null,
+      "children":[
+        {
+          "id":38677,
+          "title":"文本",
+          "description":"",
+          "type":"Field::TextField",
+          "position":0,
+          "validations":[
+            "presence"
+          ],
+          "other_option":null,
+          "visibility":"public_visibility",
+          "marked":false,
+          "settings":{
+            "layout":"block",
+            "other_option_settings":{
+              "limit":{
+
+              }
+            },
+            "length_limit":{
+
+            }
+          },
+          "detail_id":38676
+        },
+        {
+          "id":38678,
+          "title":"评分",
+          "description":"",
+          "type":"Field::Rating",
+          "position":1,
+          "validations":[
+
+          ],
+          "other_option":null,
+          "visibility":"public_visibility",
+          "marked":false,
+          "settings":{
+            "layout":"block",
+            "other_option_settings":{
+              "limit":{
+
+              }
+            },
+            "length_limit":{
+
+            }
+          },
+          "detail_id":38676
+        }
+      ]
+    }
+  ]
 }
 
 </code></pre>
-    <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">OK</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"this is a body"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"stars"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"www.baidu.com/picture.png"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">" www.test.com/image.png"</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"contact"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xx@qq.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"anonymous"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_name"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-    <p><code class="prettyprint">POST /products/:id/feedbacks</code></p>
+    <p><code>GET /api/v4/forms/:id</code></p>
 
     <p><strong>Parameters</strong></p>
 
@@ -1699,39 +1589,609 @@
       <th>Name</th>
       <th>Type</th>
       <th>Description</th>
+      <th>Comments</th>
     </tr>
     </thead><tbody>
     <tr>
-      <td>body</td>
-      <td>string</td>
-      <td><strong>Required.</strong> body of feedback</td>
-    </tr>
-    <tr>
-      <td>stars</td>
+      <td>id</td>
       <td>integer</td>
-      <td><strong>Required.</strong> stars of feedback(value in 0-5)</td>
+      <td>表单id</td>
+      <td></td>
     </tr>
+    </tbody></table>
+    <h2 id="52dced31b8">表单数据</h2><pre class="highlight http tab-http" style=""><code><span class="nf">GET</span> <span class="nn">/api/v4/forms/548795/responses</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">X-SLP-Current-Page</span><span class="p">:</span> <span class="s">1</span>
+<span class="na">X-SLP-Total-Pages</span><span class="p">:</span> <span class="s">3</span>
+<span class="na">X-SLP-Total-Count</span><span class="p">:</span> <span class="s">100</span>
+<span class="s">[</span>
+<span class="s">  {</span>
+<span class="s">    "id":548795,</span>
+<span class="s">    "created_at":"2018-07-02T11:15:54.546+08:00",</span>
+<span class="s">    "cached_values":{</span>
+<span class="s">      "38663":{</span>
+<span class="s">        "value":[</span>
+<span class="s">          "嘻"</span>
+<span class="s">        ],</span>
+<span class="s">        "text_value":[</span>
+<span class="s">          "嘻"</span>
+<span class="s">        ],</span>
+<span class="s">        "exported_value":[</span>
+<span class="s">          "嘻"</span>
+<span class="s">        ]</span>
+<span class="s">      },</span>
+<span class="s">      "38664":{</span>
+<span class="s">        "value":[</span>
+<span class="s">          "啦"</span>
+<span class="s">        ],</span>
+<span class="s">        "text_value":[</span>
+<span class="s">          "啦"</span>
+<span class="s">        ],</span>
+<span class="s">        "exported_value":[</span>
+<span class="s">          "啦"</span>
+<span class="s">        ]</span>
+<span class="s">      },</span>
+<span class="s">      "38665":{</span>
+<span class="s">        "value":[</span>
+<span class="s">          "哈"</span>
+<span class="s">        ],</span>
+<span class="s">        "text_value":[</span>
+<span class="s">          "哈"</span>
+<span class="s">        ],</span>
+<span class="s">        "exported_value":[</span>
+<span class="s">          "哈"</span>
+<span class="s">        ]</span>
+<span class="s">      },</span>
+<span class="s">      "38667":{</span>
+<span class="s">        "value":[</span>
+<span class="s">          313</span>
+<span class="s">        ],</span>
+<span class="s">        "text_value":[</span>
+<span class="s">          313</span>
+<span class="s">        ],</span>
+<span class="s">        "exported_value":[</span>
+<span class="s">          313</span>
+<span class="s">        ]</span>
+<span class="s">      },</span>
+<span class="s">      "38668":{</span>
+<span class="s">        "value":[</span>
+<span class="s">          "2018-08-03 11:14"</span>
+<span class="s">        ],</span>
+<span class="s">        "text_value":[</span>
+<span class="s">          "2018-08-03 11:14"</span>
+<span class="s">        ],</span>
+<span class="s">        "exported_value":[</span>
+<span class="s">          "2018-08-03 11:14"</span>
+<span class="s">        ]</span>
+<span class="s">      },</span>
+<span class="s">      "38669":{</span>
+<span class="s">        "value":[</span>
+<span class="s">          {</span>
+<span class="s">            "gid":"gid://skylark/Option/31826",</span>
+<span class="s">            "id":31826,</span>
+<span class="s">            "value":"4"</span>
+<span class="s">          }</span>
+<span class="s">        ],</span>
+<span class="s">        "text_value":[</span>
+<span class="s">          "4"</span>
+<span class="s">        ],</span>
+<span class="s">        "exported_value":[</span>
+<span class="s">          "4"</span>
+<span class="s">        ]</span>
+<span class="s">      },</span>
+<span class="s">      "38670":{</span>
+<span class="s">        "value":[</span>
+<span class="s">          {</span>
+<span class="s">            "gid":"gid://skylark/Option/31827",</span>
+<span class="s">            "id":31827,</span>
+<span class="s">            "value":"4"</span>
+<span class="s">          },</span>
+<span class="s">          {</span>
+<span class="s">            "value":"333"</span>
+<span class="s">          }</span>
+<span class="s">        ],</span>
+<span class="s">        "text_value":[</span>
+<span class="s">          "4",</span>
+<span class="s">          "333"</span>
+<span class="s">        ],</span>
+<span class="s">        "exported_value":[</span>
+<span class="s">          "4，333"</span>
+<span class="s">        ]</span>
+<span class="s">      },</span>
+<span class="s">      "38672":{</span>
+<span class="s">        "value":[</span>
+<span class="s">          {</span>
+<span class="s">            "gid":"gid://skylark/Choice/1436",</span>
+<span class="s">            "id":1436,</span>
+<span class="s">            "value":"西北大区-陕西分区-陕西"</span>
+<span class="s">          }</span>
+<span class="s">        ],</span>
+<span class="s">        "text_value":[</span>
+<span class="s">          "西北大区-陕西分区-陕西"</span>
+<span class="s">        ],</span>
+<span class="s">        "exported_value":[</span>
+<span class="s">          [</span>
+<span class="s">            "西北大区",</span>
+<span class="s">            "陕西分区",</span>
+<span class="s">            "陕西",</span>
+<span class="s">            null,</span>
+<span class="s">            null</span>
+<span class="s">          ]</span>
+<span class="s">        ]</span>
+<span class="s">      },</span>
+<span class="s">      "38673":{</span>
+<span class="s">        "value":[</span>
+<span class="s">          {</span>
+<span class="s">            "value":"西北大区（T2-05服务商）"</span>
+<span class="s">          }</span>
+<span class="s">        ],</span>
+<span class="s">        "text_value":[</span>
+<span class="s">          "西北大区（T2-05服务商）"</span>
+<span class="s">        ],</span>
+<span class="s">        "exported_value":[</span>
+<span class="s">          "西北大区（T2-05服务商）"</span>
+<span class="s">        ]</span>
+<span class="s">      },</span>
+<span class="s">      "38674":{</span>
+<span class="s">        "value":[</span>
+<span class="s">          4</span>
+<span class="s">        ],</span>
+<span class="s">        "text_value":[</span>
+<span class="s">          4</span>
+<span class="s">        ],</span>
+<span class="s">        "exported_value":[</span>
+<span class="s">          4</span>
+<span class="s">        ]</span>
+<span class="s">      },</span>
+<span class="s">      "38676":{</span>
+<span class="s">        "group_ids":[</span>
+<span class="s">          "1530501267755",</span>
+<span class="s">          "1530501349912"</span>
+<span class="s">        ],</span>
+<span class="s">        "child_ids":[</span>
+<span class="s">          38677,</span>
+<span class="s">          38678</span>
+<span class="s">        ]</span>
+<span class="s">      },</span>
+<span class="s">      "38677":{</span>
+<span class="s">        "grouped_ids":[</span>
+<span class="s">          "1530501267755",</span>
+<span class="s">          "1530501349912"</span>
+<span class="s">        ],</span>
+<span class="s">        "grouped_values":{</span>
+<span class="s">          "1530501267755":{</span>
+<span class="s">            "group_id":"1530501267755",</span>
+<span class="s">            "value":[</span>
+<span class="s">              "333"</span>
+<span class="s">            ],</span>
+<span class="s">            "text_value":[</span>
+<span class="s">              "333"</span>
+<span class="s">            ],</span>
+<span class="s">            "exported_value":[</span>
+<span class="s">              "333"</span>
+<span class="s">            ]</span>
+<span class="s">          },</span>
+<span class="s">          "1530501349912":{</span>
+<span class="s">            "group_id":"1530501349912",</span>
+<span class="s">            "value":[</span>
+<span class="s">              "22"</span>
+<span class="s">            ],</span>
+<span class="s">            "text_value":[</span>
+<span class="s">              "22"</span>
+<span class="s">            ],</span>
+<span class="s">            "exported_value":[</span>
+<span class="s">              "22"</span>
+<span class="s">            ]</span>
+<span class="s">          }</span>
+<span class="s">        }</span>
+<span class="s">      },</span>
+<span class="s">      "38678":{</span>
+<span class="s">        "grouped_ids":[</span>
+<span class="s">          "1530501267755",</span>
+<span class="s">          "1530501349912"</span>
+<span class="s">        ],</span>
+<span class="s">        "grouped_values":{</span>
+<span class="s">          "1530501267755":{</span>
+<span class="s">            "group_id":"1530501267755",</span>
+<span class="s">            "value":[</span>
+<span class="s">              5</span>
+<span class="s">            ],</span>
+<span class="s">            "text_value":[</span>
+<span class="s">              5</span>
+<span class="s">            ],</span>
+<span class="s">            "exported_value":[</span>
+<span class="s">              5</span>
+<span class="s">            ]</span>
+<span class="s">          }</span>
+<span class="s">        }</span>
+<span class="s">      }</span>
+<span class="s">    }</span>
+<span class="s">  },</span>
+<span class="s">  ...</span>
+<span class="s">]</span>
+
+</code></pre>
+    <p><code>GET /api/v4/forms/:id/responses</code></p>
+
+    <p><strong>Parameters</strong></p>
+
+    <table><thead>
     <tr>
-      <td>images</td>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Comments</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+      <td>id</td>
+      <td>integer</td>
+      <td>表单id</td>
+      <td></td>
+    </tr>
+    </tbody></table>
+    <h1 id="attachments">Attachments</h1><h2 id="711363c424">查询</h2><pre class="highlight http tab-http" style=""><code><span class="nf">GET</span> <span class="nn">/api/v4/attachments/query?id[]=2474&amp;id[]=2475</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http" style=""><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">[</span>
+<span class="s">  {</span>
+<span class="s">    "id": 2474,</span>
+<span class="s">    "name": "屏幕快照 2018-07-16 下午3.40.46.png",</span>
+<span class="s">    "size": "81702",</span>
+<span class="s">    "mime_type": "image/png",</span>
+<span class="s">    "extension": "image",</span>
+<span class="s">    "extra_info": {},</span>
+<span class="s">    "download_url": "http://7xlxax.dl1.z0.glb.clouddn.com/17013-1531909931-49d1c668335fe2fc660e92042431d544-1531909931258?attname=%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7+2018-07-16+%E4%B8%8B%E5%8D%883.40.46.png&amp;e=1532329592&amp;token=WFpC8JEsN77rEZRgdoQgQw-yB82e-j3fpp8dXB8Z:JZFJ7usX7rWZ6hxZgkdkq3WWhXw="</span>
+<span class="s">  },</span>
+<span class="s">  ...</span>
+<span class="s">]</span>
+
+</code></pre>
+    <p><code>GET /api/v4/attachments/query</code></p>
+
+    <p><strong>Parameters</strong></p>
+
+    <table><thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Comments</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+      <td>ids</td>
       <td>array</td>
-      <td><strong>Optional.</strong> images of feedback</td>
+      <td>附件id的集合</td>
+      <td></td>
     </tr>
     <tr>
-      <td>contact</td>
+      <td>fops</td>
       <td>string</td>
-      <td><strong>Optional.</strong> user contact</td>
+      <td>七牛云图片处理的参数，<a href="https://developer.qiniu.com/search?keyword=%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86">文档</a></td>
+      <td></td>
     </tr>
+    </tbody></table>
+    <h1 id="column-explanation">Column Explanation</h1><h2 id="7dbb085c42">数据库表解释</h2>
+    <ul>
+      <li><p>Flow: 管理员创建的流程</p>
+
+        <ul>
+          <li>Field: 发起人所需要填写的字段</li>
+          <li>Vertex &amp; Edge: 节点和边，可以构建出流程的策略图</li>
+        </ul></li>
+      <li><p>Journey: 用户发起的流程</p>
+
+        <ul>
+          <li>Assignment: 处理者收到的任务</li>
+          <li>Response: 处理者填写的数据</li>
+          <li>Moment: 一条流程所有的事件，发起、通过、拒绝、转交...</li>
+        </ul></li>
+    </ul>
+    <h2 id="41e10bfd0d">字段解释</h2>
+    <table><thead>
     <tr>
-      <td>anonymous</td>
-      <td>boolean</td>
-      <td><strong>Optional.</strong> if anonymous</td>
+      <th>Flow Column</th>
+      <th>Meaning</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+      <td>title</td>
+      <td>流程名称</td>
     </tr>
     </tbody></table>
 
-    <h1 id="errors">Errors</h1>
+    <table><thead>
+    <tr>
+      <th>Field Column</th>
+      <th>Meaning</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+      <td>title</td>
+      <td>字段名称</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>字段描述</td>
+    </tr>
+    </tbody></table>
 
-    <p>The API uses the following error codes:</p>
+    <table><thead>
+    <tr>
+      <th>Vertex Column</th>
+      <th>Meaning</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+      <td>title</td>
+      <td>节点名称</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>节点描述</td>
+    </tr>
+    </tbody></table>
 
+    <table><thead>
+    <tr>
+      <th>Edge Column</th>
+      <th>Meaning</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+      <td>from_vertex_id</td>
+      <td>入节点id</td>
+    </tr>
+    <tr>
+      <td>to_vertex_id</td>
+      <td>出节点id</td>
+    </tr>
+    </tbody></table>
+
+    <table><thead>
+    <tr>
+      <th>Journey Column</th>
+      <th>Meaning</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+      <td>sn</td>
+      <td>流程编号</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>状态</td>
+    </tr>
+    <tr>
+      <td>current_vertex_id</td>
+      <td>当前节点id</td>
+    </tr>
+    <tr>
+      <td>reviewer_vertex_ids</td>
+      <td>已完成的节点ids</td>
+    </tr>
+    </tbody></table>
+
+    <table><thead>
+    <tr>
+      <th>Journey Column</th>
+      <th>Meaning</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+      <td>vertex_id</td>
+      <td>节点id</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>状态</td>
+    </tr>
+    <tr>
+      <td>categroy</td>
+      <td><code>proposed</code>: 为发起人创建的; <code>processed</code>: 为每个处理人创建的; <code>cc</code>: 为抄送者创建的</td>
+    </tr>
+    <tr>
+      <td>operation_data</td>
+      <td>处理的相关数据</td>
+    </tr>
+    <tr>
+      <td>operation_data[comment]</td>
+      <td>处理意见</td>
+    </tr>
+    <tr>
+      <td>operation_data[esignature]</td>
+      <td>电子签名，base64编码的图片</td>
+    </tr>
+    <tr>
+      <td>operation_data[next_vertex_id]</td>
+      <td>下一节点id</td>
+    </tr>
+    <tr>
+      <td>operation_data[next_reviewer_ids]</td>
+      <td>指定下一节点处理人id</td>
+    </tr>
+    <tr>
+      <td>operation_data[duration_thresholds]</td>
+      <td>下一节点处理时间限制</td>
+    </tr>
+    <tr>
+      <td>operation_data[carbon_copy_user_ids]</td>
+      <td>抄送给其他用户id</td>
+    </tr>
+    </tbody></table>
+
+    <table><thead>
+    <tr>
+      <th>Moment Column</th>
+      <th>Meaning</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+      <td>status</td>
+      <td>意义参考journey status</td>
+    </tr>
+    <tr>
+      <td>comment</td>
+      <td>处理意见</td>
+    </tr>
+    <tr>
+      <td>esignature</td>
+      <td>电子签名，base64编码的图片</td>
+    </tr>
+    <tr>
+      <td>vertex_id</td>
+      <td>处理节点id</td>
+    </tr>
+    <tr>
+      <td>user</td>
+      <td>发起人或处理人</td>
+    </tr>
+    </tbody></table>
+
+    <table><thead>
+    <tr>
+      <th>User Column</th>
+      <th>Meaning</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+      <td>name</td>
+      <td>姓名</td>
+    </tr>
+    <tr>
+      <td>identifier</td>
+      <td>识别码</td>
+    </tr>
+    <tr>
+      <td>headimgurl</td>
+      <td>头像</td>
+    </tr>
+    </tbody></table>
+
+    <table><thead>
+    <tr>
+      <th>Response Column</th>
+      <th>Meaning</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+      <td>cached_values</td>
+      <td><code>json</code>数据</td>
+    </tr>
+    </tbody></table>
+    <h2 id="2574b30335">流程状态解释</h2>
+    <ul>
+      <li>当流程发起时(Journey Create)，会为发起人创建一个proposed Assignment</li>
+      <li>当流程到达处理人节点是，会为每一个处理人创建一个processed Assignment</li>
+      <li>proposed Assignment和Journey的状态是同步变化的，eg: Journey为finished, proposed Assignment也为finished</li>
+      <li>processed Assignment状态对Journey影响
+
+        <ul>
+          <li>当所有节点都通过(approved)时，流程(Journey)变成finished</li>
+          <li>处理人拒绝(refused)到开始节点，流程(Journey)变成receding</li>
+        </ul></li>
+    </ul>
+
+    <table><thead>
+    <tr>
+      <th>处理人(processed) Assignment Status</th>
+      <th>Meaning</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+      <td>processing</td>
+      <td>任务正在处理中</td>
+    </tr>
+    <tr>
+      <td>approved</td>
+      <td>通过</td>
+    </tr>
+    <tr>
+      <td>refused</td>
+      <td>拒绝, 可能拒绝到开始节点；可能拒绝到上一节点</td>
+    </tr>
+    <tr>
+      <td>transferred</td>
+      <td>转交</td>
+    </tr>
+    <tr>
+      <td>skipped</td>
+      <td>被其他人处理</td>
+    </tr>
+    </tbody></table>
+
+    <table><thead>
+    <tr>
+      <th>发起人(proposed) Assignment Status</th>
+      <th>Meaning</th>
+    </tr>
+    </thead><tbody>
+    <tr>
+      <td>processing</td>
+      <td>流程正在处理中</td>
+    </tr>
+    <tr>
+      <td>cancelled</td>
+      <td>发起人撤销流程</td>
+    </tr>
+    <tr>
+      <td>receding</td>
+      <td>被处理人回退到开始节点</td>
+    </tr>
+    <tr>
+      <td>finished</td>
+      <td>所有节点通过，流程完成</td>
+    </tr>
+    <tr>
+      <td>aborted</td>
+      <td>管理员手动终止流程</td>
+    </tr>
+    <tr>
+      <td>suspended</td>
+      <td>流程异常，eg: 找不到下一节点；下一节点没有处理人...</td>
+    </tr>
+    </tbody></table>
+    <h2 id="response-cached_values">Response cached_values 说明</h2>
+    <ul>
+      <li>展示建议使用text_value</li>
+      <li>附件的下载地址有权限限制，如果想获取附件真正的下载地址，通过附件<a href="https://github.com/GreenNerd/SLP-ChangeLog/wiki/%E9%99%84%E4%BB%B6api-v4">接口</a></li>
+    </ul>
+    <pre class="highlight plaintext"><code>一般字段
+{
+  `field_id`: {
+    {
+      value: [...],
+      text_value: [...],
+      exported_value: [...]
+    }
+  }
+}
+</code></pre><pre class="highlight plaintext"><code>明细`(Field::Detail)`字段
+{
+  `detail_id`: {
+    group_ids: [...],
+    child_ids: [...]
+  }
+}
+</code></pre><pre class="highlight plaintext"><code>明细内的字段
+{
+  `child_id`: {
+    grouped_ids: [...],
+    grouped_values: [
+      `group_id`: {
+        group_id: `group_id`,
+        value: [...],
+        text_value: [...],
+        exported_value: [...]
+      }
+    ]
+  }
+}
+</code></pre><h1 id="errors">Errors</h1>
     <table><thead>
     <tr>
       <th>Error Code</th>
@@ -1739,41 +2199,32 @@
     </tr>
     </thead><tbody>
     <tr>
-      <td>400</td>
-      <td>Bad Request &ndash; Your request sucks</td>
-    </tr>
-    <tr>
-      <td>401</td>
-      <td>Unauthorized &ndash; Your private token is wrong</td>
-    </tr>
-    <tr>
       <td>403</td>
-      <td>Forbidden &ndash; The request is without permission</td>
+      <td>Unauthorized - 授权失败，参考上方的2种授权方式</td>
     </tr>
     <tr>
       <td>404</td>
-      <td>Not Found &ndash; The requested resource does not exist</td>
+      <td>Not Found - 没有找到请求的资源</td>
     </tr>
     <tr>
       <td>422</td>
-      <td>Unprocessable &ndash; Fail to validate</td>
+      <td>Unprocessable - 更新资源时，验证失败</td>
     </tr>
     <tr>
       <td>500</td>
-      <td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
-    </tr>
-    <tr>
-      <td>503</td>
-      <td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
+      <td>Internal Server Error - 服务器有问题，请联系我们</td>
     </tr>
     </tbody></table>
 
   </div>
   <div class="dark-box">
     <div class="lang-selector">
-      <a href="#" data-language-name="http">http</a>
+      <a href="http://localhost:4567/#" data-language-name="http" class="active">http</a>
     </div>
   </div>
 </div>
+
+
 </body>
 </html>
+
