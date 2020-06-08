@@ -10,13 +10,14 @@ toc_footers:
 includes:
   - Pagination
   - WechatClient
-  - Pushes
-  - Flows
-  - Users
-  - Organizations
-  - Forms
   - Attachments
+  - Categories
   - ColumnExplanation
+  - Flows
+  - Forms
+  - Organizations
+  - Pushes
+  - Users
   - errors
 
 search: true
