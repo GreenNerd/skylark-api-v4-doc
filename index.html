@@ -334,6 +334,17 @@
               </ul>
           </li>
           <li>
+            <a href="#tags" class="toc-h1 toc-link" data-title="Tags">Tags</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#61fbf3a18b" class="toc-h2 toc-link" data-title="查询空间下标签类型">查询空间下标签类型</a>
+                  </li>
+                  <li>
+                    <a href="#4ba44bc588" class="toc-h2 toc-link" data-title="查询成员标签下的成员">查询成员标签下的成员</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
               <ul class="toc-list-h2">
                   <li>
@@ -2271,6 +2282,141 @@ Authorization: your_authorization
 <p><code>Status: 200 OK</code></p>
 
 <p><strong>no body</strong></p>
+<h1 id='tags'>Tags</h1><h2 id='61fbf3a18b'>查询空间下标签类型</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/tags</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+<span class="s">{</span>
+<span class="s">  "type": "user"</span>
+<span class="s">}</span>
+<span class="s">or</span>
+<span class="s">{</span>
+<span class="s">  "type": "receipt"</span>
+<span class="s">}</span>
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">[</span>
+<span class="s">  {</span>
+<span class="s">    "id": 1,</span>
+<span class="s">    "name": "歌手",</span>
+<span class="s">    "full_name": "歌手"</span>
+<span class="s">  },</span>
+<span class="s">  {</span>
+<span class="s">    "id": 1,</span>
+<span class="s">    "name": "演员",</span>
+<span class="s">    "full_name": "演员"</span>
+<span class="s">  }</span>
+<span class="s">]</span>
+</code></pre>
+<p><code>GET /api/v4/tags</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>标签类型</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='4ba44bc588'>查询成员标签下的成员</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/tags/1/taggable_users</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">[</span>
+<span class="s">  {</span>
+<span class="s">    "id": 1,</span>
+<span class="s">    "name": "第一个管理员",</span>
+<span class="s">    "nickname": "",</span>
+<span class="s">    "phone": "1111111111",</span>
+<span class="s">    "identifier": "1111111111",</span>
+<span class="s">    "qq": "123",</span>
+<span class="s">    "headimgurl": "/non-digested-assets/avatars/default.png",</span>
+<span class="s">    "openid": "123",</span>
+<span class="s">    "imported_alias": "第一个管理员",</span>
+<span class="s">    "from_wechat": false,</span>
+<span class="s">    "tags": [{</span>
+<span class="s">      "id": 1,</span>
+<span class="s">      "name": "b1",</span>
+<span class="s">      "full_name": "bq-b1",</span>
+<span class="s">      "color": "#e91e63",</span>
+<span class="s">      "tag_group_id": 1,</span>
+<span class="s">      "taggings_count": 9</span>
+<span class="s">    }, {</span>
+<span class="s">      "id": 3,</span>
+<span class="s">      "name": "a1",</span>
+<span class="s">      "full_name": "a1",</span>
+<span class="s">      "color": "#ff5722",</span>
+<span class="s">      "tag_group_id": 1,</span>
+<span class="s">      "taggings_count": 4</span>
+<span class="s">    }, {</span>
+<span class="s">      "id": 8,</span>
+<span class="s">      "name": "a2",</span>
+<span class="s">      "full_name": "a2",</span>
+<span class="s">      "color": "#673ab7",</span>
+<span class="s">      "tag_group_id": 1,</span>
+<span class="s">      "taggings_count": 1</span>
+<span class="s">    }</span>
+<span class="s">    },</span>
+<span class="s">  {</span>
+<span class="s">    "id": 1,</span>
+<span class="s">    "name": "第二个管理员",</span>
+<span class="s">    "nickname": "",</span>
+<span class="s">    "phone": "12222222222",</span>
+<span class="s">    "identifier": "12222222222",</span>
+<span class="s">    "qq": "123",</span>
+<span class="s">    "headimgurl": "/non-digested-assets/avatars/default.png",</span>
+<span class="s">    "openid": "123",</span>
+<span class="s">    "imported_alias": "第一个管理员",</span>
+<span class="s">    "from_wechat": false,</span>
+<span class="s">    "tags": [{</span>
+<span class="s">      "id": 1,</span>
+<span class="s">      "name": "b1",</span>
+<span class="s">      "full_name": "bq-b1",</span>
+<span class="s">      "color": "#e91e63",</span>
+<span class="s">      "tag_group_id": 1,</span>
+<span class="s">      "taggings_count": 9</span>
+<span class="s">    }, {</span>
+<span class="s">      "id": 3,</span>
+<span class="s">      "name": "a1",</span>
+<span class="s">      "full_name": "a1",</span>
+<span class="s">      "color": "#ff5722",</span>
+<span class="s">      "tag_group_id": 1,</span>
+<span class="s">      "taggings_count": 4</span>
+<span class="s">    }, {</span>
+<span class="s">      "id": 8,</span>
+<span class="s">      "name": "a2",</span>
+<span class="s">      "full_name": "a2",</span>
+<span class="s">      "color": "#673ab7",</span>
+<span class="s">      "tag_group_id": 1,</span>
+<span class="s">      "taggings_count": 1</span>
+<span class="s">    }</span>
+<span class="s">  }</span>
+<span class="s">]</span>
+</code></pre>
+<p><code>GET /api/v4/tags/:id/taggable_users</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>标签id</td>
+<td></td>
+</tr>
+</tbody></table>
 <h1 id='users'>Users</h1><h2 id='6d47866b22'>所在组织</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/users/14473/organizations</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
 <span class="s">{</span>
