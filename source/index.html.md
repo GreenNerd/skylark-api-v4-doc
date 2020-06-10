@@ -17,6 +17,7 @@ includes:
   - Forms
   - Organizations
   - Pushes
+  - Tags
   - Users
   - errors
 
