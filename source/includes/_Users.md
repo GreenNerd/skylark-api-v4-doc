@@ -1,5 +1,88 @@
 # Users
 
+## 查询当前空间下所有用户
+```http
+GET /api/v4/users HTTP/1.1
+Authorization: your_authorization
+
+```
+
+```http
+HTTP/1.1 200 OK
+[
+  {
+    "id": 1,
+    "name": "第一个管理员",
+    "nickname": "",
+    "phone": "1111111111",
+    "identifier": "1111111111",
+    "qq": "123",
+    "headimgurl": "/non-digested-assets/avatars/default.png",
+    "openid": "123",
+    "imported_alias": "第一个管理员",
+    "from_wechat": false,
+    "tags": [{
+      "id": 1,
+      "name": "b1",
+      "full_name": "bq-b1",
+      "color": "#e91e63",
+      "tag_group_id": 1,
+      "taggings_count": 9
+    }, {
+      "id": 3,
+      "name": "a1",
+      "full_name": "a1",
+      "color": "#ff5722",
+      "tag_group_id": 1,
+      "taggings_count": 4
+    }, {
+      "id": 8,
+      "name": "a2",
+      "full_name": "a2",
+      "color": "#673ab7",
+      "tag_group_id": 1,
+      "taggings_count": 1
+    }
+	},
+  {
+    "id": 1,
+    "name": "第二个管理员",
+    "nickname": "",
+    "phone": "12222222222",
+    "identifier": "12222222222",
+    "qq": "123",
+    "headimgurl": "/non-digested-assets/avatars/default.png",
+    "openid": "123",
+    "imported_alias": "第一个管理员",
+    "from_wechat": false,
+    "tags": [{
+      "id": 1,
+      "name": "b1",
+      "full_name": "bq-b1",
+      "color": "#e91e63",
+      "tag_group_id": 1,
+      "taggings_count": 9
+    }, {
+      "id": 3,
+      "name": "a1",
+      "full_name": "a1",
+      "color": "#ff5722",
+      "tag_group_id": 1,
+      "taggings_count": 4
+    }, {
+      "id": 8,
+      "name": "a2",
+      "full_name": "a2",
+      "color": "#673ab7",
+      "tag_group_id": 1,
+      "taggings_count": 1
+    }
+  }
+]
+```
+
+`GET /api/v4/users`
+
 ## 所在组织
 
 ```http
@@ -51,4 +134,168 @@ HTTP/1.1 200 OK
 | Name | Type | Description | Comments |
 | --- | --- | --- | ---- |
 | id | integer | 用户id |
+
+
+## 查询用户信息
+
+```http
+GET /api/v4/users/1 HTTP/1.1
+Authorization: your_authorization
+
+```
+
+```http
+HTTP/1.1 200 OK
+{
+  "id": 1,
+  "name": "第一个管理员",
+  "nickname": "",
+  "phone": "1111111111",
+  "identifier": "1111111111",
+  "qq": "123",
+  "headimgurl": "/non-digested-assets/avatars/default.png",
+  "openid": "123",
+  "imported_alias": "第一个管理员",
+  "from_wechat": false,
+  "tags": [{
+    "id": 1,
+    "name": "b1",
+    "full_name": "bq-b1",
+    "color": "#e91e63",
+    "tag_group_id": 1,
+    "taggings_count": 9
+  }, {
+    "id": 3,
+    "name": "a1",
+    "full_name": "a1",
+    "color": "#ff5722",
+    "tag_group_id": 1,
+    "taggings_count": 4
+  }, {
+    "id": 8,
+    "name": "a2",
+    "full_name": "a2",
+    "color": "#673ab7",
+    "tag_group_id": 1,
+    "taggings_count": 1
+  }
+}
+```
+
+`GET /api/v4/users/:id`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+| id | integer | 用户id |
+
+
+## 新建用户信息
+
+```http
+POST /api/v4/users HTTP/1.1
+Authorization: your_authorization
+```
+
+```http
+HTTP/1.1 200 OK
+{
+	"id": 115,
+	"name": "zxl",
+	"nickname": null,
+	"sex": null,
+	"phone": "11011011011",
+	"identifier": "77777",
+	"openid": null,
+	"created_at": "2020-06-19T14:52:48.240+08:00",
+	"updated_at": "2020-06-19T14:52:48.240+08:00",
+	"headimgurl": "/non-digested-assets/avatars/default_96.png",
+	"tags": [],
+	"organizations": []
+}
+```
+
+
+`POST /api/v4/users`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+| name | string | 名字 |
+| identifier | string | 识别码 |
+| phone | integer | 手机号 |
+
+
+## 更新用户信息
+
+```http
+PUT /api/v4/users/:id HTTP/1.1
+Authorization: your_authorization
+```
+
+```http
+HTTP/1.1 200 OK
+{
+	"id": 115,
+	"name": "wewe",
+	"nickname": null,
+	"sex": null,
+	"phone": "11011011011",
+	"identifier": "77777",
+	"openid": null,
+	"created_at": "2020-06-19T14:52:48.240+08:00",
+	"updated_at": "2020-06-19T15:05:29.370+08:00",
+	"headimgurl": "/non-digested-assets/avatars/default_96.png",
+	"tags": [],
+	"organizations": []
+}
+```
+
+
+`PUT /api/v4/users/:id`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+| name | string | 名字 |
+| identifier | string | 识别码 |
+| phone | integer | 手机号 |
+
+
+## 查询用户信息（手机号）
+
+```http
+GET /api/v4/users/query HTTP/1.1
+Authorization: your_authorization
+```
+
+```http
+HTTP/1.1 200 OK
+{
+  "id": 115,
+  "name": "zxl",
+  "nickname": null,
+  "sex": null,
+  "phone": "11011011011",
+  "identifier": "77777",
+  "openid": null,
+  "created_at": "2020-06-19T14:52:48.240+08:00",
+  "updated_at": "2020-06-19T14:52:48.240+08:00",
+  "headimgurl": "/non-digested-assets/avatars/default_96.png",
+  "tags": [],
+  "organizations": []
+}
+```
+
+`GET /api/v4/users/query`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+| keyword | integer | 手机号 |
+
 
