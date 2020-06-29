@@ -349,12 +349,8 @@ HTTP/1.1 200 OK
 | identifier | string | 识别码 |
 | phone | integer | 手机号 |
 | profile_submission_attributes | object | 自定义对象 |
-| id | integer | 如果已有自定义属性，那么就用id修改 |
-| fieldf_id | integer | 当没有属性的时候用fieldf_id创建 |
-
-
-
-
+| id | integer | 如已有自定义属性，那么就用 id 修改（我方提供）|
+| fieldf_id | integer | 当没有自定义属性时，用 fieldf_id 创建（我方提供）|
 
 ## 查询用户信息（手机号）
 
