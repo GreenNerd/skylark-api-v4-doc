@@ -230,26 +230,111 @@ HTTP/1.1 200 OK
 
 ## 更新用户信息
 
+自定义字段：先在 空间设置-->用户属性设置 中添加
+
 ```http
 PUT /api/v4/users/:id HTTP/1.1
 Authorization: your_authorization
+在 body 中
+{
+    "profile_submission_attributes": {
+        "entries_attributes": [
+            {
+                "field_id": 5980,
+                "value": "数据"
+            },
+            {
+                "field_id": 5977,
+                "value": "二号数据"
+            },
+            {
+                "field_id": 5976,
+                "value": "新数据"
+            },
+            {
+                "field_id": 5974,
+                "value": "四号数据"
+            }
+        ]
+    }
+}
 ```
+
 
 ```http
 HTTP/1.1 200 OK
 {
-	"id": 115,
-	"name": "wewe",
+	"id": 323,
+	"name": "望天wangtian",
 	"nickname": null,
 	"sex": null,
-	"phone": "11011011011",
-	"identifier": "77777",
+	"phone": "186000000000",
+	"identifier": "186000000000",
 	"openid": null,
-	"created_at": "2020-06-19T14:52:48.240+08:00",
-	"updated_at": "2020-06-19T15:05:29.370+08:00",
+	"created_at": "2018-10-11T14:55:21.550+08:00",
+	"updated_at": "2018-10-11T14:55:21.550+08:00",
 	"headimgurl": "/non-digested-assets/avatars/default_96.png",
 	"tags": [],
-	"organizations": []
+	"organizations": [
+		{
+			"id": 409,
+			"name": "11",
+			"description": "",
+			"created_at": "2018-10-15T18:09:13.526+08:00"
+		}
+	],
+	"profile_submission": {
+		"entries": [
+			{
+				"id": 1091215,
+				"field_id": 5980,
+				"option_id": null,
+				"value": "23",
+				"choice_id": null,
+				"value_id": null,
+				"latitude": null,
+				"longitude": null,
+				"group_id": null,
+				"detail_id": null
+			},
+			{
+				"id": 1091216,
+				"field_id": 5977,
+				"option_id": null,
+				"value": "23123",
+				"choice_id": null,
+				"value_id": null,
+				"latitude": null,
+				"longitude": null,
+				"group_id": null,
+				"detail_id": null
+			},
+			{
+				"id": 1091217,
+				"field_id": 5976,
+				"option_id": null,
+				"value": "测34试",
+				"choice_id": null,
+				"value_id": null,
+				"latitude": null,
+				"longitude": null,
+				"group_id": null,
+				"detail_id": null
+			},
+			{
+				"id": 1091218,
+				"field_id": 5974,
+				"option_id": null,
+				"value": "454",
+				"choice_id": null,
+				"value_id": null,
+				"latitude": null,
+				"longitude": null,
+				"group_id": null,
+				"detail_id": null
+			}
+		]
+	}
 }
 ```
 
@@ -263,6 +348,12 @@ HTTP/1.1 200 OK
 | name | string | 名字 |
 | identifier | string | 识别码 |
 | phone | integer | 手机号 |
+| profile_submission_attributes | object | 自定义对象 |
+| id | integer | 如果已有自定义属性，那么就用id修改 |
+| fieldf_id | integer | 当没有属性的时候用fieldf_id创建 |
+
+
+
 
 
 ## 查询用户信息（手机号）
