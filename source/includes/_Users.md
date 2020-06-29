@@ -350,7 +350,7 @@ HTTP/1.1 200 OK
 | phone | integer | 手机号 |
 | profile_submission_attributes | object | 自定义对象 |
 | id | integer | 如已有自定义属性，那么就用 id 修改（我方提供）|
-| fieldf_id | integer | 当没有自定义属性时，用 fieldf_id 创建（我方提供）|
+| field_id | integer | 当没有自定义属性时，用 fieldf_id 创建（我方提供）|
 
 ## 查询用户信息（手机号）
 
