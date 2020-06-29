@@ -2671,22 +2671,106 @@ Authorization: your_authorization
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='2e536466d5'>更新用户信息</h2><pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">/api/v4/users/:id</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<h2 id='2e536466d5'>更新用户信息</h2>
+<p>自定义字段：先在 空间设置--&gt;用户属性设置 中添加</p>
+<pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">/api/v4/users/:id</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+<span class="s">在 body 中</span>
+<span class="s">{</span>
+<span class="s">    "profile_submission_attributes": {</span>
+<span class="s">        "entries_attributes": [</span>
+<span class="s">            {</span>
+<span class="s">                "field_id": 5980,</span>
+<span class="s">                "value": "数据"</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "field_id": 5977,</span>
+<span class="s">                "value": "二号数据"</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "field_id": 5976,</span>
+<span class="s">                "value": "新数据"</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "field_id": 5974,</span>
+<span class="s">                "value": "四号数据"</span>
+<span class="s">            }</span>
+<span class="s">        ]</span>
+<span class="s">    }</span>
+<span class="s">}</span>
 </code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="s">{</span>
-<span class="s">    "id": 115,</span>
-<span class="s">    "name": "wewe",</span>
+<span class="s">    "id": 323,</span>
+<span class="s">    "name": "望天wangtian",</span>
 <span class="s">    "nickname": null,</span>
 <span class="s">    "sex": null,</span>
-<span class="s">    "phone": "11011011011",</span>
-<span class="s">    "identifier": "77777",</span>
+<span class="s">    "phone": "186000000000",</span>
+<span class="s">    "identifier": "186000000000",</span>
 <span class="s">    "openid": null,</span>
-<span class="s">    "created_at": "2020-06-19T14:52:48.240+08:00",</span>
-<span class="s">    "updated_at": "2020-06-19T15:05:29.370+08:00",</span>
+<span class="s">    "created_at": "2018-10-11T14:55:21.550+08:00",</span>
+<span class="s">    "updated_at": "2018-10-11T14:55:21.550+08:00",</span>
 <span class="s">    "headimgurl": "/non-digested-assets/avatars/default_96.png",</span>
 <span class="s">    "tags": [],</span>
-<span class="s">    "organizations": []</span>
+<span class="s">    "organizations": [</span>
+<span class="s">        {</span>
+<span class="s">            "id": 409,</span>
+<span class="s">            "name": "11",</span>
+<span class="s">            "description": "",</span>
+<span class="s">            "created_at": "2018-10-15T18:09:13.526+08:00"</span>
+<span class="s">        }</span>
+<span class="s">    ],</span>
+<span class="s">    "profile_submission": {</span>
+<span class="s">        "entries": [</span>
+<span class="s">            {</span>
+<span class="s">                "id": 1091215,</span>
+<span class="s">                "field_id": 5980,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "23",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 1091216,</span>
+<span class="s">                "field_id": 5977,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "23123",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 1091217,</span>
+<span class="s">                "field_id": 5976,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "测34试",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 1091218,</span>
+<span class="s">                "field_id": 5974,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "454",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            }</span>
+<span class="s">        ]</span>
+<span class="s">    }</span>
 <span class="s">}</span>
 </code></pre>
 <p><code>PUT /api/v4/users/:id</code></p>
@@ -2717,6 +2801,24 @@ Authorization: your_authorization
 <td>phone</td>
 <td>integer</td>
 <td>手机号</td>
+<td></td>
+</tr>
+<tr>
+<td>profile_submission_attributes</td>
+<td>object</td>
+<td>自定义对象</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>如果已有自定义属性，那么就用id修改</td>
+<td></td>
+</tr>
+<tr>
+<td>fieldf_id</td>
+<td>integer</td>
+<td>当没有属性的时候用fieldf_id创建</td>
 <td></td>
 </tr>
 </tbody></table>
