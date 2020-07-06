@@ -33,3 +33,85 @@ HTTP/1.1 200 OK
 | --- | --- | --- | ---- |
 | ids | array | 附件id的集合 |
 | fops | string | 七牛云图片处理的参数，[文档](https://developer.qiniu.com/search?keyword=%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86) |
+
+## 附件Token
+
+```http
+GET /api/v4/attachments/uptoken?purpose=create_responses HTTP/1.1
+Authorization: your_authorization
+
+```
+
+```http
+HTTP/1.1 200 OK
+{
+	"uptoken": "WFpC8JEsN77rEZRgdoQgQw-yB82e-j3fpp8dXB8Z:hQdV5hQ3etWr_MVcMwe8HpHf3bo=:eyJzY29wZSI6InNscC1hdHRhY2htZW50LWJldGEiLCJzYXZlS2V5IjoiMS9jcmVhdGVfcmVzcG9uc2VzLy0xNTk0MDA1ODk0LTFhMmU2ZGVkOGZkMDdiZTM2ZjEzNDI3Yjg4Yzk2MDExLSQoeDprZXkpIiwiY2FsbGJhY2tVcmwiOiJodHRwczovL2JldGEuc2t5bGFya2x5LmNvbS9hdHRhY2htZW50cy5qc29uIiwiY2FsbGJhY2tCb2R5Ijoia2V5PSQoa2V5KVx1MDAyNm5hbWU9JChmbmFtZSlcdTAwMjZzaXplPSQoZnNpemUpXHUwMDI2bWltZV90eXBlPSQobWltZVR5cGUpIiwiZGVhZGxpbmUiOjE1OTQwMDk0OTQsImZzaXplTGltaXQiOjUyNDI4ODAwLCJ1cGhvc3RzIjpbImh0dHA6Ly91cC5xaW5pdS5jb20iLCJodHRwOi8vdXBsb2FkLnFpbml1LmNvbSIsIi1IIHVwLnFpbml1LmNvbSBodHRwOi8vMTgzLjEzMS43LjMiXSwiZ2xvYmFsIjpmYWxzZX0="
+}
+```
+
+`GET /api/v4/attachments/uptoken?purpose=create_responses`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+| purpose | string | create_responses |
+
+
+## 上传7牛
+
+```http
+POST https://up.qbox.me/ HTTP/1.1
+Authorization: your_authorization
+
+```
+
+```http
+HTTP/1.1 200 OK
+{
+	"extension": "image",
+	"extra_info": {},
+	"id": 3258,
+	"mime_type": "image/jpeg",
+	"name": "15690311631029630.jpg",
+	"size": "41491"
+}
+```
+
+`POST https://up.qbox.me/`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+| token | string | 其他接口获取 |
+| file | file | 上传的文件 |
+| :key | integer | 毫秒表示的时间 |
+
+## 创建附件
+
+· 接口待完善
+
+```http
+POST /api/v4/attachments HTTP/1.1
+Authorization: your_authorization
+
+```
+
+```http
+HTTP/1.1 200 OK
+
+```
+
+`POST /api/v4/attachments`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+| key |  | 2 |
+| name |  | 2 |
+| size |  | 2 |
+| mime_type |  | 2 |
+
+

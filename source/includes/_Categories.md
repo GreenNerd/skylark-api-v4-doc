@@ -57,6 +57,33 @@ HTTP/1.1 200 OK
 
 `GET /api/v4/categories`
 
+## 获取分类
+
+```http
+GET /api/v4/categories/:id HTTP/1.1
+Authorization: your_authorization
+
+```
+
+```http
+HTTP/1.1 200 OK
+{
+	"id": 154,
+	"name": "2下子分类2",
+	"depth": 2,
+	"description": "",
+	"icon": "fa-folder-open",
+	"position": 1488447621,
+	"hidden": false,
+	"external_link": null,
+	"sort_type": "manual",
+	"cms_variables": "",
+	"ancestry": "134/136",
+	"created_at": "2017-03-02T17:40:21.834+08:00"
+}
+```
+
+`GET /api/v4/categories/:id`
 ## 分类下的分类
 
 ```http

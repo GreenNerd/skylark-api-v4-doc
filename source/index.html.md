@@ -10,6 +10,7 @@ toc_footers:
 includes:
   - Pagination
   - WechatClient
+  - Accesses
   - Attachments
   - Categories
   - ColumnExplanation
