@@ -239,10 +239,39 @@
               </ul>
           </li>
           <li>
+            <a href="#accesses" class="toc-h1 toc-link" data-title="Accesses">Accesses</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#id" class="toc-h2 toc-link" data-title="获取权限ID">获取权限ID</a>
+                  </li>
+                  <li>
+                    <a href="#9629737465" class="toc-h2 toc-link" data-title="创建组织管理员">创建组织管理员</a>
+                  </li>
+                  <li>
+                    <a href="#1f3fcec323" class="toc-h2 toc-link" data-title="删除组织管理员">删除组织管理员</a>
+                  </li>
+                  <li>
+                    <a href="#6df0c823e6" class="toc-h2 toc-link" data-title="修改组织管理员">修改组织管理员</a>
+                  </li>
+                  <li>
+                    <a href="#7f47be2c10" class="toc-h2 toc-link" data-title="查询每个组织下的管理员">查询每个组织下的管理员</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#attachments" class="toc-h1 toc-link" data-title="Attachments">Attachments</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#711363c424" class="toc-h2 toc-link" data-title="查询">查询</a>
+                  </li>
+                  <li>
+                    <a href="#token" class="toc-h2 toc-link" data-title="附件Token">附件Token</a>
+                  </li>
+                  <li>
+                    <a href="#7" class="toc-h2 toc-link" data-title="上传7牛">上传7牛</a>
+                  </li>
+                  <li>
+                    <a href="#52479ed18f" class="toc-h2 toc-link" data-title="创建附件">创建附件</a>
                   </li>
               </ul>
           </li>
@@ -251,6 +280,9 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#99f9a7e446" class="toc-h2 toc-link" data-title="空间所有分类">空间所有分类</a>
+                  </li>
+                  <li>
+                    <a href="#a7fe4ad390" class="toc-h2 toc-link" data-title="获取分类">获取分类</a>
                   </li>
                   <li>
                     <a href="#b075a1f04c" class="toc-h2 toc-link" data-title="分类下的分类">分类下的分类</a>
@@ -299,6 +331,12 @@
                   </li>
                   <li>
                     <a href="#52dced31b8" class="toc-h2 toc-link" data-title="表单数据">表单数据</a>
+                  </li>
+                  <li>
+                    <a href="#9244b98e91" class="toc-h2 toc-link" data-title="创建表单填写记录">创建表单填写记录</a>
+                  </li>
+                  <li>
+                    <a href="#cf789bca7a" class="toc-h2 toc-link" data-title="修改表单填写记录">修改表单填写记录</a>
                   </li>
               </ul>
           </li>
@@ -485,6 +523,360 @@ PAYLOAD为：<code>{&quot;namespace_id&quot;:1}</code></p>
 <ul>
 <li>  None</li>
 </ul>
+<h1 id='accesses'>Accesses</h1><h2 id='id'>获取权限ID</h2><pre class="highlight http tab-http"><code><span class="err">GET /api/v4/accesses
+Authorization: your_authorization
+</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">[</span>
+<span class="s">    {</span>
+<span class="s">        "id": 1,</span>
+<span class="s">        "name": "超级管理员",</span>
+<span class="s">        "actions": [</span>
+<span class="s">            1,</span>
+<span class="s">            3,</span>
+<span class="s">            4</span>
+<span class="s">        ],</span>
+<span class="s">        "founded": false</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">        "id": 16,</span>
+<span class="s">        "name": "发送消息、表单和模板通知",</span>
+<span class="s">        "actions": [</span>
+<span class="s">            4</span>
+<span class="s">        ],</span>
+<span class="s">        "founded": false</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">        "id": 17,</span>
+<span class="s">        "name": "管理组织架构",</span>
+<span class="s">        "actions": [</span>
+<span class="s">            1</span>
+<span class="s">        ],</span>
+<span class="s">        "founded": false</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">        "id": 18,</span>
+<span class="s">        "name": "管理组织成员",</span>
+<span class="s">        "actions": [</span>
+<span class="s">            3</span>
+<span class="s">        ],</span>
+<span class="s">        "founded": false</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">        "id": 26,</span>
+<span class="s">        "name": "组织管理员",</span>
+<span class="s">        "actions": [</span>
+<span class="s">            1,</span>
+<span class="s">            3</span>
+<span class="s">        ],</span>
+<span class="s">        "founded": false</span>
+<span class="s">    }</span>
+<span class="s">]</span>
+</code></pre>
+<p><code>GET /api/v4/accesses</code></p>
+<h2 id='9629737465'>创建组织管理员</h2><pre class="highlight http tab-http"><code><span class="err">GET /api/v4/organizations/:organization_id/administrators?user_id&amp;access_id
+Authorization: your_authorization
+</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">{</span>
+<span class="s">    "id": 320,</span>
+<span class="s">    "user": {</span>
+<span class="s">        "id": 690,</span>
+<span class="s">        "name": "zxl",</span>
+<span class="s">        "nickname": "贤丨🤺",</span>
+<span class="s">        "phone": "12121212121",</span>
+<span class="s">        "identifier": "12121212121",</span>
+<span class="s">        "qq": null,</span>
+<span class="s">        "headimgurl": "http://thirdwx.qlogo.cn/mmopen/vi_32/KU6FI52PPicLT6iaZ88S49btibcTic2OcnSg4gObibYyxc92giafHRwjpNgaPZKRiaRGt47sdoulxO3fqzdn69EjmyTwQ",</span>
+<span class="s">        "openid": "oXDm5s0XDReFEqbMcAddC_CQGrNY",</span>
+<span class="s">        "imported_alias": "zxl",</span>
+<span class="s">        "from_wechat": false,</span>
+<span class="s">        "tags": [],</span>
+<span class="s">        "profile_submission": {</span>
+<span class="s">            "entries": []</span>
+<span class="s">        }</span>
+<span class="s">    },</span>
+<span class="s">    "access": {</span>
+<span class="s">        "id": 1,</span>
+<span class="s">        "name": "超级管理员",</span>
+<span class="s">        "actions": [</span>
+<span class="s">            1,</span>
+<span class="s">            3,</span>
+<span class="s">            4</span>
+<span class="s">        ],</span>
+<span class="s">        "founded": false</span>
+<span class="s">    },</span>
+<span class="s">    "organization": {</span>
+<span class="s">        "id": 590,</span>
+<span class="s">        "name": "111111",</span>
+<span class="s">        "description": "",</span>
+<span class="s">        "created_at": "2020-05-13T11:37:02.061+08:00"</span>
+<span class="s">    }</span>
+<span class="s">}</span>
+</code></pre>
+<p><code>POST /api/v4/organizations/:organization_id/administrators?user_id&amp;access_id</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>integer</td>
+<td>用户ID</td>
+<td></td>
+</tr>
+<tr>
+<td>access_id</td>
+<td>integer</td>
+<td>权限ID</td>
+<td></td>
+</tr>
+<tr>
+<td>:organization_id</td>
+<td>integer</td>
+<td>组织ID</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='1f3fcec323'>删除组织管理员</h2><pre class="highlight http tab-http"><code><span class="err">DELETE /api/v4/organizations/:organization_id/administrators/:id
+Authorization: your_authorization
+</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">OK</span>
+
+</code></pre>
+<p><code>DELETE /api/v4/organizations/:organization_id/administrators/:id</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>:id</td>
+<td>integer</td>
+<td>管理员ID</td>
+<td></td>
+</tr>
+<tr>
+<td>:organization_id</td>
+<td>integer</td>
+<td>组织ID</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='6df0c823e6'>修改组织管理员</h2><pre class="highlight http tab-http"><code><span class="err">PUT /api/v4/organizations/:organization_id/administrators:id
+Authorization: your_authorization
+</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">{</span>
+<span class="s">    "id": 321,</span>
+<span class="s">    "user": {</span>
+<span class="s">        "id": 690,</span>
+<span class="s">        "name": "zxl",</span>
+<span class="s">        "nickname": "贤丨🤺",</span>
+<span class="s">        "phone": "12123456654",</span>
+<span class="s">        "identifier": "12123456654",</span>
+<span class="s">        "qq": null,</span>
+<span class="s">        "headimgurl": "http://thirdwx.qlogo.cn/mmopen/vi_32/KU6FI52PPicLT6iaZ88S49btibcTic2OcnSg4gObibYyxc92giafHRwjpNgaPZKRiaRGt47sdoulxO3fqzdn69EjmyTwQ",</span>
+<span class="s">        "openid": "oXDm5s0XDReFEqbMcAddC_CQGrNY",</span>
+<span class="s">        "imported_alias": "zxl",</span>
+<span class="s">        "from_wechat": false,</span>
+<span class="s">        "tags": [],</span>
+<span class="s">        "profile_submission": {</span>
+<span class="s">            "entries": []</span>
+<span class="s">        }</span>
+<span class="s">    },</span>
+<span class="s">    "access": {</span>
+<span class="s">        "id": 18,</span>
+<span class="s">        "name": "管理组织成员",</span>
+<span class="s">        "actions": [</span>
+<span class="s">            3</span>
+<span class="s">        ],</span>
+<span class="s">        "founded": false</span>
+<span class="s">    },</span>
+<span class="s">    "organization": {</span>
+<span class="s">        "id": 590,</span>
+<span class="s">        "name": "111111",</span>
+<span class="s">        "description": "",</span>
+<span class="s">        "created_at": "2020-05-13T11:37:02.061+08:00"</span>
+<span class="s">    }</span>
+<span class="s">}</span>
+
+</code></pre>
+<p><code>PUT /api/v4/organizations/:organization_id/administrators:id</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>integer</td>
+<td>用户ID</td>
+<td></td>
+</tr>
+<tr>
+<td>access_id</td>
+<td>integer</td>
+<td>权限ID</td>
+<td></td>
+</tr>
+<tr>
+<td>:id</td>
+<td>integer</td>
+<td>管理员ID</td>
+<td></td>
+</tr>
+<tr>
+<td>:organization_id</td>
+<td>integer</td>
+<td>组织ID</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='7f47be2c10'>查询每个组织下的管理员</h2><pre class="highlight http tab-http"><code><span class="err">GET /api/v4/organizations/:organization_id/administrators
+Authorization: your_authorization
+</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">[</span>
+<span class="s">    {</span>
+<span class="s">        "id": 311,</span>
+<span class="s">        "user": {</span>
+<span class="s">            "id": 1536,</span>
+<span class="s">            "name": "希星李",</span>
+<span class="s">            "nickname": "希希里图",</span>
+<span class="s">            "phone": "12345677654",</span>
+<span class="s">            "identifier": "12345677654",</span>
+<span class="s">            "qq": "",</span>
+<span class="s">            "headimgurl": "/non-digested-assets/avatars/default.png",</span>
+<span class="s">            "openid": null,</span>
+<span class="s">            "imported_alias": "lxx",</span>
+<span class="s">            "from_wechat": false,</span>
+<span class="s">            "tags": [],</span>
+<span class="s">            "profile_submission": {</span>
+<span class="s">                "entries": []</span>
+<span class="s">            }</span>
+<span class="s">        },</span>
+<span class="s">        "access": {</span>
+<span class="s">            "id": 2,</span>
+<span class="s">            "name": "创建者",</span>
+<span class="s">            "actions": [</span>
+<span class="s">                1,</span>
+<span class="s">                3,</span>
+<span class="s">                4</span>
+<span class="s">            ],</span>
+<span class="s">            "founded": true</span>
+<span class="s">        },</span>
+<span class="s">        "organization": {</span>
+<span class="s">            "id": 590,</span>
+<span class="s">            "name": "111111",</span>
+<span class="s">            "description": "",</span>
+<span class="s">            "created_at": "2020-05-13T11:37:02.061+08:00"</span>
+<span class="s">        }</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">        "id": 319,</span>
+<span class="s">        "user": {</span>
+<span class="s">            "id": 194,</span>
+<span class="s">            "name": "zx",</span>
+<span class="s">            "nickname": "",</span>
+<span class="s">            "phone": "12345677654",</span>
+<span class="s">            "identifier": "字符串",</span>
+<span class="s">            "qq": "",</span>
+<span class="s">            "headimgurl": "/non-digested-assets/avatars/default.png",</span>
+<span class="s">            "openid": null,</span>
+<span class="s">            "imported_alias": "张瑞",</span>
+<span class="s">            "from_wechat": false,</span>
+<span class="s">            "tags": [],</span>
+<span class="s">            "profile_submission": {</span>
+<span class="s">                "entries": []</span>
+<span class="s">            }</span>
+<span class="s">        },</span>
+<span class="s">        "access": {</span>
+<span class="s">            "id": 18,</span>
+<span class="s">            "name": "管理组织成员",</span>
+<span class="s">            "actions": [</span>
+<span class="s">                3</span>
+<span class="s">            ],</span>
+<span class="s">            "founded": false</span>
+<span class="s">        },</span>
+<span class="s">        "organization": {</span>
+<span class="s">            "id": 590,</span>
+<span class="s">            "name": "111111",</span>
+<span class="s">            "description": "",</span>
+<span class="s">            "created_at": "2020-05-13T11:37:02.061+08:00"</span>
+<span class="s">        }</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">        "id": 321,</span>
+<span class="s">        "user": {</span>
+<span class="s">            "id": 690,</span>
+<span class="s">            "name": "zxl",</span>
+<span class="s">            "nickname": "贤独丨🤺",</span>
+<span class="s">            "phone": "12345677654",</span>
+<span class="s">            "identifier": "12345677654",</span>
+<span class="s">            "qq": null,</span>
+<span class="s">            "headimgurl": "http://thirdwx.qlogo.cn/mmopen/vi_32/KU6FI52PPicLT6iaZ88S49btibcTic2OcnSg4gObibYyxc92giafHRwjpNgaPZKRiaRGt47sdoulxO3fqzdn69EjmyTwQ",</span>
+<span class="s">            "openid": "oXDm5s0XDReFEqbMcAddC_CQGrNY",</span>
+<span class="s">            "imported_alias": "zxl",</span>
+<span class="s">            "from_wechat": false,</span>
+<span class="s">            "tags": [],</span>
+<span class="s">            "profile_submission": {</span>
+<span class="s">                "entries": []</span>
+<span class="s">            }</span>
+<span class="s">        },</span>
+<span class="s">        "access": {</span>
+<span class="s">            "id": 1,</span>
+<span class="s">            "name": "超级管理员",</span>
+<span class="s">            "actions": [</span>
+<span class="s">                1,</span>
+<span class="s">                3,</span>
+<span class="s">                4</span>
+<span class="s">            ],</span>
+<span class="s">            "founded": false</span>
+<span class="s">        },</span>
+<span class="s">        "organization": {</span>
+<span class="s">            "id": 590,</span>
+<span class="s">            "name": "111111",</span>
+<span class="s">            "description": "",</span>
+<span class="s">            "created_at": "2020-05-13T11:37:02.061+08:00"</span>
+<span class="s">        }</span>
+<span class="s">    }</span>
+<span class="s">]</span>
+
+</code></pre>
+<p><code>Get /api/v4/organizations/:organization_id/administrators</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>:organization_id</td>
+<td>integer</td>
+<td>组织ID</td>
+<td></td>
+</tr>
+</tbody></table>
 <h1 id='attachments'>Attachments</h1><h2 id='711363c424'>查询</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/attachments/query?id[]=2474&amp;id[]=2475</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
 
@@ -525,6 +917,122 @@ PAYLOAD为：<code>{&quot;namespace_id&quot;:1}</code></p>
 <td>fops</td>
 <td>string</td>
 <td>七牛云图片处理的参数，<a href="https://developer.qiniu.com/search?keyword=%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86">文档</a></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='token'>附件Token</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/attachments/uptoken?purpose=create_responses</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">{</span>
+<span class="s">    "uptoken": "WFpC8JEsN77rEZRgdoQgQw-yB82e-j3fpp8dXB8Z:hQdV5hQ3etWr_MVcMwe8HpHf3bo=:eyJzY29wZSI6InNscC1hdHRhY2htZW50LWJldGEiLCJzYXZlS2V5IjoiMS9jcmVhdGVfcmVzcG9uc2VzLy0xNTk0MDA1ODk0LTFhMmU2ZGVkOGZkMDdiZTM2ZjEzNDI3Yjg4Yzk2MDExLSQoeDprZXkpIiwiY2FsbGJhY2tVcmwiOiJodHRwczovL2JldGEuc2t5bGFya2x5LmNvbS9hdHRhY2htZW50cy5qc29uIiwiY2FsbGJhY2tCb2R5Ijoia2V5PSQoa2V5KVx1MDAyNm5hbWU9JChmbmFtZSlcdTAwMjZzaXplPSQoZnNpemUpXHUwMDI2bWltZV90eXBlPSQobWltZVR5cGUpIiwiZGVhZGxpbmUiOjE1OTQwMDk0OTQsImZzaXplTGltaXQiOjUyNDI4ODAwLCJ1cGhvc3RzIjpbImh0dHA6Ly91cC5xaW5pdS5jb20iLCJodHRwOi8vdXBsb2FkLnFpbml1LmNvbSIsIi1IIHVwLnFpbml1LmNvbSBodHRwOi8vMTgzLjEzMS43LjMiXSwiZ2xvYmFsIjpmYWxzZX0="</span>
+<span class="s">}</span>
+</code></pre>
+<p><code>GET /api/v4/attachments/uptoken?purpose=create_responses</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>purpose</td>
+<td>string</td>
+<td>create_responses</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='7'>上传7牛</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">https://up.qbox.me/</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">{</span>
+<span class="s">    "extension": "image",</span>
+<span class="s">    "extra_info": {},</span>
+<span class="s">    "id": 3258,</span>
+<span class="s">    "mime_type": "image/jpeg",</span>
+<span class="s">    "name": "15690311631029630.jpg",</span>
+<span class="s">    "size": "41491"</span>
+<span class="s">}</span>
+</code></pre>
+<p><code>POST https://up.qbox.me/</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token</td>
+<td>string</td>
+<td>其他接口获取</td>
+<td></td>
+</tr>
+<tr>
+<td>file</td>
+<td>file</td>
+<td>上传的文件</td>
+<td></td>
+</tr>
+<tr>
+<td>:key</td>
+<td>integer</td>
+<td>毫秒表示的时间</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='52479ed18f'>创建附件</h2>
+<p>· 接口待完善</p>
+<pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v4/attachments</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+
+</code></pre>
+<p><code>POST /api/v4/attachments</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td></td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td></td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>size</td>
+<td></td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>mime_type</td>
+<td></td>
+<td>2</td>
 <td></td>
 </tr>
 </tbody></table>
@@ -577,6 +1085,26 @@ PAYLOAD为：<code>{&quot;namespace_id&quot;:1}</code></p>
 
 </code></pre>
 <p><code>GET /api/v4/categories</code></p>
+<h2 id='a7fe4ad390'>获取分类</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/categories/:id</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">{</span>
+<span class="s">    "id": 154,</span>
+<span class="s">    "name": "2下子分类2",</span>
+<span class="s">    "depth": 2,</span>
+<span class="s">    "description": "",</span>
+<span class="s">    "icon": "fa-folder-open",</span>
+<span class="s">    "position": 1488447621,</span>
+<span class="s">    "hidden": false,</span>
+<span class="s">    "external_link": null,</span>
+<span class="s">    "sort_type": "manual",</span>
+<span class="s">    "cms_variables": "",</span>
+<span class="s">    "ancestry": "134/136",</span>
+<span class="s">    "created_at": "2017-03-02T17:40:21.834+08:00"</span>
+<span class="s">}</span>
+</code></pre>
+<p><code>GET /api/v4/categories/:id</code></p>
 <h2 id='b075a1f04c'>分类下的分类</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/categories/:id/children</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
 
@@ -1188,444 +1716,88 @@ Authorization: your_authorization
 
 </code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="s">{</span>
-<span class="s">  "id":3987,</span>
-<span class="s">  "title":"这是一个表单",</span>
-<span class="s">  "description":"&lt;p&gt;哈哈&lt;/p&gt;",</span>
-<span class="s">  "created_at":"2018-02-08T15:32:02.921+08:00",</span>
-<span class="s">  "updated_at":"2018-05-21T22:07:51.748+08:00",</span>
-<span class="s">  "status":"published",</span>
-<span class="s">  "fields":[</span>
-<span class="s">    {</span>
-<span class="s">      "id":38664,</span>
-<span class="s">      "title":"文本",</span>
-<span class="s">      "description":"",</span>
-<span class="s">      "type":"Field::TextField",</span>
-<span class="s">      "position":0,</span>
-<span class="s">      "validations":[</span>
-<span class="s">        "presence"</span>
-<span class="s">      ],</span>
-<span class="s">      "other_option":null,</span>
-<span class="s">      "visibility":"public_visibility",</span>
-<span class="s">      "marked":false,</span>
-<span class="s">      "settings":{</span>
-<span class="s">        "layout":"block",</span>
-<span class="s">        "other_option_settings":{</span>
-<span class="s">          "limit":{</span>
-
-          }
-        },
-        "length_limit":{
-
-        }
-      },
-      "detail_id":null
-    },
-    {
-      "id":38665,
-      "title":"段落",
-      "description":"",
-      "type":"Field::TextArea",
-      "position":1,
-      "validations":[
-        "presence"
-      ],
-      "other_option":null,
-      "visibility":"public_visibility",
-      "marked":false,
-      "settings":{
-        "layout":"block",
-        "other_option_settings":{
-          "limit":{
-
-          }
-        },
-        "length_limit":{
-
-        }
-      },
-      "detail_id":null
-    },
-    {
-      "id":38663,
-      "title":"未命名标题",
-      "description":"",
-      "type":"Field::TextField",
-      "position":2,
-      "validations":[
-
-      ],
-      "other_option":null,
-      "visibility":"public_visibility",
-      "marked":false,
-      "settings":{
-        "layout":"block",
-        "other_option_settings":{
-          "limit":{
-
-          }
-        },
-        "length_limit":{
-
-        }
-      },
-      "detail_id":null
-    },
-    {
-      "id":38666,
-      "title":"章节",
-      "description":"&lt;p&gt;章节细节&lt;/p&gt;",
-      "type":"Field::SectionBreak",
-      "position":3,
-      "validations":[
-
-      ],
-      "other_option":null,
-      "visibility":"public_visibility",
-      "marked":false,
-      "settings":{
-        "layout":"block",
-        "other_option_settings":{
-          "limit":{
-
-          }
-        },
-        "length_limit":{
-
-        }
-      },
-      "detail_id":null
-    },
-    {
-      "id":38667,
-      "title":"整数",
-      "description":"",
-      "type":"Field::Integer",
-      "position":4,
-      "validations":[
-
-      ],
-      "other_option":null,
-      "visibility":"public_visibility",
-      "marked":false,
-      "settings":{
-        "layout":"block",
-        "other_option_settings":{
-          "limit":{
-
-          }
-        },
-        "length_limit":{
-
-        }
-      },
-      "detail_id":null
-    },
-    {
-      "id":38668,
-      "title":"日期时间",
-      "description":"",
-      "type":"Field::DateTime",
-      "position":5,
-      "validations":[
-
-      ],
-      "other_option":null,
-      "visibility":"public_visibility",
-      "marked":false,
-      "settings":{
-        "layout":"block",
-        "input_type":"datetime-local",
-        "other_option_settings":{
-          "limit":{
-
-          }
-        },
-        "length_limit":{
-
-        }
-      },
-      "detail_id":null
-    },
-    {
-      "id":38669,
-      "title":"单选",
-      "description":"",
-      "type":"Field::RadioButton",
-      "position":6,
-      "validations":[
-
-      ],
-      "other_option":"其他",
-      "visibility":"public_visibility",
-      "marked":false,
-      "settings":{
-        "layout":"list",
-        "other_option_settings":{
-          "limit":{
-
-          }
-        },
-        "length_limit":{
-
-        }
-      },
-      "detail_id":null,
-      "options":[
-        {
-          "id":31826,
-          "value":"4",
-          "settings":{
-            "limit_settings":{
-
-            }
-          },
-          "position":0
-        }
-      ]
-    },
-    {
-      "id":38670,
-      "title":"多选",
-      "description":"",
-      "type":"Field::CheckBox",
-      "position":7,
-      "validations":[
-        "presence"
-      ],
-      "other_option":"其他",
-      "visibility":"public_visibility",
-      "marked":false,
-      "settings":{
-        "layout":"list",
-        "other_option_settings":{
-          "limit":{
-
-          }
-        },
-        "length_limit":{
-
-        }
-      },
-      "detail_id":null,
-      "options":[
-        {
-          "id":31827,
-          "value":"4",
-          "settings":{
-            "limit_settings":{
-
-            }
-          },
-          "position":1518075122
-        }
-      ]
-    },
-    {
-      "id":38671,
-      "title":"文件上传",
-      "description":"",
-      "type":"Field::File",
-      "position":8,
-      "validations":[
-
-      ],
-      "other_option":null,
-      "visibility":"public_visibility",
-      "marked":false,
-      "settings":{
-        "layout":"block",
-        "other_option_settings":{
-          "limit":{
-
-          }
-        },
-        "length_limit":{
-
-        }
-      },
-      "detail_id":null
-    },
-    {
-      "id":38672,
-      "title":"级联选择",
-      "description":"",
-      "type":"Field::CascadedSelect",
-      "position":9,
-      "validations":[
-        "presence"
-      ],
-      "other_option":null,
-      "visibility":"public_visibility",
-      "marked":false,
-      "settings":{
-        "layout":"block",
-        "other_option_settings":{
-          "limit":{
-
-          }
-        },
-        "length_limit":{
-
-        }
-      },
-      "detail_id":null
-    },
-    {
-      "id":38673,
-      "title":"组织",
-      "description":"",
-      "type":"Field::Organization",
-      "position":10,
-      "validations":[
-        "presence"
-      ],
-      "other_option":null,
-      "visibility":"public_visibility",
-      "marked":false,
-      "settings":{
-        "layout":"block",
-        "other_option_settings":{
-          "limit":{
-
-          }
-        },
-        "length_limit":{
-
-        }
-      },
-      "detail_id":null
-    },
-    {
-      "id":38674,
-      "title":"评分",
-      "description":"",
-      "type":"Field::Rating",
-      "position":11,
-      "validations":[
-        "presence"
-      ],
-      "other_option":null,
-      "visibility":"public_visibility",
-      "marked":false,
-      "settings":{
-        "layout":"block",
-        "other_option_settings":{
-          "limit":{
-
-          }
-        },
-        "length_limit":{
-
-        }
-      },
-      "detail_id":null
-    },
-    {
-      "id":38675,
-      "title":"地理位置",
-      "description":"",
-      "type":"Field::Location",
-      "position":12,
-      "validations":[
-
-      ],
-      "other_option":null,
-      "visibility":"public_visibility",
-      "marked":false,
-      "settings":{
-        "layout":"block",
-        "other_option_settings":{
-          "limit":{
-
-          }
-        },
-        "length_limit":{
-
-        }
-      },
-      "detail_id":null
-    },
-    {
-      "id":38676,
-      "title":"明细",
-      "description":"呵呵",
-      "type":"Field::Detail",
-      "position":13,
-      "validations":[
-
-      ],
-      "other_option":null,
-      "visibility":"public_visibility",
-      "marked":false,
-      "settings":{
-        "layout":"block",
-        "button_name":"添加菜单",
-        "other_option_settings":{
-          "limit":{
-
-          }
-        },
-        "length_limit":{
-
-        }
-      },
-      "detail_id":null,
-      "children":[
-        {
-          "id":38677,
-          "title":"文本",
-          "description":"",
-          "type":"Field::TextField",
-          "position":0,
-          "validations":[
-            "presence"
-          ],
-          "other_option":null,
-          "visibility":"public_visibility",
-          "marked":false,
-          "settings":{
-            "layout":"block",
-            "other_option_settings":{
-              "limit":{
-
-              }
-            },
-            "length_limit":{
-
-            }
-          },
-          "detail_id":38676
-        },
-        {
-          "id":38678,
-          "title":"评分",
-          "description":"",
-          "type":"Field::Rating",
-          "position":1,
-          "validations":[
-
-          ],
-          "other_option":null,
-          "visibility":"public_visibility",
-          "marked":false,
-          "settings":{
-            "layout":"block",
-            "other_option_settings":{
-              "limit":{
-
-              }
-            },
-            "length_limit":{
-
-            }
-          },
-          "detail_id":38676
-        }
-      ]
-    }
-  ]
-}
-
+<span class="s">    "id": 7,</span>
+<span class="s">    "title": "2016年09月20日工作报告",</span>
+<span class="s">    "description": "&lt;p&gt;&lt;img src=\"https://images.skylarkly.com/Fh3rPkNswcUh3CCREX_YlfSZnbhI\" alt=\"simditor-img\"&gt;&lt;br&gt;&lt;/p&gt;",</span>
+<span class="s">    "created_at": "2016-09-20T16:44:28.082+08:00",</span>
+<span class="s">    "updated_at": "2018-08-30T11:33:19.857+08:00",</span>
+<span class="s">    "status": "published",</span>
+<span class="s">    "fields": [</span>
+<span class="s">        {</span>
+<span class="s">            "id": 26,</span>
+<span class="s">            "title": "为了督促大家填写工作日志，请大家按时完成以下表单！该表单将于明日上午十点关闭。谢谢大家！",</span>
+<span class="s">            "description": "",</span>
+<span class="s">            "type": "Field::SectionBreak",</span>
+<span class="s">            "position": 0,</span>
+<span class="s">            "validations": [],</span>
+<span class="s">            "other_option": null,</span>
+<span class="s">            "visibility": "public_visibility",</span>
+<span class="s">            "marked": false,</span>
+<span class="s">            "settings": {</span>
+<span class="s">                "layout": "block",</span>
+<span class="s">                "other_option_settings": {</span>
+<span class="s">                    "limit": {}</span>
+<span class="s">                },</span>
+<span class="s">                "length_limit": {},</span>
+<span class="s">                "limit_settings": {},</span>
+<span class="s">                "char_size_limit_settings": {}</span>
+<span class="s">            },</span>
+<span class="s">            "detail_id": null,</span>
+<span class="s">            "identity_key": "field_26",</span>
+<span class="s">            "data": {}</span>
+<span class="s">        },</span>
+<span class="s">        {</span>
+<span class="s">            "id": 27,</span>
+<span class="s">            "title": "上午完成工作",</span>
+<span class="s">            "description": "",</span>
+<span class="s">            "type": "Field::TextArea",</span>
+<span class="s">            "position": 3,</span>
+<span class="s">            "validations": [</span>
+<span class="s">                "presence"</span>
+<span class="s">            ],</span>
+<span class="s">            "other_option": null,</span>
+<span class="s">            "visibility": "public_visibility",</span>
+<span class="s">            "marked": false,</span>
+<span class="s">            "settings": {</span>
+<span class="s">                "layout": "block",</span>
+<span class="s">                "other_option_settings": {</span>
+<span class="s">                    "limit": {}</span>
+<span class="s">                },</span>
+<span class="s">                "length_limit": {},</span>
+<span class="s">                "limit_settings": {},</span>
+<span class="s">                "char_size_limit_settings": {}</span>
+<span class="s">            },</span>
+<span class="s">            "detail_id": null,</span>
+<span class="s">            "identity_key": "field_27",</span>
+<span class="s">            "data": {}</span>
+<span class="s">        },</span>
+<span class="s">        {</span>
+<span class="s">            "id": 28,</span>
+<span class="s">            "title": "下午完成工作",</span>
+<span class="s">            "description": "",</span>
+<span class="s">            "type": "Field::TextArea",</span>
+<span class="s">            "position": 4,</span>
+<span class="s">            "validations": [</span>
+<span class="s">                "presence"</span>
+<span class="s">            ],</span>
+<span class="s">            "other_option": null,</span>
+<span class="s">            "visibility": "public_visibility",</span>
+<span class="s">            "marked": false,</span>
+<span class="s">            "settings": {</span>
+<span class="s">                "layout": "block",</span>
+<span class="s">                "other_option_settings": {</span>
+<span class="s">                    "limit": {}</span>
+<span class="s">                },</span>
+<span class="s">                "length_limit": {},</span>
+<span class="s">                "limit_settings": {},</span>
+<span class="s">                "char_size_limit_settings": {}</span>
+<span class="s">            },</span>
+<span class="s">            "detail_id": null,</span>
+<span class="s">            "identity_key": "field_28",</span>
+<span class="s">            "data": {}</span>
+<span class="s">        }</span>
+<span class="s">    ]</span>
+<span class="s">}</span>
 </code></pre>
 <p><code>GET /api/v4/forms/:id</code></p>
 
@@ -1654,209 +1826,427 @@ Authorization: your_authorization
 <span class="na">X-SLP-Total-Pages</span><span class="p">:</span> <span class="s">3</span>
 <span class="na">X-SLP-Total-Count</span><span class="p">:</span> <span class="s">100</span>
 <span class="s">[</span>
-<span class="s">  {</span>
-<span class="s">    "id":548795,</span>
-<span class="s">    "created_at":"2018-07-02T11:15:54.546+08:00",</span>
-<span class="s">    "cached_values":{</span>
-<span class="s">      "38663":{</span>
-<span class="s">        "value":[</span>
-<span class="s">          "嘻"</span>
-<span class="s">        ],</span>
-<span class="s">        "text_value":[</span>
-<span class="s">          "嘻"</span>
-<span class="s">        ],</span>
-<span class="s">        "exported_value":[</span>
-<span class="s">          "嘻"</span>
-<span class="s">        ]</span>
-<span class="s">      },</span>
-<span class="s">      "38664":{</span>
-<span class="s">        "value":[</span>
-<span class="s">          "啦"</span>
-<span class="s">        ],</span>
-<span class="s">        "text_value":[</span>
-<span class="s">          "啦"</span>
-<span class="s">        ],</span>
-<span class="s">        "exported_value":[</span>
-<span class="s">          "啦"</span>
-<span class="s">        ]</span>
-<span class="s">      },</span>
-<span class="s">      "38665":{</span>
-<span class="s">        "value":[</span>
-<span class="s">          "哈"</span>
-<span class="s">        ],</span>
-<span class="s">        "text_value":[</span>
-<span class="s">          "哈"</span>
-<span class="s">        ],</span>
-<span class="s">        "exported_value":[</span>
-<span class="s">          "哈"</span>
-<span class="s">        ]</span>
-<span class="s">      },</span>
-<span class="s">      "38667":{</span>
-<span class="s">        "value":[</span>
-<span class="s">          313</span>
-<span class="s">        ],</span>
-<span class="s">        "text_value":[</span>
-<span class="s">          313</span>
-<span class="s">        ],</span>
-<span class="s">        "exported_value":[</span>
-<span class="s">          313</span>
-<span class="s">        ]</span>
-<span class="s">      },</span>
-<span class="s">      "38668":{</span>
-<span class="s">        "value":[</span>
-<span class="s">          "2018-08-03 11:14"</span>
-<span class="s">        ],</span>
-<span class="s">        "text_value":[</span>
-<span class="s">          "2018-08-03 11:14"</span>
-<span class="s">        ],</span>
-<span class="s">        "exported_value":[</span>
-<span class="s">          "2018-08-03 11:14"</span>
-<span class="s">        ]</span>
-<span class="s">      },</span>
-<span class="s">      "38669":{</span>
-<span class="s">        "value":[</span>
-<span class="s">          {</span>
-<span class="s">            "gid":"gid://skylark/Option/31826",</span>
-<span class="s">            "id":31826,</span>
-<span class="s">            "value":"4"</span>
-<span class="s">          }</span>
-<span class="s">        ],</span>
-<span class="s">        "text_value":[</span>
-<span class="s">          "4"</span>
-<span class="s">        ],</span>
-<span class="s">        "exported_value":[</span>
-<span class="s">          "4"</span>
-<span class="s">        ]</span>
-<span class="s">      },</span>
-<span class="s">      "38670":{</span>
-<span class="s">        "value":[</span>
-<span class="s">          {</span>
-<span class="s">            "gid":"gid://skylark/Option/31827",</span>
-<span class="s">            "id":31827,</span>
-<span class="s">            "value":"4"</span>
-<span class="s">          },</span>
-<span class="s">          {</span>
-<span class="s">            "value":"333"</span>
-<span class="s">          }</span>
-<span class="s">        ],</span>
-<span class="s">        "text_value":[</span>
-<span class="s">          "4",</span>
-<span class="s">          "333"</span>
-<span class="s">        ],</span>
-<span class="s">        "exported_value":[</span>
-<span class="s">          "4，333"</span>
-<span class="s">        ]</span>
-<span class="s">      },</span>
-<span class="s">      "38672":{</span>
-<span class="s">        "value":[</span>
-<span class="s">          {</span>
-<span class="s">            "gid":"gid://skylark/Choice/1436",</span>
-<span class="s">            "id":1436,</span>
-<span class="s">            "value":"西北大区-陕西分区-陕西"</span>
-<span class="s">          }</span>
-<span class="s">        ],</span>
-<span class="s">        "text_value":[</span>
-<span class="s">          "西北大区-陕西分区-陕西"</span>
-<span class="s">        ],</span>
-<span class="s">        "exported_value":[</span>
-<span class="s">          [</span>
-<span class="s">            "西北大区",</span>
-<span class="s">            "陕西分区",</span>
-<span class="s">            "陕西",</span>
-<span class="s">            null,</span>
-<span class="s">            null</span>
-<span class="s">          ]</span>
-<span class="s">        ]</span>
-<span class="s">      },</span>
-<span class="s">      "38673":{</span>
-<span class="s">        "value":[</span>
-<span class="s">          {</span>
-<span class="s">            "value":"西北大区（T2-05服务商）"</span>
-<span class="s">          }</span>
-<span class="s">        ],</span>
-<span class="s">        "text_value":[</span>
-<span class="s">          "西北大区（T2-05服务商）"</span>
-<span class="s">        ],</span>
-<span class="s">        "exported_value":[</span>
-<span class="s">          "西北大区（T2-05服务商）"</span>
-<span class="s">        ]</span>
-<span class="s">      },</span>
-<span class="s">      "38674":{</span>
-<span class="s">        "value":[</span>
-<span class="s">          4</span>
-<span class="s">        ],</span>
-<span class="s">        "text_value":[</span>
-<span class="s">          4</span>
-<span class="s">        ],</span>
-<span class="s">        "exported_value":[</span>
-<span class="s">          4</span>
-<span class="s">        ]</span>
-<span class="s">      },</span>
-<span class="s">      "38676":{</span>
-<span class="s">        "group_ids":[</span>
-<span class="s">          "1530501267755",</span>
-<span class="s">          "1530501349912"</span>
-<span class="s">        ],</span>
-<span class="s">        "child_ids":[</span>
-<span class="s">          38677,</span>
-<span class="s">          38678</span>
-<span class="s">        ]</span>
-<span class="s">      },</span>
-<span class="s">      "38677":{</span>
-<span class="s">        "grouped_ids":[</span>
-<span class="s">          "1530501267755",</span>
-<span class="s">          "1530501349912"</span>
-<span class="s">        ],</span>
-<span class="s">        "grouped_values":{</span>
-<span class="s">          "1530501267755":{</span>
-<span class="s">            "group_id":"1530501267755",</span>
-<span class="s">            "value":[</span>
-<span class="s">              "333"</span>
+<span class="s">    {</span>
+<span class="s">        "id": 71630,</span>
+<span class="s">        "created_at": "2020-06-18T11:31:53.996+08:00",</span>
+<span class="s">        "cached_values": {</span>
+<span class="s">            "5924": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    "test"</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "test"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "test"</span>
+<span class="s">                ]</span>
+<span class="s">            },</span>
+<span class="s">            "5925": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    "12345677654"</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "12345677654"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "12345677654"</span>
+<span class="s">                ]</span>
+<span class="s">            },</span>
+<span class="s">            "5926": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    "2020-06-18 11:28"</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "2020-06-18 11:28"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "2020-06-18 11:28"</span>
+<span class="s">                ]</span>
+<span class="s">            },</span>
+<span class="s">            "5927": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    {</span>
+<span class="s">                        "id": 6314,</span>
+<span class="s">                        "gid": "gid://skylark/Option/6314",</span>
+<span class="s">                        "value": "渠道带访"</span>
+<span class="s">                    }</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "渠道带访"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "渠道带访"</span>
+<span class="s">                ]</span>
+<span class="s">            }</span>
+<span class="s">        },</span>
+<span class="s">        "mapped_values": {</span>
+<span class="s">            "customer_name": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    "test"</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "test"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "test"</span>
+<span class="s">                ]</span>
+<span class="s">            },</span>
+<span class="s">            "customer_phone": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    "12345677654"</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "12345677654"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "12345677654"</span>
+<span class="s">                ]</span>
+<span class="s">            },</span>
+<span class="s">            "planed_visit_time": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    "2020-06-18 11:28"</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "2020-06-18 11:28"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "2020-06-18 11:28"</span>
+<span class="s">                ]</span>
+<span class="s">            },</span>
+<span class="s">            "customer_source": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    {</span>
+<span class="s">                        "id": 6314,</span>
+<span class="s">                        "gid": "gid://skylark/Option/6314",</span>
+<span class="s">                        "value": "渠道带访"</span>
+<span class="s">                    }</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "渠道带访"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "渠道带访"</span>
+<span class="s">                ]</span>
+<span class="s">            }</span>
+<span class="s">        },</span>
+<span class="s">        "user": {</span>
+<span class="s">            "id": 79,</span>
+<span class="s">            "name": "樊翔宇",</span>
+<span class="s">            "nickname": "左耳朵狗子",</span>
+<span class="s">            "sex": 1,</span>
+<span class="s">            "phone": "18828072450",</span>
+<span class="s">            "identifier": "18828072450",</span>
+<span class="s">            "openid": "oXDm5s2v7fnJ2Mut-UiiHtCEIb6Q",</span>
+<span class="s">            "created_at": "2017-02-22T13:56:54.125+08:00",</span>
+<span class="s">            "updated_at": "2020-06-29T15:50:23.090+08:00",</span>
+<span class="s">            "headimgurl": "http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKFLWWPT1sSVywib8qpNNfLjMOliblYqa105ibCOKGvzwRV0vAEAlGLcwXkiclCaBcH9leucaTib6Hp95Q/96",</span>
+<span class="s">            "tags": [],</span>
+<span class="s">            "organizations": [</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 582,</span>
+<span class="s">                    "name": "lxx",</span>
+<span class="s">                    "description": null,</span>
+<span class="s">                    "created_at": "2020-04-08T11:43:40.789+08:00"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 478,</span>
+<span class="s">                    "name": "aaaaaaaaaa",</span>
+<span class="s">                    "description": "",</span>
+<span class="s">                    "created_at": "2019-05-29T11:50:39.217+08:00"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 475,</span>
+<span class="s">                    "name": "二级组织",</span>
+<span class="s">                    "description": "",</span>
+<span class="s">                    "created_at": "2019-05-28T17:11:55.970+08:00"</span>
+<span class="s">                }</span>
 <span class="s">            ],</span>
-<span class="s">            "text_value":[</span>
-<span class="s">              "333"</span>
+<span class="s">            "profile_submission": {</span>
+<span class="s">                "entries": [</span>
+<span class="s">                    {</span>
+<span class="s">                        "id": 1091241,</span>
+<span class="s">                        "field_id": 6035,</span>
+<span class="s">                        "option_id": null,</span>
+<span class="s">                        "value": "四川省-成都市-高新区-桂溪街办",</span>
+<span class="s">                        "choice_id": 7650,</span>
+<span class="s">                        "value_id": null,</span>
+<span class="s">                        "latitude": null,</span>
+<span class="s">                        "longitude": null,</span>
+<span class="s">                        "group_id": null,</span>
+<span class="s">                        "detail_id": null</span>
+<span class="s">                    }</span>
+<span class="s">                ]</span>
+<span class="s">            }</span>
+<span class="s">        },</span>
+<span class="s">        "entries": [</span>
+<span class="s">            {</span>
+<span class="s">                "id": 1091207,</span>
+<span class="s">                "field_id": 5927,</span>
+<span class="s">                "option_id": 6314,</span>
+<span class="s">                "value": "渠道带访",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 1091206,</span>
+<span class="s">                "field_id": 5926,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "2020-06-18 11:28",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 1091205,</span>
+<span class="s">                "field_id": 5925,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "12345677654",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 1091204,</span>
+<span class="s">                "field_id": 5924,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "test",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            }</span>
+<span class="s">        ]</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">        "id": 71625,</span>
+<span class="s">        "created_at": "2020-06-17T16:38:00.775+08:00",</span>
+<span class="s">        "cached_values": {</span>
+<span class="s">            "5924": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    "zxl"</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "zxl"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "zxl"</span>
+<span class="s">                ]</span>
+<span class="s">            },</span>
+<span class="s">            "5925": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    "12345678765"</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "12345678765"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "12345678765"</span>
+<span class="s">                ]</span>
+<span class="s">            },</span>
+<span class="s">            "5926": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    "2020-06-17 16:37"</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "2020-06-17 16:37"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "2020-06-17 16:37"</span>
+<span class="s">                ]</span>
+<span class="s">            },</span>
+<span class="s">            "5927": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    {</span>
+<span class="s">                        "id": 6316,</span>
+<span class="s">                        "gid": "gid://skylark/Option/6316",</span>
+<span class="s">                        "value": "电话预约"</span>
+<span class="s">                    }</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "电话预约"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "电话预约"</span>
+<span class="s">                ]</span>
+<span class="s">            },</span>
+<span class="s">            "5928": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    "未到访"</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "未到访"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "未到访"</span>
+<span class="s">                ]</span>
+<span class="s">            }</span>
+<span class="s">        },</span>
+<span class="s">        "mapped_values": {</span>
+<span class="s">            "customer_name": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    "zxl"</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "zxl"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "zxl"</span>
+<span class="s">                ]</span>
+<span class="s">            },</span>
+<span class="s">            "customer_phone": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    "12345678765"</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "12345678765"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "12345678765"</span>
+<span class="s">                ]</span>
+<span class="s">            },</span>
+<span class="s">            "planed_visit_time": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    "2020-06-17 16:37"</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "2020-06-17 16:37"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "2020-06-17 16:37"</span>
+<span class="s">                ]</span>
+<span class="s">            },</span>
+<span class="s">            "customer_source": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    {</span>
+<span class="s">                        "id": 6316,</span>
+<span class="s">                        "gid": "gid://skylark/Option/6316",</span>
+<span class="s">                        "value": "电话预约"</span>
+<span class="s">                    }</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "电话预约"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "电话预约"</span>
+<span class="s">                ]</span>
+<span class="s">            },</span>
+<span class="s">            "arrive_visit": {</span>
+<span class="s">                "value": [</span>
+<span class="s">                    "未到访"</span>
+<span class="s">                ],</span>
+<span class="s">                "text_value": [</span>
+<span class="s">                    "未到访"</span>
+<span class="s">                ],</span>
+<span class="s">                "exported_value": [</span>
+<span class="s">                    "未到访"</span>
+<span class="s">                ]</span>
+<span class="s">            }</span>
+<span class="s">        },</span>
+<span class="s">        "user": {</span>
+<span class="s">            "id": 1536,</span>
+<span class="s">            "name": "希星李",</span>
+<span class="s">            "nickname": "希希里图",</span>
+<span class="s">            "sex": 1,</span>
+<span class="s">            "phone": "18728190482",</span>
+<span class="s">            "identifier": "18728190482",</span>
+<span class="s">            "openid": null,</span>
+<span class="s">            "created_at": "2020-04-08T11:28:36.020+08:00",</span>
+<span class="s">            "updated_at": "2020-06-29T15:50:44.783+08:00",</span>
+<span class="s">            "headimgurl": "/non-digested-assets/avatars/default_96.png",</span>
+<span class="s">            "tags": [],</span>
+<span class="s">            "organizations": [</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 582,</span>
+<span class="s">                    "name": "lxx",</span>
+<span class="s">                    "description": null,</span>
+<span class="s">                    "created_at": "2020-04-08T11:43:40.789+08:00"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 584,</span>
+<span class="s">                    "name": "xxtest",</span>
+<span class="s">                    "description": "&lt;p&gt;xxtest&lt;/p&gt;",</span>
+<span class="s">                    "created_at": "2020-04-09T16:15:38.021+08:00"</span>
+<span class="s">                }</span>
 <span class="s">            ],</span>
-<span class="s">            "exported_value":[</span>
-<span class="s">              "333"</span>
-<span class="s">            ]</span>
-<span class="s">          },</span>
-<span class="s">          "1530501349912":{</span>
-<span class="s">            "group_id":"1530501349912",</span>
-<span class="s">            "value":[</span>
-<span class="s">              "22"</span>
-<span class="s">            ],</span>
-<span class="s">            "text_value":[</span>
-<span class="s">              "22"</span>
-<span class="s">            ],</span>
-<span class="s">            "exported_value":[</span>
-<span class="s">              "22"</span>
-<span class="s">            ]</span>
-<span class="s">          }</span>
-<span class="s">        }</span>
-<span class="s">      },</span>
-<span class="s">      "38678":{</span>
-<span class="s">        "grouped_ids":[</span>
-<span class="s">          "1530501267755",</span>
-<span class="s">          "1530501349912"</span>
-<span class="s">        ],</span>
-<span class="s">        "grouped_values":{</span>
-<span class="s">          "1530501267755":{</span>
-<span class="s">            "group_id":"1530501267755",</span>
-<span class="s">            "value":[</span>
-<span class="s">              5</span>
-<span class="s">            ],</span>
-<span class="s">            "text_value":[</span>
-<span class="s">              5</span>
-<span class="s">            ],</span>
-<span class="s">            "exported_value":[</span>
-<span class="s">              5</span>
-<span class="s">            ]</span>
-<span class="s">          }</span>
-<span class="s">        }</span>
-<span class="s">      }</span>
+<span class="s">            "profile_submission": {</span>
+<span class="s">                "entries": []</span>
+<span class="s">            }</span>
+<span class="s">        },</span>
+<span class="s">        "entries": [</span>
+<span class="s">            {</span>
+<span class="s">                "id": 1091199,</span>
+<span class="s">                "field_id": 5928,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "未到访",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 1091198,</span>
+<span class="s">                "field_id": 5927,</span>
+<span class="s">                "option_id": 6316,</span>
+<span class="s">                "value": "电话预约",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 1091197,</span>
+<span class="s">                "field_id": 5926,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "2020-06-17 16:37",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 1091196,</span>
+<span class="s">                "field_id": 5925,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "12345678765",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 1091195,</span>
+<span class="s">                "field_id": 5924,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "zxl",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            }</span>
+<span class="s">        ]</span>
 <span class="s">    }</span>
-<span class="s">  },</span>
-<span class="s">  ...</span>
 <span class="s">]</span>
 
 </code></pre>
@@ -1876,6 +2266,306 @@ Authorization: your_authorization
 <td>id</td>
 <td>integer</td>
 <td>表单id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='9244b98e91'>创建表单填写记录</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v4/forms/:form_id/responses</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+body中传入:
+{
+    "response": {
+        "entries_attributes": [
+            {
+                "field_id": 5888,
+                "value": "zxl"
+            },
+            {
+                "field_id": 5890,
+                "value": "12345677654"
+            }
+        ]
+    },
+    "user_id": "690"
+}
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">OK</span>
+<span class="s">{</span>
+<span class="s">    "id": 71657,</span>
+<span class="s">    "created_at": "2020-07-06T14:30:57.219+08:00",</span>
+<span class="s">    "cached_values": {</span>
+<span class="s">        "5888": {</span>
+<span class="s">            "value": [</span>
+<span class="s">                "zxl"</span>
+<span class="s">            ],</span>
+<span class="s">            "text_value": [</span>
+<span class="s">                "zxl"</span>
+<span class="s">            ],</span>
+<span class="s">            "exported_value": [</span>
+<span class="s">                "zxl"</span>
+<span class="s">            ]</span>
+<span class="s">        },</span>
+<span class="s">        "5890": {</span>
+<span class="s">            "value": [</span>
+<span class="s">                "12345677654"</span>
+<span class="s">            ],</span>
+<span class="s">            "text_value": [</span>
+<span class="s">                "12345677654"</span>
+<span class="s">            ],</span>
+<span class="s">            "exported_value": [</span>
+<span class="s">                "12345677654"</span>
+<span class="s">            ]</span>
+<span class="s">        }</span>
+<span class="s">    },</span>
+<span class="s">    "mapped_values": {</span>
+<span class="s">        "customer_phone": {</span>
+<span class="s">            "value": [</span>
+<span class="s">                "zxl"</span>
+<span class="s">            ],</span>
+<span class="s">            "text_value": [</span>
+<span class="s">                "zxl"</span>
+<span class="s">            ],</span>
+<span class="s">            "exported_value": [</span>
+<span class="s">                "zxl"</span>
+<span class="s">            ]</span>
+<span class="s">        },</span>
+<span class="s">        "is_new": {</span>
+<span class="s">            "value": [</span>
+<span class="s">                "12345677654"</span>
+<span class="s">            ],</span>
+<span class="s">            "text_value": [</span>
+<span class="s">                "12345677654"</span>
+<span class="s">            ],</span>
+<span class="s">            "exported_value": [</span>
+<span class="s">                "12345677654"</span>
+<span class="s">            ]</span>
+<span class="s">        }</span>
+<span class="s">    },</span>
+<span class="s">    "involved_user_ids": [],</span>
+<span class="s">    "involved_organization_ids": [],</span>
+<span class="s">    "entries": [</span>
+<span class="s">        {</span>
+<span class="s">            "id": 1091336,</span>
+<span class="s">            "field_id": 5888,</span>
+<span class="s">            "option_id": null,</span>
+<span class="s">            "value": "zxl",</span>
+<span class="s">            "choice_id": null,</span>
+<span class="s">            "value_id": null,</span>
+<span class="s">            "latitude": null,</span>
+<span class="s">            "longitude": null,</span>
+<span class="s">            "group_id": null,</span>
+<span class="s">            "detail_id": null</span>
+<span class="s">        },</span>
+<span class="s">        {</span>
+<span class="s">            "id": 1091337,</span>
+<span class="s">            "field_id": 5890,</span>
+<span class="s">            "option_id": null,</span>
+<span class="s">            "value": "12345677654",</span>
+<span class="s">            "choice_id": null,</span>
+<span class="s">            "value_id": null,</span>
+<span class="s">            "latitude": null,</span>
+<span class="s">            "longitude": null,</span>
+<span class="s">            "group_id": null,</span>
+<span class="s">            "detail_id": null</span>
+<span class="s">        }</span>
+<span class="s">    ],</span>
+<span class="s">    "user": {</span>
+<span class="s">        "id": 690,</span>
+<span class="s">        "name": "zxl",</span>
+<span class="s">        "nickname": "贤独丨🤺",</span>
+<span class="s">        "sex": 1,</span>
+<span class="s">        "phone": "12345677654",</span>
+<span class="s">        "identifier": "12345677654",</span>
+<span class="s">        "openid": "oXDm5s0XDReFEqbMcAddC_CQGrNY",</span>
+<span class="s">        "created_at": "2019-12-30T11:20:05.128+08:00",</span>
+<span class="s">        "updated_at": "2020-07-06T11:07:48.147+08:00",</span>
+<span class="s">        "headimgurl": "http://thirdwx.qlogo.cn/mmopen/vi_32/KU6FI52PPicLT6iaZ88S49btibcTic2OcnSg4gObibYyxc92giafHRwjpNgaPZKRiaRGt47sdoulxO3fqzdn69EjmyTwQ/96",</span>
+<span class="s">        "tags": [],</span>
+<span class="s">        "organizations": [],</span>
+<span class="s">        "profile_submission": {</span>
+<span class="s">            "entries": []</span>
+<span class="s">        }</span>
+<span class="s">    }</span>
+<span class="s">}</span>
+</code></pre>
+<p><code>POST /api/v4/forms/:form_id/responses</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>form_id</td>
+<td>integer</td>
+<td>表单id</td>
+<td></td>
+</tr>
+<tr>
+<td>field_id</td>
+<td>integer</td>
+<td>选项id</td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>选项值</td>
+<td></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>integer</td>
+<td>用户id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='cf789bca7a'>修改表单填写记录</h2><pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">/api/v4/forms/:form_id/responses/:id</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+
+body中：
+{
+    "response": {
+        "entries_attributes": [
+            {
+                "id": 1091336,
+                "value": "zxl"
+            },
+            {
+                "id": 1091337,
+                "value": "111"
+            }
+        ]
+    }
+}
+
+
+{
+    "id": 71657,
+    "created_at": "2020-07-06T14:30:57.219+08:00",
+    "cached_values": {
+        "5888": {
+            "value": [
+                "12121"
+            ],
+            "text_value": [
+                "12121"
+            ],
+            "exported_value": [
+                "12121"
+            ]
+        },
+        "5890": {
+            "value": [
+                "124534"
+            ],
+            "text_value": [
+                "124534"
+            ],
+            "exported_value": [
+                "124534"
+            ]
+        }
+    },
+    "mapped_values": {
+        "customer_phone": {
+            "value": [
+                "12121"
+            ],
+            "text_value": [
+                "12121"
+            ],
+            "exported_value": [
+                "12121"
+            ]
+        },
+        "is_new": {
+            "value": [
+                "124534"
+            ],
+            "text_value": [
+                "124534"
+            ],
+            "exported_value": [
+                "124534"
+            ]
+        }
+    },
+    "involved_user_ids": [],
+    "involved_organization_ids": [],
+    "entries": [
+        {
+            "id": 1091336,
+            "field_id": 5888,
+            "option_id": null,
+            "value": "12121",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 1091337,
+            "field_id": 5890,
+            "option_id": null,
+            "value": "124534",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        }
+    ],
+    "user": {
+        "id": 690,
+        "name": "zxl",
+        "nickname": "贤独丨🤺",
+        "sex": 1,
+        "phone": "12345677654",
+        "identifier": "12345677654",
+        "openid": "oXDm5s0XDReFEqbMcAddC_CQGrNY",
+        "created_at": "2019-12-30T11:20:05.128+08:00",
+        "updated_at": "2020-07-06T11:07:48.147+08:00",
+        "headimgurl": "http://thirdwx.qlogo.cn/mmopen/vi_32/KU6FI52PPicLT6iaZ88S49btibcTic2OcnSg4gObibYyxc92giafHRwjpNgaPZKRiaRGt47sdoulxO3fqzdn69EjmyTwQ/96",
+        "tags": [],
+        "organizations": [],
+        "profile_submission": {
+            "entries": []
+        }
+    }
+}
+</code></pre>
+<p><code>PUT /api/v4/forms/:form_id/responses/:id</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>:form_id</td>
+<td>integer</td>
+<td>表单id</td>
+<td></td>
+</tr>
+<tr>
+<td>:id</td>
+<td>integer</td>
+<td>数据id</td>
 <td></td>
 </tr>
 </tbody></table>
