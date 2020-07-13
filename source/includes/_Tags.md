@@ -38,6 +38,32 @@ HTTP/1.1 200 OK
 | --- | --- | --- | ---- |
 | type | string | 标签类型 |
 
+## 更新成员标签
+
+```http
+POST /api/v4/users/:id/tag HTTP/1.1
+Authorization: your_authorization
+
+```
+```http
+HTTP/1.1 200 OK
+
+
+```
+
+
+`POST /api/v4/users/:id/tag`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+| id | integer | 用户id |
+| add_tag_ids | Array | 新增的标签 |
+| remove_tag_ids | Array | 删除的标签 |
+
+
+
 ## 查询成员标签下的成员
 
 ```http

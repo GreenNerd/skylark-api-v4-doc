@@ -14,6 +14,7 @@ includes:
   - Attachments
   - Categories
   - ColumnExplanation
+  - Comments
   - Flows
   - Forms
   - Organizations

@@ -303,3 +303,209 @@ Content-Type: application/json
 | identifier | string | 识别码 |
 | phone | string | 电话号码 |
 | organization_id | integer | 组织id |
+
+
+## 获取组织成员
+
+```http
+GET /api/v4/organizations/:id/members HTTP/1.1
+Authorization: your_authorization
+
+```
+
+```http
+HTTP/1.1 201 
+[	
+  {
+		"id": 527,
+		"name": "jackdfsff",
+		"nickname": null,
+		"sex": null,
+		"phone": "10086100101",
+		"identifier": "jack_123_1",
+		"openid": null,
+		"created_at": "2019-05-15T15:42:23.836+08:00",
+		"updated_at": "2019-05-15T15:42:23.836+08:00",
+		"headimgurl": "/non-digested-assets/avatars/default_96.png"
+	},
+	{
+		"id": 528,
+		"name": "jackdfsff",
+		"nickname": null,
+		"sex": null,
+		"phone": null,
+		"identifier": "jack_123_1_1",
+		"openid": null,
+		"created_at": "2019-05-15T15:42:39.467+08:00",
+		"updated_at": "2019-05-15T15:42:39.467+08:00",
+		"headimgurl": "/non-digested-assets/avatars/default_96.png"
+	}
+]
+
+```
+
+`GET /api/v4/organizations/:id/members`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+| id | integer | 组织id |
+
+
+## 多人加入组织
+
+```http
+PUT /api/v4/organizations/:organization_id/members/add HTTP/1.1
+Authorization: your_authorization
+
+{
+	"member_ids": []
+}
+```
+
+```http
+HTTP/1.1 200 OK
+
+
+```
+
+`PUT /api/v4/organizations/:organization_id/members/add`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+| organization_id | integer | 组织id |
+
+
+## 移除多个成员
+
+```http
+PUT /api/v4/organizations/:organization_id/members/remove HTTP/1.1
+Authorization: your_authorization
+
+{
+	"member_ids": []
+}
+```
+
+```http
+HTTP/1.1 200 OK
+
+```
+
+`PUT /api/v4/organizations/:organization_id/members/add`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+| organization_id | integer | 组织id |
+
+## 更新组织成员信息
+
+```http
+PUT /api/v4/organizations/:organization_id/members/:id HTTP/1.1
+Authorization: your_authorization
+```
+
+```http
+HTTP/1.1 200 OK
+
+{
+	"id": 1558,
+	"name": "zxlzxl",
+	"nickname": null,
+	"sex": null,
+	"phone": "15883535410",
+	"identifier": "zxlll",
+	"openid": null,
+	"created_at": "2020-07-13T10:04:41.836+08:00",
+	"updated_at": "2020-07-13T10:21:08.843+08:00"
+}
+```
+
+`PUT /api/v4/organizations/:organization_id/members/:id`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+| organization_id | integer | 组织id |
+| id | integer | 成员id |
+| name | string | 名字 |
+| phone | integer | 电话 |
+| identifier | string | 识别码 |
+
+## 搜索组织
+
+```http
+PUT /api/v4/organizations/query HTTP/1.1
+Authorization: your_authorization
+```
+
+```http
+HTTP/1.1 200 OK
+
+
+```
+
+`PUT /api/v4/organizations/query`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+
+
+## POST请求（作用待定）
+
+```http
+POST /api/v4/posts HTTP/1.1
+Authorization: your_authorization
+
+{
+  post:{
+    :title, :html_body, :status, :enable_appendable,:published_as_id, :namecard_id, :comment_status,:tag_ids, 
+    { tag_ids: [] }, :cloned_from_id, :author_id,:attachment_ids, { attachment_ids: [] },
+    red_packet_setting_attributes: Messageable::RedPacketable::RED_PACKET_SETTING_PARAMS,
+    user_boundary_attributes: Messageable::Overlord::USER_BOUNDARY_PARAMS,
+    push_agent_on_publish_attributes: Pushable::PUSH_AGENT_PARAMS
+    }
+}
+```
+
+```http
+HTTP/1.1 200 OK
+
+
+```
+
+`POST /api/v4/posts`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+
+## 移除未绑定成员
+
+```http
+POST /api/v4/settings/remove_suspended_members HTTP/1.1
+Authorization: your_authorization
+
+```
+
+```http
+HTTP/1.1 200 OK
+
+```
+
+`POST /api/v4/settings/remove_suspended_members`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+
