@@ -327,13 +327,19 @@
             <a href="#flows" class="toc-h1 toc-link" data-title="Flows">Flows</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#1" class="toc-h2 toc-link" data-title="新建流程（1）">新建流程（1）</a>
+                  </li>
+                  <li>
+                    <a href="#2" class="toc-h2 toc-link" data-title="新建流程确认（2）">新建流程确认（2）</a>
+                  </li>
+                  <li>
                     <a href="#155570b4f1" class="toc-h2 toc-link" data-title="创建组织流程">创建组织流程</a>
                   </li>
                   <li>
                     <a href="#abb5975e52" class="toc-h2 toc-link" data-title="获取发起的流程列表">获取发起的流程列表</a>
                   </li>
                   <li>
-                    <a href="#moment" class="toc-h2 toc-link" data-title="获取某条流程的所有Moment">获取某条流程的所有Moment</a>
+                    <a href="#moment" class="toc-h2 toc-link" data-title="获取某条流程的所有 Moment">获取某条流程的所有 Moment</a>
                   </li>
               </ul>
           </li>
@@ -345,6 +351,9 @@
                   </li>
                   <li>
                     <a href="#52dced31b8" class="toc-h2 toc-link" data-title="表单数据">表单数据</a>
+                  </li>
+                  <li>
+                    <a href="#cad1fb4d84" class="toc-h2 toc-link" data-title="单条表单数据">单条表单数据</a>
                   </li>
                   <li>
                     <a href="#9244b98e91" class="toc-h2 toc-link" data-title="创建表单填写记录">创建表单填写记录</a>
@@ -1673,7 +1682,1182 @@ Authorization: your_authorization
 <td>----</td>
 </tr>
 </tbody></table>
-<h1 id='flows'>Flows</h1><h2 id='155570b4f1'>创建组织流程</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/yaw/flows/8</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<h1 id='flows'>Flows</h1><h2 id='1'>新建流程（1）</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v4/yaw/flows/27/journeys</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">Body中传入</span>
+<span class="s">{</span>
+<span class="s">    "assignment": {</span>
+<span class="s">        "response_attributes": {</span>
+<span class="s">            "entries_attributes": [</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 545,</span>
+<span class="s">                    "value": "7-4-406"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 496,</span>
+<span class="s">                    "value": "123"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 497,</span>
+<span class="s">                    "value": "657"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 498,</span>
+<span class="s">                    "value": "7"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 499,</span>
+<span class="s">                    "value": "757"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 516,</span>
+<span class="s">                    "value": "5"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 517,</span>
+<span class="s">                    "value": "576"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 519,</span>
+<span class="s">                    "value": "57"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 521,</span>
+<span class="s">                    "value": "576"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 546,</span>
+<span class="s">                    "option_id": 913</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 525,</span>
+<span class="s">                    "value": "75"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 527,</span>
+<span class="s">                    "value": "75"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 523,</span>
+<span class="s">                    "value": "57"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 500,</span>
+<span class="s">                    "value": "57"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 501,</span>
+<span class="s">                    "option_id": 901</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 502,</span>
+<span class="s">                    "value": "757"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 503,</span>
+<span class="s">                    "value": "2020-08-27"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 504,</span>
+<span class="s">                    "value": "5765"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 505,</span>
+<span class="s">                    "value": "675"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 506,</span>
+<span class="s">                    "value": "75"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 507,</span>
+<span class="s">                    "value": "75"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 509,</span>
+<span class="s">                    "value": "675"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 510,</span>
+<span class="s">                    "value": "675"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 511,</span>
+<span class="s">                    "value": "75"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 512,</span>
+<span class="s">                    "option_id": 905</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 513,</span>
+<span class="s">                    "value": "6757"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 515,</span>
+<span class="s">                    "value": "576"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 518,</span>
+<span class="s">                    "value": "575"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 520,</span>
+<span class="s">                    "value": "2020-08-27"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 528,</span>
+<span class="s">                    "value": "657"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 526,</span>
+<span class="s">                    "value": "5675"</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "field_id": 529,</span>
+<span class="s">                    "value": "2020-08-27"</span>
+<span class="s">                }</span>
+<span class="s">            ]</span>
+<span class="s">        },</span>
+<span class="s">        "operation": "route"</span>
+<span class="s">    },</span>
+<span class="s">    "user_id": "1",</span>
+<span class="s">    "webhook": {</span>
+<span class="s">        "payload_url": "http://shandenabian.skylarkly.com/magnate/hourse/status/sign",</span>
+<span class="s">        "subscribed_events": [</span>
+<span class="s">            "JourneyStatusEvent"</span>
+<span class="s">        ]</span>
+<span class="s">    }</span>
+<span class="s">}</span>
+<span class="s">{</span>
+<span class="s">    "assignment": {</span>
+<span class="s">        "id": 693,</span>
+<span class="s">        "status": "stashed",</span>
+<span class="s">        "category": "proposed",</span>
+<span class="s">        "read": true,</span>
+<span class="s">        "current_duration_threshold": null,</span>
+<span class="s">        "created_at": "2020-09-07T09:52:41.927+08:00",</span>
+<span class="s">        "updated_at": "2020-09-07T09:52:41.959+08:00",</span>
+<span class="s">        "after_submit_action": "default",</span>
+<span class="s">        "after_submit_redirect_url": null,</span>
+<span class="s">        "gid": "gid://skylark/YetAnotherWorkflow::Assignment/693",</span>
+<span class="s">        "pretty_current_duration_threshold": null,</span>
+<span class="s">        "journey": {</span>
+<span class="s">            "id": 290,</span>
+<span class="s">            "sn": "2720200907095241000019",</span>
+<span class="s">            "status": "stashed",</span>
+<span class="s">            "current_duration_threshold": null,</span>
+<span class="s">            "created_at": "2020-09-07T09:52:41.884+08:00",</span>
+<span class="s">            "updated_at": "2020-09-07T09:52:41.884+08:00",</span>
+<span class="s">            "gid": "gid://skylark/YetAnotherWorkflow::Journey/290",</span>
+<span class="s">            "pretty_current_duration_threshold": null,</span>
+<span class="s">            "response": {</span>
+<span class="s">                "id": 4491,</span>
+<span class="s">                "created_at": "2020-09-07T09:52:41.865+08:00",</span>
+<span class="s">                "entries": []</span>
+<span class="s">            },</span>
+<span class="s">            "user": {</span>
+<span class="s">                "id": 1,</span>
+<span class="s">                "name": "水映汀洲",</span>
+<span class="s">                "nickname": "坤",</span>
+<span class="s">                "phone": "18980807092",</span>
+<span class="s">                "identifier": "123456",</span>
+<span class="s">                "qq": "",</span>
+<span class="s">                "headimgurl": "http://thirdwx.qlogo.cn/mmopen/vi_32/uJ7wdTmBn87QFExPS17iam0BxXiakvKI8rv2G49VNFGEzIC5BRGxtjvwSyExjN8ulQql4FZcY6NvVeO6xMvK3Piag",</span>
+<span class="s">                "openid": "ouvMN1kWhKQuOFQEoZcmiOXt4Yjs",</span>
+<span class="s">                "imported_alias": "水映汀洲",</span>
+<span class="s">                "gid": "gid://skylark/User/1"</span>
+<span class="s">            }</span>
+<span class="s">        },</span>
+<span class="s">        "response": {</span>
+<span class="s">            "id": 4492,</span>
+<span class="s">            "created_at": "2020-09-07T09:52:41.904+08:00",</span>
+<span class="s">            "entries": [</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62935,</span>
+<span class="s">                    "field_id": 529,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "2020-08-27",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62934,</span>
+<span class="s">                    "field_id": 526,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "5675",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62933,</span>
+<span class="s">                    "field_id": 513,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "6757",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62932,</span>
+<span class="s">                    "field_id": 512,</span>
+<span class="s">                    "option_id": 905,</span>
+<span class="s">                    "value": "护照",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62931,</span>
+<span class="s">                    "field_id": 511,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "75",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62930,</span>
+<span class="s">                    "field_id": 510,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "675",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62929,</span>
+<span class="s">                    "field_id": 509,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "675",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62928,</span>
+<span class="s">                    "field_id": 507,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "75",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62927,</span>
+<span class="s">                    "field_id": 506,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "75",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62926,</span>
+<span class="s">                    "field_id": 505,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "675",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62925,</span>
+<span class="s">                    "field_id": 504,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "5765",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62924,</span>
+<span class="s">                    "field_id": 503,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "2020-08-27",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62923,</span>
+<span class="s">                    "field_id": 502,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "757",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62922,</span>
+<span class="s">                    "field_id": 501,</span>
+<span class="s">                    "option_id": 901,</span>
+<span class="s">                    "value": "护照",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62921,</span>
+<span class="s">                    "field_id": 500,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "57",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62920,</span>
+<span class="s">                    "field_id": 523,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "57",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62919,</span>
+<span class="s">                    "field_id": 527,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "75",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62918,</span>
+<span class="s">                    "field_id": 525,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "75",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62917,</span>
+<span class="s">                    "field_id": 546,</span>
+<span class="s">                    "option_id": 913,</span>
+<span class="s">                    "value": "分期",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62916,</span>
+<span class="s">                    "field_id": 521,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "576",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62915,</span>
+<span class="s">                    "field_id": 519,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "57",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62914,</span>
+<span class="s">                    "field_id": 517,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "576",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62913,</span>
+<span class="s">                    "field_id": 516,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "5",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62912,</span>
+<span class="s">                    "field_id": 499,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "757",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62911,</span>
+<span class="s">                    "field_id": 498,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "7",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62910,</span>
+<span class="s">                    "field_id": 497,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "657",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62909,</span>
+<span class="s">                    "field_id": 496,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "123",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                },</span>
+<span class="s">                {</span>
+<span class="s">                    "id": 62908,</span>
+<span class="s">                    "field_id": 545,</span>
+<span class="s">                    "option_id": null,</span>
+<span class="s">                    "value": "7-4-406",</span>
+<span class="s">                    "choice_id": null,</span>
+<span class="s">                    "value_id": null,</span>
+<span class="s">                    "latitude": null,</span>
+<span class="s">                    "longitude": null,</span>
+<span class="s">                    "group_id": null,</span>
+<span class="s">                    "detail_id": null</span>
+<span class="s">                }</span>
+<span class="s">            ]</span>
+<span class="s">        }</span>
+<span class="s">    },</span>
+<span class="s">    "next_vertices": [</span>
+<span class="s">        {</span>
+<span class="s">            "id": 82,</span>
+<span class="s">            "name": "工作人员",</span>
+<span class="s">            "type": "YetAnotherWorkflow::Vertex::Normal",</span>
+<span class="s">            "metadata": {</span>
+<span class="s">                "position": {</span>
+<span class="s">                    "x": 395,</span>
+<span class="s">                    "y": 224.71875</span>
+<span class="s">                }</span>
+<span class="s">            },</span>
+<span class="s">            "operations": {</span>
+<span class="s">                "route": {</span>
+<span class="s">                    "name": "选路",</span>
+<span class="s">                    "enabled": true</span>
+<span class="s">                },</span>
+<span class="s">                "refuse": {</span>
+<span class="s">                    "name": "回退",</span>
+<span class="s">                    "enabled": true</span>
+<span class="s">                },</span>
+<span class="s">                "approve": {</span>
+<span class="s">                    "name": "通过",</span>
+<span class="s">                    "enabled": true</span>
+<span class="s">                },</span>
+<span class="s">                "comment": {</span>
+<span class="s">                    "name": "处理意见",</span>
+<span class="s">                    "enabled": true</span>
+<span class="s">                },</span>
+<span class="s">                "transfer": {</span>
+<span class="s">                    "name": "转交",</span>
+<span class="s">                    "enabled": true</span>
+<span class="s">                },</span>
+<span class="s">                "esignature": {</span>
+<span class="s">                    "name": "电子签字",</span>
+<span class="s">                    "enabled": false</span>
+<span class="s">                }</span>
+<span class="s">            },</span>
+<span class="s">            "settings": {</span>
+<span class="s">                "carbon_copy": {</span>
+<span class="s">                    "enable_manual": false</span>
+<span class="s">                },</span>
+<span class="s">                "refuse_mode": 1,</span>
+<span class="s">                "assign_manually": false,</span>
+<span class="s">                "duration_threshold": {</span>
+<span class="s">                    "value": null,</span>
+<span class="s">                    "enable_delay": false,</span>
+<span class="s">                    "business_time": {</span>
+<span class="s">                        "final": "17:00",</span>
+<span class="s">                        "initial": "09:00",</span>
+<span class="s">                        "workday": true</span>
+<span class="s">                    },</span>
+<span class="s">                    "enable_manual": false,</span>
+<span class="s">                    "enable_business_time": false</span>
+<span class="s">                },</span>
+<span class="s">                "distributed_equally": false</span>
+<span class="s">            },</span>
+<span class="s">            "graph_id": 28,</span>
+<span class="s">            "created_at": "2020-08-14T15:49:39.367+08:00",</span>
+<span class="s">            "updated_at": "2020-08-27T14:31:43.061+08:00",</span>
+<span class="s">            "gid": "gid://skylark/YetAnotherWorkflow::Vertex::Normal/82",</span>
+<span class="s">            "fields": []</span>
+<span class="s">        }</span>
+<span class="s">    ],</span>
+<span class="s">    "next_graphs": [</span>
+<span class="s">        {</span>
+<span class="s">            "id": 28,</span>
+<span class="s">            "name": "主流程",</span>
+<span class="s">            "ancestry": null,</span>
+<span class="s">            "settings": {</span>
+<span class="s">                "visibility": "public",</span>
+<span class="s">                "duration_threshold": {</span>
+<span class="s">                    "value": null,</span>
+<span class="s">                    "enable_delay": false,</span>
+<span class="s">                    "business_time": {</span>
+<span class="s">                        "final": "17:00",</span>
+<span class="s">                        "initial": "09:00",</span>
+<span class="s">                        "workday": true</span>
+<span class="s">                    },</span>
+<span class="s">                    "enable_manual": false,</span>
+<span class="s">                    "enable_business_time": false</span>
+<span class="s">                }</span>
+<span class="s">            },</span>
+<span class="s">            "metadata": {},</span>
+<span class="s">            "created_at": "2020-08-14T15:42:29.868+08:00",</span>
+<span class="s">            "updated_at": "2020-08-14T15:42:29.940+08:00",</span>
+<span class="s">            "gid": "gid://skylark/YetAnotherWorkflow::Graph/28"</span>
+<span class="s">        }</span>
+<span class="s">    ]</span>
+<span class="s">}</span>
+</code></pre>
+<p><code>POST /api/v4/yaw/flows/27/journeys</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>流程 id</td>
+<td></td>
+</tr>
+<tr>
+<td>entries_attributes</td>
+<td>array</td>
+<td>每一项的值组成的数组</td>
+<td>格式固定</td>
+</tr>
+<tr>
+<td>field_id</td>
+<td>integer</td>
+<td>每一项值的 ID</td>
+<td>--</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>每一项的值</td>
+<td>--</td>
+</tr>
+<tr>
+<td>operation</td>
+<td>string</td>
+<td>流程发起的状态</td>
+<td>固定值为：route</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>integer</td>
+<td>用户 id</td>
+<td>--</td>
+</tr>
+<tr>
+<td>webhook</td>
+<td>object</td>
+<td>监听流程状态</td>
+<td>--</td>
+</tr>
+<tr>
+<td>payload_url</td>
+<td>strings</td>
+<td>流程通过的回调地址</td>
+<td>--</td>
+</tr>
+<tr>
+<td>subscribed_events</td>
+<td>strings</td>
+<td>固定值</td>
+<td>JourneyStatusEvent</td>
+</tr>
+</tbody></table>
+<h2 id='2'>新建流程确认（2）</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v4/yaw/flows/27/journeys</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">Body中传入</span>
+<span class="s">{</span>
+<span class="s">    "assignment": {</span>
+<span class="s">        "response_attributes": {</span>
+<span class="s">            "entries_attributes": []</span>
+<span class="s">        },</span>
+<span class="s">        "operation": "propose",</span>
+<span class="s">        "next_vertex_id": 82</span>
+<span class="s">    },</span>
+<span class="s">    "user_id": "1",</span>
+<span class="s">    "webhook": {</span>
+<span class="s">        "payload_url": "http://shandenabian.skylarkly.com/magnate/hourse/status/sign",</span>
+<span class="s">        "subscribed_events": [</span>
+<span class="s">            "JourneyStatusEvent"</span>
+<span class="s">        ]</span>
+<span class="s">    }</span>
+<span class="s">}</span>
+<span class="s">{</span>
+<span class="s">    "id": 693,</span>
+<span class="s">    "status": "processing",</span>
+<span class="s">    "category": "proposed",</span>
+<span class="s">    "read": true,</span>
+<span class="s">    "current_duration_threshold": null,</span>
+<span class="s">    "created_at": "2020-09-07T09:53:06.796+08:00",</span>
+<span class="s">    "updated_at": "2020-09-07T09:53:06.833+08:00",</span>
+<span class="s">    "after_submit_action": "default",</span>
+<span class="s">    "after_submit_redirect_url": null,</span>
+<span class="s">    "gid": "gid://skylark/YetAnotherWorkflow::Assignment/693",</span>
+<span class="s">    "pretty_current_duration_threshold": null,</span>
+<span class="s">    "journey": {</span>
+<span class="s">        "id": 290,</span>
+<span class="s">        "sn": "2720200907095241000019",</span>
+<span class="s">        "status": "processing",</span>
+<span class="s">        "current_duration_threshold": null,</span>
+<span class="s">        "created_at": "2020-09-07T09:53:06.796+08:00",</span>
+<span class="s">        "updated_at": "2020-09-07T09:53:06.796+08:00",</span>
+<span class="s">        "gid": "gid://skylark/YetAnotherWorkflow::Journey/290",</span>
+<span class="s">        "pretty_current_duration_threshold": null,</span>
+<span class="s">        "response": {</span>
+<span class="s">            "id": 4491,</span>
+<span class="s">            "created_at": "2020-09-07T09:52:41.865+08:00",</span>
+<span class="s">            "entries": []</span>
+<span class="s">        },</span>
+<span class="s">        "user": {</span>
+<span class="s">            "id": 1,</span>
+<span class="s">            "name": "水映汀洲",</span>
+<span class="s">            "nickname": "坤",</span>
+<span class="s">            "phone": "18980807092",</span>
+<span class="s">            "identifier": "123456",</span>
+<span class="s">            "qq": "",</span>
+<span class="s">            "headimgurl": "http://thirdwx.qlogo.cn/mmopen/vi_32/uJ7wdTmBn87QFExPS17iam0BxXiakvKI8rv2G49VNFGEzIC5BRGxtjvwSyExjN8ulQql4FZcY6NvVeO6xMvK3Piag",</span>
+<span class="s">            "openid": "ouvMN1kWhKQuOFQEoZcmiOXt4Yjs",</span>
+<span class="s">            "imported_alias": "水映汀洲",</span>
+<span class="s">            "gid": "gid://skylark/User/1"</span>
+<span class="s">        }</span>
+<span class="s">    },</span>
+<span class="s">    "response": {</span>
+<span class="s">        "id": 4492,</span>
+<span class="s">        "created_at": "2020-09-07T09:52:41.904+08:00",</span>
+<span class="s">        "entries": [</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62935,</span>
+<span class="s">                "field_id": 529,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "2020-08-27",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62934,</span>
+<span class="s">                "field_id": 526,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "5675",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62933,</span>
+<span class="s">                "field_id": 513,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "6757",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62932,</span>
+<span class="s">                "field_id": 512,</span>
+<span class="s">                "option_id": 905,</span>
+<span class="s">                "value": "护照",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62931,</span>
+<span class="s">                "field_id": 511,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "75",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62930,</span>
+<span class="s">                "field_id": 510,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "675",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62929,</span>
+<span class="s">                "field_id": 509,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "675",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62928,</span>
+<span class="s">                "field_id": 507,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "75",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62927,</span>
+<span class="s">                "field_id": 506,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "75",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62926,</span>
+<span class="s">                "field_id": 505,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "675",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62925,</span>
+<span class="s">                "field_id": 504,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "5765",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62924,</span>
+<span class="s">                "field_id": 503,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "2020-08-27",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62923,</span>
+<span class="s">                "field_id": 502,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "757",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62922,</span>
+<span class="s">                "field_id": 501,</span>
+<span class="s">                "option_id": 901,</span>
+<span class="s">                "value": "护照",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62921,</span>
+<span class="s">                "field_id": 500,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "57",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62920,</span>
+<span class="s">                "field_id": 523,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "57",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62919,</span>
+<span class="s">                "field_id": 527,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "75",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62918,</span>
+<span class="s">                "field_id": 525,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "75",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62917,</span>
+<span class="s">                "field_id": 546,</span>
+<span class="s">                "option_id": 913,</span>
+<span class="s">                "value": "分期",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62916,</span>
+<span class="s">                "field_id": 521,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "576",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62915,</span>
+<span class="s">                "field_id": 519,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "57",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62914,</span>
+<span class="s">                "field_id": 517,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "576",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62913,</span>
+<span class="s">                "field_id": 516,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "5",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62912,</span>
+<span class="s">                "field_id": 499,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "757",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62911,</span>
+<span class="s">                "field_id": 498,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "7",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62910,</span>
+<span class="s">                "field_id": 497,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "657",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62909,</span>
+<span class="s">                "field_id": 496,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "123",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            },</span>
+<span class="s">            {</span>
+<span class="s">                "id": 62908,</span>
+<span class="s">                "field_id": 545,</span>
+<span class="s">                "option_id": null,</span>
+<span class="s">                "value": "7-4-406",</span>
+<span class="s">                "choice_id": null,</span>
+<span class="s">                "value_id": null,</span>
+<span class="s">                "latitude": null,</span>
+<span class="s">                "longitude": null,</span>
+<span class="s">                "group_id": null,</span>
+<span class="s">                "detail_id": null</span>
+<span class="s">            }</span>
+<span class="s">        ]</span>
+<span class="s">    }</span>
+<span class="s">}</span>
+</code></pre>
+<p><code>POST /api/v4/yaw/flows/:id/journeys</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>流程 id</td>
+<td></td>
+</tr>
+<tr>
+<td>entries_attributes</td>
+<td>array</td>
+<td>每一项的值组成的数组</td>
+<td>空数组</td>
+</tr>
+<tr>
+<td>operation</td>
+<td>string</td>
+<td>流程发起的状态</td>
+<td>固定值为：propose</td>
+</tr>
+<tr>
+<td>next_vertex_id</td>
+<td>integer</td>
+<td>下一个节点 ID</td>
+<td>上一个接口返回</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>integer</td>
+<td>用户 id</td>
+<td>--</td>
+</tr>
+<tr>
+<td>webhook</td>
+<td>object</td>
+<td>监听流程状态</td>
+<td>--</td>
+</tr>
+<tr>
+<td>payload_url</td>
+<td>strings</td>
+<td>流程通过的回调地址</td>
+<td>--</td>
+</tr>
+<tr>
+<td>subscribed_events</td>
+<td>strings</td>
+<td>固定值</td>
+<td>JourneyStatusEvent</td>
+</tr>
+</tbody></table>
+
+<!-- ## 获取单条流程数据
+
+```http
+GET /api/v4/yaw/flows/#{flow_id}/journeys/#{id} HTTP/1.1
+Authorization: your_authorization
+
+```
+
+```http
+HTTP/1.1 200 OK
+
+```
+
+`GET /v4/responses/:dataID`
+
+**Parameters**
+
+| Name | Type    | Description | Comments |
+| ---- | ------- | ----------- | -------- |
+| id   | integer | 数据 id     | -->
+<h2 id='155570b4f1'>创建组织流程</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/yaw/flows/8</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
 
 </code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
@@ -1769,7 +2953,7 @@ Authorization: your_authorization
 <tr>
 <td>id</td>
 <td>integer</td>
-<td>流程id</td>
+<td>流程 id</td>
 <td></td>
 </tr>
 </tbody></table>
@@ -1833,11 +3017,11 @@ Authorization: your_authorization
 <tr>
 <td>id</td>
 <td>integer</td>
-<td>流程id</td>
+<td>流程 id</td>
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='moment'>获取某条流程的所有Moment</h2><pre class="highlight http tab-http"><code><span class="err">GET /api/v4/yaw/journeys/392/moments
+<h2 id='moment'>获取某条流程的所有 Moment</h2><pre class="highlight http tab-http"><code><span class="err">GET /api/v4/yaw/journeys/392/moments
 Authorization: your_authorization
 
 </span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
@@ -1887,7 +3071,7 @@ Authorization: your_authorization
 <tr>
 <td>id</td>
 <td>integer</td>
-<td>流程id</td>
+<td>流程 id</td>
 <td></td>
 </tr>
 </tbody></table>
@@ -1994,7 +3178,7 @@ Authorization: your_authorization
 <tr>
 <td>id</td>
 <td>integer</td>
-<td>表单id</td>
+<td>表单 id</td>
 <td></td>
 </tr>
 </tbody></table>
@@ -2445,7 +3629,960 @@ Authorization: your_authorization
 <tr>
 <td>id</td>
 <td>integer</td>
-<td>表单id</td>
+<td>表单 id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='cad1fb4d84'>单条表单数据</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/responses/1385?form=13</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+
+{
+    "id": 1385,
+    "created_at": "2020-08-04T11:23:00.571+08:00",
+    "cached_values": {
+        "2": {
+            "value": [
+                "15884559372"
+            ],
+            "text_value": [
+                "15884559372"
+            ],
+            "exported_value": [
+                "15884559372"
+            ]
+        },
+        "4": {
+            "value": [
+                "杨女士"
+            ],
+            "text_value": [
+                "杨女士"
+            ],
+            "exported_value": [
+                "杨女士"
+            ]
+        },
+        "5": {
+            "value": [
+                "12121212112"
+            ],
+            "text_value": [
+                "12121212112"
+            ],
+            "exported_value": [
+                "12121212112"
+            ]
+        },
+        "6": {
+            "value": [
+                {
+                    "id": 4,
+                    "gid": "gid://skylark/Option/4",
+                    "value": "女"
+                }
+            ],
+            "text_value": [
+                "女"
+            ],
+            "exported_value": [
+                "女"
+            ]
+        },
+        "7": {
+            "value": [
+                {
+                    "id": 534,
+                    "gid": "gid://skylark/Option/534",
+                    "value": "小黄车"
+                }
+            ],
+            "text_value": [
+                "小黄车"
+            ],
+            "exported_value": [
+                "小黄车"
+            ]
+        },
+        "8": {
+            "value": [
+                {
+                    "id": 13,
+                    "gid": "gid://skylark/Option/13",
+                    "value": "家庭自住"
+                }
+            ],
+            "text_value": [
+                "家庭自住"
+            ],
+            "exported_value": [
+                "家庭自住"
+            ]
+        },
+        "29": {
+            "value": [
+                {
+                    "id": 62,
+                    "gid": "gid://skylark/Option/62",
+                    "value": "D无意向"
+                }
+            ],
+            "text_value": [
+                "D无意向"
+            ],
+            "exported_value": [
+                "D无意向"
+            ]
+        },
+        "71": {
+            "value": [
+                "一个人到访，说的是给娃娃看房，娃娃在成都工作，然后在外面看了下环境就想走，进来给她讲户型也不是很感兴趣，然后就要慌到走。"
+            ],
+            "text_value": [
+                "一个人到访，说的是给娃娃看房，娃娃在成都工作，然后在外面看了下环境就想走，进来给她讲户型也不是很感兴趣，然后就要慌到走。"
+            ],
+            "exported_value": [
+                "一个人到访，说的是给娃娃看房，娃娃在成都工作，然后在外面看了下环境就想走，进来给她讲户型也不是很感兴趣，然后就要慌到走。"
+            ]
+        },
+        "72": {
+            "value": [
+                {
+                    "id": 120,
+                    "gid": "gid://skylark/Option/120",
+                    "value": "51-60岁"
+                }
+            ],
+            "text_value": [
+                "51-60岁"
+            ],
+            "exported_value": [
+                "51-60岁"
+            ]
+        },
+        "75": {
+            "value": [
+                {
+                    "id": 543,
+                    "gid": "gid://skylark/Option/543",
+                    "value": "总价61-70万"
+                }
+            ],
+            "text_value": [
+                "总价61-70万"
+            ],
+            "exported_value": [
+                "总价61-70万"
+            ]
+        },
+        "76": {
+            "value": [
+                {
+                    "id": 126,
+                    "gid": "gid://skylark/Option/126",
+                    "value": "按揭"
+                }
+            ],
+            "text_value": [
+                "按揭"
+            ],
+            "exported_value": [
+                "按揭"
+            ]
+        },
+        "77": {
+            "value": [
+                {
+                    "id": 128,
+                    "gid": "gid://skylark/Option/128",
+                    "value": "有"
+                }
+            ],
+            "text_value": [
+                "有"
+            ],
+            "exported_value": [
+                "有"
+            ]
+        },
+        "85": {
+            "value": [
+                "张朦檬"
+            ],
+            "text_value": [
+                "张朦檬"
+            ],
+            "exported_value": [
+                "张朦檬"
+            ]
+        },
+        "152": {
+            "value": [
+                {
+                    "id": 2483,
+                    "gid": "gid://skylark/Choice/2483",
+                    "value": "四川省-成都市-邛崃市"
+                }
+            ],
+            "text_value": [
+                "四川省-成都市-邛崃市"
+            ],
+            "exported_value": [
+                [
+                    "四川省",
+                    "成都市",
+                    "邛崃市"
+                ]
+            ]
+        },
+        "163": {
+            "value": [
+                {
+                    "id": 484,
+                    "gid": "gid://skylark/Option/484",
+                    "value": "到访客户"
+                }
+            ],
+            "text_value": [
+                "到访客户"
+            ],
+            "exported_value": [
+                "到访客户"
+            ]
+        },
+        "321": {
+            "value": [
+                {
+                    "id": 547,
+                    "gid": "gid://skylark/Option/547",
+                    "value": "平乐"
+                }
+            ],
+            "text_value": [
+                "平乐"
+            ],
+            "exported_value": [
+                "平乐"
+            ]
+        },
+        "322": {
+            "value": [
+                {
+                    "id": 554,
+                    "gid": "gid://skylark/Option/554",
+                    "value": "区域"
+                },
+                {
+                    "id": 555,
+                    "gid": "gid://skylark/Option/555",
+                    "value": "地段"
+                },
+                {
+                    "id": 556,
+                    "gid": "gid://skylark/Option/556",
+                    "value": "户型"
+                },
+                {
+                    "id": 557,
+                    "gid": "gid://skylark/Option/557",
+                    "value": "装修"
+                },
+                {
+                    "id": 558,
+                    "gid": "gid://skylark/Option/558",
+                    "value": "价格"
+                }
+            ],
+            "text_value": [
+                "区域",
+                "地段",
+                "户型",
+                "装修",
+                "价格"
+            ],
+            "exported_value": [
+                "区域，地段，户型，装修，价格"
+            ]
+        },
+        "323": {
+            "value": [
+                {
+                    "id": 563,
+                    "gid": "gid://skylark/Option/563",
+                    "value": "住宅1F"
+                },
+                {
+                    "id": 564,
+                    "gid": "gid://skylark/Option/564",
+                    "value": "住宅2F"
+                }
+            ],
+            "text_value": [
+                "住宅1F",
+                "住宅2F"
+            ],
+            "exported_value": [
+                "住宅1F，住宅2F"
+            ]
+        },
+        "423": {
+            "value": [
+                {
+                    "id": 762,
+                    "gid": "gid://skylark/Option/762",
+                    "value": "否"
+                }
+            ],
+            "text_value": [
+                "否"
+            ],
+            "exported_value": [
+                "否"
+            ]
+        }
+    },
+    "mapped_values": {
+        "payment_method": {
+            "value": [
+                {
+                    "id": 126,
+                    "gid": "gid://skylark/Option/126",
+                    "value": "按揭"
+                }
+            ],
+            "text_value": [
+                "按揭"
+            ],
+            "exported_value": [
+                "按揭"
+            ]
+        },
+        "saler_phone": {
+            "value": [
+                "12334566543"
+            ],
+            "text_value": [
+                "12334566543"
+            ],
+            "exported_value": [
+                "12334566543"
+            ]
+        },
+        "customer_gender": {
+            "value": [
+                {
+                    "id": 4,
+                    "gid": "gid://skylark/Option/4",
+                    "value": "女"
+                }
+            ],
+            "text_value": [
+                "女"
+            ],
+            "exported_value": [
+                "女"
+            ]
+        },
+        "customer_phone": {
+            "value": [
+                "12121212112"
+            ],
+            "text_value": [
+                "12121212112"
+            ],
+            "exported_value": [
+                "12121212112"
+            ]
+        },
+        "customer_name": {
+            "value": [
+                "杨女士"
+            ],
+            "text_value": [
+                "杨女士"
+            ],
+            "exported_value": [
+                "杨女士"
+            ]
+        },
+        "motivation": {
+            "value": [
+                {
+                    "id": 13,
+                    "gid": "gid://skylark/Option/13",
+                    "value": "家庭自住"
+                }
+            ],
+            "text_value": [
+                "家庭自住"
+            ],
+            "exported_value": [
+                "家庭自住"
+            ]
+        },
+        "channel": {
+            "value": [
+                {
+                    "id": 534,
+                    "gid": "gid://skylark/Option/534",
+                    "value": "小黄车"
+                }
+            ],
+            "text_value": [
+                "小黄车"
+            ],
+            "exported_value": [
+                "小黄车"
+            ]
+        },
+        "working_area": {
+            "value": [
+                {
+                    "id": 2483,
+                    "gid": "gid://skylark/Choice/2483",
+                    "value": "四川省-成都市-邛崃市"
+                }
+            ],
+            "text_value": [
+                "四川省-成都市-邛崃市"
+            ],
+            "exported_value": [
+                [
+                    "四川省",
+                    "成都市",
+                    "邛崃市"
+                ]
+            ]
+        },
+        "age": {
+            "value": [
+                {
+                    "id": 120,
+                    "gid": "gid://skylark/Option/120",
+                    "value": "51-60岁"
+                }
+            ],
+            "text_value": [
+                "51-60岁"
+            ],
+            "exported_value": [
+                "51-60岁"
+            ]
+        },
+        "saler": {
+            "value": [
+                "张朦檬"
+            ],
+            "text_value": [
+                "张朦檬"
+            ],
+            "exported_value": [
+                "张朦檬"
+            ]
+        },
+        "intention": {
+            "value": [
+                {
+                    "id": 62,
+                    "gid": "gid://skylark/Option/62",
+                    "value": "D无意向"
+                }
+            ],
+            "text_value": [
+                "D无意向"
+            ],
+            "exported_value": [
+                "D无意向"
+            ]
+        },
+        "living_area2": {
+            "value": [
+                {
+                    "id": 547,
+                    "gid": "gid://skylark/Option/547",
+                    "value": "平乐"
+                }
+            ],
+            "text_value": [
+                "平乐"
+            ],
+            "exported_value": [
+                "平乐"
+            ]
+        },
+        "entitlement": {
+            "value": [
+                {
+                    "id": 128,
+                    "gid": "gid://skylark/Option/128",
+                    "value": "有"
+                }
+            ],
+            "text_value": [
+                "有"
+            ],
+            "exported_value": [
+                "有"
+            ]
+        },
+        "remark": {
+            "value": [
+                "一个人到访，说的是给娃娃看房，娃娃在成都工作，然后在外面看了下环境就想走，进来给她讲户型也不是很感兴趣，然后就要慌到走。"
+            ],
+            "text_value": [
+                "一个人到访，说的是给娃娃看房，娃娃在成都工作，然后在外面看了下环境就想走，进来给她讲户型也不是很感兴趣，然后就要慌到走。"
+            ],
+            "exported_value": [
+                "一个人到访，说的是给娃娃看房，娃娃在成都工作，然后在外面看了下环境就想走，进来给她讲户型也不是很感兴趣，然后就要慌到走。"
+            ]
+        },
+        "source": {
+            "value": [
+                {
+                    "id": 484,
+                    "gid": "gid://skylark/Option/484",
+                    "value": "到访客户"
+                }
+            ],
+            "text_value": [
+                "到访客户"
+            ],
+            "exported_value": [
+                "到访客户"
+            ]
+        },
+        "customer_resistance": {
+            "value": [
+                {
+                    "id": 554,
+                    "gid": "gid://skylark/Option/554",
+                    "value": "区域"
+                },
+                {
+                    "id": 555,
+                    "gid": "gid://skylark/Option/555",
+                    "value": "地段"
+                },
+                {
+                    "id": 556,
+                    "gid": "gid://skylark/Option/556",
+                    "value": "户型"
+                },
+                {
+                    "id": 557,
+                    "gid": "gid://skylark/Option/557",
+                    "value": "装修"
+                },
+                {
+                    "id": 558,
+                    "gid": "gid://skylark/Option/558",
+                    "value": "价格"
+                }
+            ],
+            "text_value": [
+                "区域",
+                "地段",
+                "户型",
+                "装修",
+                "价格"
+            ],
+            "exported_value": [
+                "区域，地段，户型，装修，价格"
+            ]
+        },
+        "preferred_apartment": {
+            "value": [
+                {
+                    "id": 563,
+                    "gid": "gid://skylark/Option/563",
+                    "value": "住宅1F"
+                },
+                {
+                    "id": 564,
+                    "gid": "gid://skylark/Option/564",
+                    "value": "住宅2F"
+                }
+            ],
+            "text_value": [
+                "住宅1F",
+                "住宅2F"
+            ],
+            "exported_value": [
+                "住宅1F，住宅2F"
+            ]
+        },
+        "price_range": {
+            "value": [
+                {
+                    "id": 543,
+                    "gid": "gid://skylark/Option/543",
+                    "value": "总价61-70万"
+                }
+            ],
+            "text_value": [
+                "总价61-70万"
+            ],
+            "exported_value": [
+                "总价61-70万"
+            ]
+        },
+        "line_card": {
+            "value": [
+                {
+                    "id": 762,
+                    "gid": "gid://skylark/Option/762",
+                    "value": "否"
+                }
+            ],
+            "text_value": [
+                "否"
+            ],
+            "exported_value": [
+                "否"
+            ]
+        }
+    },
+    "involved_user_ids": [],
+    "involved_organization_ids": [],
+    "entries": [
+        {
+            "id": 10584,
+            "field_id": 423,
+            "option_id": 762,
+            "value": "否",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10583,
+            "field_id": 163,
+            "option_id": 484,
+            "value": "到访客户",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10180,
+            "field_id": 2,
+            "option_id": null,
+            "value": "15884559372",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10179,
+            "field_id": 85,
+            "option_id": null,
+            "value": "张朦檬",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10178,
+            "field_id": 321,
+            "option_id": 547,
+            "value": "平乐",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10177,
+            "field_id": 152,
+            "option_id": null,
+            "value": "四川省-成都市-邛崃市",
+            "choice_id": 2483,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10176,
+            "field_id": 322,
+            "option_id": 558,
+            "value": "价格",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10175,
+            "field_id": 322,
+            "option_id": 557,
+            "value": "装修",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10174,
+            "field_id": 322,
+            "option_id": 555,
+            "value": "地段",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10173,
+            "field_id": 322,
+            "option_id": 556,
+            "value": "户型",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10172,
+            "field_id": 322,
+            "option_id": 554,
+            "value": "区域",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10171,
+            "field_id": 76,
+            "option_id": 126,
+            "value": "按揭",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10170,
+            "field_id": 75,
+            "option_id": 543,
+            "value": "总价61-70万",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10169,
+            "field_id": 323,
+            "option_id": 563,
+            "value": "住宅1F",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10168,
+            "field_id": 323,
+            "option_id": 564,
+            "value": "住宅2F",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10167,
+            "field_id": 8,
+            "option_id": 13,
+            "value": "家庭自住",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10166,
+            "field_id": 7,
+            "option_id": 534,
+            "value": "小黄车",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10165,
+            "field_id": 29,
+            "option_id": 62,
+            "value": "D无意向",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10164,
+            "field_id": 77,
+            "option_id": 128,
+            "value": "有",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10163,
+            "field_id": 72,
+            "option_id": 120,
+            "value": "51-60岁",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10162,
+            "field_id": 71,
+            "option_id": null,
+            "value": "一个人到访，说的是给娃娃看房，娃娃在成都工作，然后在外面看了下环境就想走，进来给她讲户型也不是很感兴趣，然后就要慌到走。",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10161,
+            "field_id": 6,
+            "option_id": 4,
+            "value": "女",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10160,
+            "field_id": 5,
+            "option_id": null,
+            "value": "12121212112",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        },
+        {
+            "id": 10159,
+            "field_id": 4,
+            "option_id": null,
+            "value": "杨女士",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+        }
+    ],
+    "user": {
+        "id": 75,
+        "name": "张朦檬",
+        "nickname": "Smile",
+        "sex": 2,
+        "phone": "15884559372",
+        "identifier": "15884559372",
+        "openid": "ouvMN1qTZ_ucaufm5HFI26w_Q43A",
+        "created_at": "2020-07-03T10:17:37.855+08:00",
+        "updated_at": "2020-07-03T11:13:04.931+08:00",
+        "headimgurl": "http://thirdwx.qlogo.cn/mmopen/vi_32/AAlQYG92O3xBbrZniaa6uv6ex5wTeUyllIKYu7zWwrqrCvoL9jCuic21P7sGR52r1WjgsCxMic5kSzwiahz5JClxbQ/96",
+        "tags": [
+            {
+                "id": 2,
+                "name": "magnate_saler"
+            },
+            {
+                "id": 1,
+                "name": "magnate_admin"
+            }
+        ],
+        "organizations": [
+            {
+                "id": 8,
+                "name": "销售",
+                "description": "",
+                "created_at": "2020-07-03T10:17:02.093+08:00"
+            }
+        ]
+    }
+}
+
+</code></pre>
+<p><code>GET /api/v4/responses/:dataID</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>dataID</td>
+<td>integer</td>
+<td>数据 id</td>
 <td></td>
 </tr>
 </tbody></table>
@@ -2582,13 +4719,13 @@ body中传入:
 <tr>
 <td>form_id</td>
 <td>integer</td>
-<td>表单id</td>
+<td>表单 id</td>
 <td></td>
 </tr>
 <tr>
 <td>field_id</td>
 <td>integer</td>
-<td>选项id</td>
+<td>选项 id</td>
 <td></td>
 </tr>
 <tr>
@@ -2600,7 +4737,7 @@ body中传入:
 <tr>
 <td>user_id</td>
 <td>integer</td>
-<td>用户id</td>
+<td>用户 id</td>
 <td></td>
 </tr>
 </tbody></table>
@@ -2739,19 +4876,19 @@ body中：
 <tr>
 <td>:form_id</td>
 <td>integer</td>
-<td>表单id</td>
+<td>表单 id</td>
 <td></td>
 </tr>
 <tr>
 <td>:id</td>
 <td>integer</td>
-<td>修改用数据id</td>
+<td>修改用数据 id</td>
 <td></td>
 </tr>
 <tr>
 <td>:field_id</td>
 <td>integer</td>
-<td>如果没有值则则用field_id</td>
+<td>如果没有值则则用 field_id</td>
 <td></td>
 </tr>
 </tbody></table>
