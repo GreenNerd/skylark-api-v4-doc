@@ -333,6 +333,9 @@
                     <a href="#2" class="toc-h2 toc-link" data-title="新建流程确认（2）">新建流程确认（2）</a>
                   </li>
                   <li>
+                    <a href="#b9e4c28fb2" class="toc-h2 toc-link" data-title="获取单条流程数据（待开发）">获取单条流程数据（待开发）</a>
+                  </li>
+                  <li>
                     <a href="#700a332c2d" class="toc-h2 toc-link" data-title="获取组织流程">获取组织流程</a>
                   </li>
                   <li>
@@ -2096,9 +2099,7 @@ Authorization: your_authorization
 <td>JourneyStatusEvent</td>
 </tr>
 </tbody></table>
-
-<p>&lt;!-- ## 获取单条流程数据</p>
-<pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/yaw/flows/#{flow_id}/journeys/#{id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<h2 id='b9e4c28fb2'>获取单条流程数据（待开发）</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/yaw/flows/#{flow_id}/journeys/#{id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
 
 </code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
@@ -2120,7 +2121,7 @@ Authorization: your_authorization
 <td>id</td>
 <td>integer</td>
 <td>数据 id</td>
-<td>--&gt;</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='700a332c2d'>获取组织流程</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/yaw/flows/8</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
