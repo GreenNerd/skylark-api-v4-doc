@@ -328,7 +328,7 @@ Body中传入
 | payload_url        | strings | 流程通过的回调地址   | --                 |
 | subscribed_events  | strings | 固定值               | JourneyStatusEvent |
 
-<!-- ## 获取单条流程数据
+## 获取单条流程数据（待开发）
 
 ```http
 GET /api/v4/yaw/flows/#{flow_id}/journeys/#{id} HTTP/1.1
@@ -347,7 +347,8 @@ HTTP/1.1 200 OK
 
 | Name | Type    | Description | Comments |
 | ---- | ------- | ----------- | -------- |
-| id   | integer | 数据 id     | -->      |
+| id   | integer | 数据 id     |          |
+
 
 ## 获取组织流程
 
