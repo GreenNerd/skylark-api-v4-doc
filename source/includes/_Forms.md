@@ -941,3 +941,5 @@ HTTP/1.1 200 OK
 | Name | Type | Description | Comments |
 | --- | --- | --- | ---- |
 | id | integer | 记录 id |
+
+## 搜索表单记录
