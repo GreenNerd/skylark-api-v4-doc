@@ -148,36 +148,86 @@ Authorization: your_authorization
 HTTP/1.1 200 OK
 {
   "id": 1,
-  "name": "第一个管理员",
-  "nickname": "",
-  "phone": "1111111111",
-  "identifier": "1111111111",
-  "qq": "123",
-  "headimgurl": "/non-digested-assets/avatars/default.png",
-  "openid": "123",
-  "imported_alias": "第一个管理员",
-  "from_wechat": false,
-  "tags": [{
-    "id": 1,
-    "name": "b1",
-    "full_name": "bq-b1",
-    "color": "#e91e63",
-    "tag_group_id": 1,
-    "taggings_count": 9
-  }, {
-    "id": 3,
-    "name": "a1",
-    "full_name": "a1",
-    "color": "#ff5722",
-    "tag_group_id": 1,
-    "taggings_count": 4
-  }, {
-    "id": 8,
-    "name": "a2",
-    "full_name": "a2",
-    "color": "#673ab7",
-    "tag_group_id": 1,
-    "taggings_count": 1
+  "name": "高新服务小助手",
+  "nickname": "坤",
+  "sex": 0,
+  "phone": "18980807092",
+  "identifier": "18980807092",
+  "openid": "oyyT9s3lmVAnPV9CwYHL2zFLMf4E",
+  "created_at": "2020-07-13T16:27:44.749+08:00",
+  "updated_at": "2022-05-22T21:10:16.405+08:00",
+  "headimgurl": "http://thirdwx.qlogo.cn/mmopen/vi_32/Ok2zIF8CS9AP28EWv75Ox9uVahUVtWN21ic3IxMILCpudNUl59Gcia94WtqU8aLz4t5PIpT9F84sYIMBr5oGDLGw/96",
+  "tags": [
+    {
+      "id": 18,
+      "name": "可视化"
+    }
+  ],
+  "organizations": [
+    {
+      "id": 1,
+      "name": "政务服务处",
+      "description": "<p>您可以根据需要更改名字及描述，或者删除组织</p>",
+      "created_at": "2020-07-13T16:27:44.800+08:00"
+    },
+    {
+      "id": 3,
+      "name": "社区治理",
+      "description": "",
+      "created_at": "2020-09-04T15:36:32.953+08:00"
+    },
+    {
+      "id": 5,
+      "name": "街办数据统计",
+      "description": "",
+      "created_at": "2020-09-17T17:37:25.962+08:00"
+    },
+    {
+      "id": 18,
+      "name": "授权记录",
+      "description": null,
+      "created_at": "2021-04-22T14:00:22.511+08:00"
+    }
+  ],
+  "profile_submission": {
+    "entries": [
+      {
+        "id": 401385,
+        "field_id": 9632,
+        "option_id": null,
+        "value": "81",
+        "choice_id": null,
+        "value_id": null,
+        "latitude": null,
+        "longitude": null,
+        "group_id": null,
+        "detail_id": null
+      },
+      {
+        "id": 55527,
+        "field_id": 9633,
+        "option_id": null,
+        "value": "81",
+        "choice_id": null,
+        "value_id": null,
+        "latitude": null,
+        "longitude": null,
+        "group_id": null,
+        "detail_id": null
+      },
+      {
+        "id": 1,
+        "field_id": 64,
+        "option_id": null,
+        "value": "四川省-成都市-高新区-中和街办",
+        "choice_id": 6,
+        "value_id": null,
+        "latitude": null,
+        "longitude": null,
+        "group_id": null,
+        "detail_id": null
+      }
+    ]
   }
 }
 ```
