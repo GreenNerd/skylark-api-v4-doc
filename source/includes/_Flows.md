@@ -450,7 +450,9 @@ HTTP/1.1 200 OK
 | operation | string | 寻路固定为 route |
 | 其他参数参考表单提交填写记录 | | |
 
-## 发起流程任务（发起）
+* 发起流程的完整请求都是固定为先寻路（route），后发起（propose）
+
+## 发起流程任务（propose）
 
 ```http
 POST /api/v4/yaw/flows/:id/journeys HTTP/1.1
@@ -578,7 +580,9 @@ HTTP/1.1 200 OK
 | operation | string | 发起固定为 propose |
 | next_vertex_id | integer | 需要到达的下一个流程节点，从 [发起流程任务（寻路）] 的返回结果获取 |
 
-## 发起流程任务（发起）
+* 发起流程的完整请求都是固定为先寻路（route），后发起（propose）
+
+## 查询流程
 
 ```http
 GET /api/v4/yaw/flows/:id/journey_ids HTTP/1.1
