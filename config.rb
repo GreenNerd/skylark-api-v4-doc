@@ -28,6 +28,24 @@ end
 
 activate :sprockets
 
+# middleman-sprockets 4.1 snapshots Sprockets extensions before it registers
+# SassC, then looks up `screen.css.scss` instead of `screen.css`. Sprockets 4
+# only compiles when the requested path is the output type, so the raw SCSS
+# reaches CSS minification and @import cannot be resolved.
+after_configuration do
+  extensions[:sprockets].interface.send(:setup!)
+end
+
+unless Middleman::Sprockets::Extension.private_method_defined?(:source_file_relative_to_root_without_engine)
+  Middleman::Sprockets::Extension.class_eval do
+    alias_method :source_file_relative_to_root_without_engine, :source_file_relative_to_root
+
+    def source_file_relative_to_root(resource)
+      source_file_relative_to_root_without_engine(resource).sub(/\.(scss|sass|coffee)\z/, '')
+    end
+  end
+end
+
 activate :autoprefixer do |config|
   config.browsers = ['last 2 version', 'Firefox ESR']
   config.cascade  = false
