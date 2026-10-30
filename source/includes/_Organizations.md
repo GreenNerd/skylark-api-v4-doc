@@ -1,203 +1,18 @@
 # Organizations
 
+读取、更新、删除组织，以及 `GET /organizations/:id/members`，scope 是 `organization_user`。
+
+`POST /organizations`、嵌套的成员接口、管理员接口，scope 是 `manage_organization`。
+
+组织对象见 [Column Explanation](#column-explanation)。更新同时接受 `PUT` 和 `PATCH`。
+
 ## 所有组织
 
-```http
-GET /api/v4/organizations HTTP/1.1
-Authorization: your_authorization
-
-```
+分页。包含 `ancestor_names` 和资料条目。
 
 ```http
-HTTP/1.1 200 OK
-X-SLP-Current-Page: 1
-X-SLP-Total-Pages: 1
-X-SLP-Total-Count: 4
-[
-  {
-    "id": 1,
-    "name": "开发部",
-    "description": "<p>您可以根据需要更改名字及描述，或者删除组织</p>",
-    "description_text": "您可以根据需要更改名字及描述，或者删除组织",
-    "created_at": "2016-08-26T18:08:22.624+08:00",
-    "updated_at": "2019-07-25T11:00:59.249+08:00",
-    "children_count": 4,
-    "parent_id": null,
-    "ancestry": null,
-    "application_strategy": "closed",
-    "profile_submission": {
-      "entries": [
-          {
-            "id": 513216,
-            "field_id": 4394,
-            "option_id": null,
-            "value": "2019-07-25",
-            "choice_id": null,
-            "value_id": null,
-            "latitude": null,
-            "longitude": null,
-            "group_id": null,
-            "detail_id": null
-          },
-          {
-            "id": 513215,
-            "field_id": 4393,
-            "option_id": 2948,
-            "value": "B",
-            "choice_id": null,
-            "value_id": null,
-            "latitude": null,
-            "longitude": null,
-            "group_id": null,
-            "detail_id": null
-          },
-          {
-            "id": 513214,
-            "field_id": 4393,
-            "option_id": 2947,
-            "value": "A",
-            "choice_id": null,
-            "value_id": null,
-            "latitude": null,
-            "longitude": null,
-            "group_id": null,
-            "detail_id": null
-          },
-          {
-            "id": 513213,
-            "field_id": 4380,
-            "option_id": 2933,
-            "value": "A",
-            "choice_id": null,
-            "value_id": null,
-            "latitude": null,
-            "longitude": null,
-            "group_id": null,
-            "detail_id": null
-          },
-          {
-            "id": 513212,
-            "field_id": 4379,
-            "option_id": null,
-            "value": "123",
-            "choice_id": null,
-            "value_id": null,
-            "latitude": null,
-            "longitude": null,
-            "group_id": null,
-            "detail_id": null
-          }
-        ],
-        "cached_values": {
-            "4379": {
-                "value": [
-                    "123"
-                ],
-                "text_value": [
-                    "123"
-                ],
-                "exported_value": [
-                    "123"
-                ]
-            },
-            "4380": {
-                "value": [
-                    {
-                        "id": 2933,
-                        "gid": "gid://skylark/Option/2933",
-                        "value": "A"
-                    }
-                ],
-                "text_value": [
-                    "A"
-                ],
-                "exported_value": [
-                    "A"
-                ]
-            },
-            "4393": {
-                "value": [
-                    {
-                        "id": 2947,
-                        "gid": "gid://skylark/Option/2947",
-                        "value": "A"
-                    },
-                    {
-                        "id": 2948,
-                        "gid": "gid://skylark/Option/2948",
-                        "value": "B"
-                    }
-                ],
-                "text_value": [
-                    "A",
-                    "B"
-                ],
-                "exported_value": [
-                    "A，B"
-                ]
-            },
-            "4394": {
-                "value": [
-                    "2019-07-25"
-                ],
-                "text_value": [
-                    "2019-07-25"
-                ],
-                "exported_value": [
-                    "2019-07-25"
-                ]
-            }
-        }
-    }
-},
-  {
-    "id": 15113,
-    "name": "组织_a",
-    "description": "",
-    "description_text": "",
-    "created_at": "2018-08-14T10:00:29.691+08:00",
-    "updated_at": "2018-08-14T10:00:40.625+08:00",
-    "children_count": 1,
-    "parent_id": 14516,
-    "ancestry": "14516"
-  },
-  {
-    "id": 15114,
-    "name": "组织_a_a",
-    "description": "",
-    "description_text": "",
-    "created_at": "2018-08-14T10:00:40.624+08:00",
-    "updated_at": "2018-08-14T10:00:40.624+08:00",
-    "children_count": 0,
-    "parent_id": 15113,
-    "ancestry": "14516/15113"
-  },
-  {
-    "id": 15115,
-    "name": "组织_b",
-    "description": "",
-    "description_text": "",
-    "created_at": "2018-08-14T10:00:49.660+08:00",
-    "updated_at": "2018-08-14T10:00:49.660+08:00",
-    "children_count": 0,
-    "parent_id": 14516,
-    "ancestry": "14516"
-  }
-]
-
-```
-
-`GET /api/v4/organizations`
-
-**Parameters**
-
-*   None
-
-## 顶级组织
-
-```http
-GET /api/v4/organizations/roots HTTP/1.1
-Authorization: your_authorization
+GET /api/v4/organizations?page=1&per_page=24 HTTP/1.1
+Authorization: example-appid:<encoded_data>
 
 ```
 
@@ -209,592 +24,578 @@ X-SLP-Total-Count: 1
 
 [
   {
-    "id": 14516,
-    "name": "第一个组织",
-    "description": "您可以根据需要更改名字及描述，或者删除组织",
-    "description_text": "您可以根据需要更改名字及描述，或者删除组织",
-    "created_at": "2017-12-25T16:06:13.111+08:00",
-    "updated_at": "2018-08-14T10:00:49.663+08:00",
-    "children_count": 2,
+    "id": 1,
+    "name": "示例组织",
+    "description": null,
+    "description_text": null,
+    "created_at": "2026-01-01T00:00:00.000+08:00",
+    "updated_at": "2026-01-01T00:00:00.000+08:00",
+    "children_count": 0,
     "parent_id": null,
-    "ancestry": null
+    "ancestry": null,
+    "ancestor_names": [],
+    "application_strategy": "must_approved"
   }
 ]
+```
+
+`GET /api/v4/organizations`
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| page | integer | 否 | 页码 |
+| per_page | integer | 否 | 每页条数 |
+
+## 组织详情
+
+在组织字段之外还有四个统计字段。
+
+```http
+GET /api/v4/organizations/1 HTTP/1.1
+Authorization: example-appid:<encoded_data>
+
+```
+
+```http
+HTTP/1.1 200 OK
+
+{
+  "id": 1,
+  "name": "示例组织",
+  "description": null,
+  "description_text": null,
+  "created_at": "2026-01-01T00:00:00.000+08:00",
+  "updated_at": "2026-01-01T00:00:00.000+08:00",
+  "children_count": 0,
+  "parent_id": null,
+  "ancestry": null,
+  "ancestor_names": [],
+  "application_strategy": "must_approved",
+  "apply_link": "https://beta.skylarkly.com/namespaces/1/organizations/1",
+  "members_count": 1,
+  "binded_members_count": 0,
+  "pending_organization_applications_count": 0
+}
+```
+
+`GET /api/v4/organizations/:id`
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| id | integer | 是 | 组织 id |
+
+## 顶级组织
+
+响应与组织列表相同。
+
+```http
+GET /api/v4/organizations/roots HTTP/1.1
+Authorization: example-appid:<encoded_data>
 
 ```
 
 `GET /api/v4/organizations/roots`
 
-**Parameters**
+## 按名称查询
 
-*   None
+`name` 默认按 PostgreSQL 正则匹配（`name ~ :name`）。代码用 `params.fetch(:regexp_match, true)` 判断。查询字符串里的 `regexp_match=false` 是字符串，在 Ruby 里仍为真，正则不会关闭。
 
-## 子代组织
+分页之后又调用了 `reorder`，但没有写回变量，所以响应顺序不一定按名称。
 
 ```http
-GET /api/v4/organizations/15113/children HTTP/1.1
-Authorization: your_authorization
+GET /api/v4/organizations/query?name=示例&page=1 HTTP/1.1
+Authorization: example-appid:<encoded_data>
 
 ```
 
+`GET /api/v4/organizations/query`
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| name | string | 是 | 组织名称或正则 |
+| regexp_match | boolean | 否 | 默认开启正则。GET 查询字符串无法把它关掉 |
+| page | integer | 否 | 页码 |
+| per_page | integer | 否 | 每页条数 |
+
+## 子代组织
+
+直接子组织，响应与组织列表相同。路径参数是 `:id`。
+
 ```http
-HTTP/1.1 200 OK
-X-SLP-Current-Page: 1
-X-SLP-Total-Pages: 1
-X-SLP-Total-Count: 2
-[
-  {
-    "id": 15113,
-    "name": "组织_a",
-    "description": "",
-    "description_text": "",
-    "created_at": "2018-08-14T10:00:29.691+08:00",
-    "updated_at": "2018-08-14T10:00:40.625+08:00",
-    "children_count": 1,
-    "parent_id": 14516,
-    "ancestry": "14516"
-  },
-  {
-    "id": 15115,
-    "name": "组织_b",
-    "description": "",
-    "description_text": "",
-    "created_at": "2018-08-14T10:00:49.660+08:00",
-    "updated_at": "2018-08-14T10:00:49.660+08:00",
-    "children_count": 0,
-    "parent_id": 14516,
-    "ancestry": "14516"
-  }
-]
+GET /api/v4/organizations/1/children HTTP/1.1
+Authorization: example-appid:<encoded_data>
 
 ```
 
 `GET /api/v4/organizations/:id/children`
 
-**Parameters**
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| id | integer | 是 | 组织 id |
 
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| id | integer | 父级组织id |
+## 全部后代
+
+分页，含下级的下级。
+
+```http
+GET /api/v4/organizations/1/descendants?page=1 HTTP/1.1
+Authorization: example-appid:<encoded_data>
+
+```
+
+`GET /api/v4/organizations/:id/descendants`
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| id | integer | 是 | 组织 id |
+| page | integer | 否 | 页码 |
+| per_page | integer | 否 | 每页条数 |
+
+## 创始人
+
+返回完整 v4 用户对象。
+
+```http
+GET /api/v4/organizations/1/founder HTTP/1.1
+Authorization: example-appid:<encoded_data>
+
+```
+
+`GET /api/v4/organizations/:id/founder`
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| id | integer | 是 | 组织 id |
 
 ## 组织成员
 
+路径参数是 `:id`，不是 `:organization_id`。分页。成员没有 `headimgurl`，有 `tag_ids` 和 `tags`（`id`、`name`、`full_name`）。`with_descendants` 有值时包含下级组织的成员。
+
 ```http
-GET /api/v4/organizations/:organization_id/members HTTP/1.1
-Authorization: your_authorization
+GET /api/v4/organizations/1/members?with_descendants=1 HTTP/1.1
+Authorization: example-appid:<encoded_data>
 
 ```
 
 ```http
 HTTP/1.1 200 OK
-X-SLP-Current-Page: 1
-X-SLP-Total-Pages: 1
-X-SLP-Total-Count: 3
+
 [
   {
-    "id": 127059,
-    "name": "user_a",
-    "nickname": null,
+    "id": 1,
+    "name": "示例用户",
+    "nickname": "示例",
     "sex": null,
-    "phone": null,
-    "identifier": "user_a",
-    "openid": null,
-    "created_at": "2018-08-14T10:10:19.434+08:00",
-    "updated_at": "2018-08-14T10:10:19.434+08:00",
-    "headimgurl": "/non-digested-assets/avatars/default_96.png"
-  },
-  {
-    "id": 127060,
-    "name": "user_b",
-    "nickname": null,
-    "sex": null,
-    "phone": null,
-    "identifier": "user_b",
-    "openid": null,
-    "created_at": "2018-08-14T10:10:24.671+08:00",
-    "updated_at": "2018-08-14T10:10:24.671+08:00",
-    "headimgurl": "/non-digested-assets/avatars/default_96.png"
-  },
-  {
-    "id": 127061,
-    "name": "user_c",
-    "nickname": null,
-    "sex": null,
-    "phone": null,
-    "identifier": "user_c",
-    "openid": null,
-    "created_at": "2018-08-14T10:10:29.831+08:00",
-    "updated_at": "2018-08-14T10:10:29.831+08:00",
-    "headimgurl": "/non-digested-assets/avatars/default_96.png"
+    "phone": "13800138000",
+    "identifier": "13800138000",
+    "openid": "oEXAMPLE",
+    "created_at": "2026-01-01T00:00:00.000+08:00",
+    "updated_at": "2026-01-01T00:00:00.000+08:00",
+    "tag_ids": [1],
+    "tags": [{ "id": 1, "name": "成员", "full_name": "成员" }]
   }
 ]
-
 ```
 
 `GET /api/v4/organizations/:id/members`
 
-**Parameters**
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| id | integer | 是 | 组织 id |
+| with_descendants | string | 否 | 有值时包含下级成员 |
+| page | integer | 否 | 页码 |
+| per_page | integer | 否 | 每页条数 |
 
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| organization_id | integer | 组织id |
-| with_descendants | string | Optional 传任意值，代表包含子孙后代组织的成员 |
+## 按标签筛选成员
+
+`tag_id` 必填。范围是该组织子树。分页。返回完整 v4 用户。
+
+```http
+GET /api/v4/organizations/1/taggable_members?tag_id=1&page=1 HTTP/1.1
+Authorization: example-appid:<encoded_data>
+
+```
+
+`GET /api/v4/organizations/:id/taggable_members`
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| id | integer | 是 | 组织 id |
+| tag_id | integer | 是 | 标签 |
+| page | integer | 否 | 页码 |
+| per_page | integer | 否 | 每页条数 |
 
 ## 创建组织
 
+scope 为 `manage_organization`。`founder_id` 必须是当前空间的用户，`parent_id` 若出现必须是当前空间的组织，否则 422，`errors` 为字符串数组。成功 201，正文是组织对象。父级字段名是 `parent_id`。
+
 ```http
-POST /api/v4/organizations/ HTTP/1.1
-Authorization: your_authorization
+POST /api/v4/organizations HTTP/1.1
+Authorization: example-appid:<encoded_data>
 Content-Type: application/json
+
 {
-  "name": "name",
-  "description": "description",
+  "parent_id": null,
+  "name": "示例组织",
+  "description": "说明",
   "application_strategy": "must_approved",
-  "founder_id": 3,
-  "patent_id": 13
+  "founder_id": 1,
+  "profile_submission_attributes": {
+    "entries_attributes": [
+      {
+        "value": "示例",
+        "field_id": 1,
+        "option_id": null,
+        "choice_id": null,
+        "value_id": null,
+        "longitude": null,
+        "latitude": null,
+        "_destroy": false,
+        "group_id": null
+      }
+    ]
+  }
 }
-
 ```
 
-```http
-HTTP/1.1 201 Created
-Content-Type: application/json
-{
-  "id": 25,
-  "name": "name",
-  "description": "description",
-  "description_text": "description",
-  "created_at": "2018-12-06T10:35:35.203+08:00",
-  "updated_at": "2018-12-06T10:35:35.203+08:00",
-  "children_count": 0,
-  "parent_id": "13",
-  "ancestry": "abc",
-  "application_strategy": "must_approved"
-}
+`POST /api/v4/organizations`
 
-```
-
-`POST /api/v4/organizations/`
-
-**Parameters**
-
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| name | string | 名字 |
-| description | string | 描述 |
-| application_strategy | string | 审核状态 | [:must_approved, :auto_approved, :closed] |
-| founder_id | integer | 创建者id |
-| patent_id | integer | 父级组织id | 创建顶级组织时不需要 |
-
-## 创建组织成员
-
-```http
-POST /api/v4/organizations/20/members HTTP/1.1
-Authorization: your_authorization
-Content-Type: application/json
-
-{
-  "name": "jack",
-  "identifier": "jack_123",
-  "phone": "10086100101"
-}
-
-```
-
-```http
-HTTP/1.1 201 Created
-Content-Type: application/json
-{
-  "id": 20,
-  "name": "jack",
-  "nickname": null,
-  "sex": null,
-  "phone": "10086100101",
-  "identifier": "jack_123",
-  "openid": null,
-  "created_at": "2018-12-06T10:54:34.901+08:00",
-  "updated_at": "2018-12-06T10:54:34.901+08:00"
-}
-
-```
-
-`POST /api/v4/organizations/:organization_id/members`
-
-**Parameters**
-
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| name | string | 名字 |
-| identifier | string | 识别码 |
-| phone | string | 电话号码 |
-| organization_id | integer | 组织id |
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| parent_id | integer | 否 | 上级组织 |
+| name | string | 是 | 名称 |
+| description | string | 否 | 说明 |
+| application_strategy | string | 否 | `must_approved`、`auto_approved`、`closed` |
+| founder_id | integer | 是 | 创始人用户 id |
+| profile_submission_attributes | object | 否 | 含 `entries_attributes` |
 
 ## 修改组织信息
 
+`parent_id` 和 `founder_id` 会被丢掉，不能用这个接口改上级或创始人。成功 200，正文是组织对象。
+
 ```http
-PUT /api/v4/organizations/21 HTTP/1.1
-Authorization: your_authorization
+PUT /api/v4/organizations/1 HTTP/1.1
+Authorization: example-appid:<encoded_data>
 Content-Type: application/json
 
 {
-  "name": "修改组织名字",
-  "description": "修改组织描述",
-  "application_strategy": "must_approved"
+  "name": "示例组织",
+  "description": "说明",
+  "application_strategy": "auto_approved"
 }
-
 ```
 
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-{
-    "id": 21,
-    "name": "修改组织名字",
-    "description": "修改组织描述",
-    "description_text": "修改组织描述",
-    "created_at": "2018-12-05T10:19:41.202+08:00",
-    "updated_at": "2018-12-13T09:29:52.080+08:00",
-    "children_count": 1,
-    "parent_id": null,
-    "ancestry": null,
-    "application_strategy": "must_approved"
-}
+`PUT /api/v4/organizations/:id`
 
-```
+`PATCH /api/v4/organizations/:id`
 
-`PUS /api/v4/organizations/:id`
-
-**Parameters**
-
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| id | integer | 组织id |
-| name | string | 名字 |
-| description | string | 描述 |
-| application_strategy | string | 审核状态 | [:must_approved, :auto_approved, :closed] |
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| id | integer | 是 | 组织 id |
+| name | string | 否 | 名称 |
+| description | string | 否 | 说明 |
+| application_strategy | string | 否 | `must_approved`、`auto_approved`、`closed` |
 
 ## 删除组织
 
 ```http
-DELETE /api/v4/organizations/21 HTTP/1.1
-Authorization: your_authorization
-Content-Type: application/json
+DELETE /api/v4/organizations/1 HTTP/1.1
+Authorization: example-appid:<encoded_data>
 
 ```
 
 ```http
 HTTP/1.1 204 No Content
-
 ```
 
 `DELETE /api/v4/organizations/:id`
 
-**Parameters**
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| id | integer | 是 | 组织 id |
 
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| id | integer | 组织id |
+# Members
+
+以下接口的路径参数是 `:organization_id`，scope 为 `manage_organization`。
+
+## 创建组织成员
+
+在当前空间新建用户并加入该组织。成功 201，正文是成员用户（含 `tag_ids`）。
+
+```http
+POST /api/v4/organizations/1/members HTTP/1.1
+Authorization: example-appid:<encoded_data>
+Content-Type: application/json
+
+{
+  "name": "示例用户",
+  "identifier": "13800138000",
+  "phone": "13800138000",
+  "tag_ids": [1]
+}
+```
+
+`POST /api/v4/organizations/:organization_id/members`
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| organization_id | integer | 是 | 组织 id |
+| name | string | 否 | 姓名 |
+| identifier | string | 否 | 识别码 |
+| phone | string | 否 | 手机号 |
+| tag_ids | integer[] | 否 | 用户标签 |
 
 ## 修改组织成员信息
 
+`:id` 是成员用户 id。可写字段与创建相同。
+
 ```http
-PUT /api/v4/organizations/23/members/20 HTTP/1.1
-Authorization: your_authorization
+PUT /api/v4/organizations/1/members/1 HTTP/1.1
+Authorization: example-appid:<encoded_data>
 Content-Type: application/json
 
 {
-  "name": "jack",
-  "identifier": "jack_123",
-  "phone": "10086100101"
+  "name": "示例用户",
+  "identifier": "13800138000",
+  "phone": "13800138000",
+  "tag_ids": [1]
 }
-
-```
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-{
-    "id": 20,
-    "name": "jack",
-    "nickname": "jack",
-    "sex": null,
-    "phone": "10086100101",
-    "identifier": "jack_123",
-    "openid": null,
-    "created_at": "2018-12-06T10:54:34.901+08:00",
-    "updated_at": "2018-12-13T10:08:35.305+08:00"
-}
-
 ```
 
 `PUT /api/v4/organizations/:organization_id/members/:id`
 
-**Parameters**
+`PATCH /api/v4/organizations/:organization_id/members/:id`
 
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| id | integer | 组织id |
-| organization_id | integer | 组织id |
-| name | string | 名字 |
-| identifier | string | 识别码 |
-| phone | string | 电话号码 |
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| organization_id | integer | 是 | 组织 id |
+| id | integer | 是 | 成员用户 id |
+| name | string | 否 | 姓名 |
+| identifier | string | 否 | 识别码 |
+| phone | string | 否 | 手机号 |
+| tag_ids | integer[] | 否 | 用户标签 |
+
+## 搜索组织成员
+
+按姓名或手机号。分页。响应与成员列表相同。
+
+```http
+GET /api/v4/organizations/1/members/query?keyword=示例&page=1 HTTP/1.1
+Authorization: example-appid:<encoded_data>
+
+```
+
+`GET /api/v4/organizations/:organization_id/members/query`
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| organization_id | integer | 是 | 组织 id |
+| keyword | string | 否 | 姓名或手机号 |
+| page | integer | 否 | 页码 |
+| per_page | integer | 否 | 每页条数 |
 
 ## 增加组织人员
 
+把已有用户加入组织。响应是对象，不是裸数组。
+
 ```http
-PUT /api/v4/organizations/23/members/add HTTP/1.1
-Authorization: your_authorization
+PUT /api/v4/organizations/1/members/add HTTP/1.1
+Authorization: example-appid:<encoded_data>
 Content-Type: application/json
 
 {
-  "member_ids": [19]
+  "member_ids": [1]
 }
-
 ```
 
 ```http
 HTTP/1.1 200 OK
-Content-Type: application/json
-[19]
 
+{
+  "member_ids": [1]
+}
 ```
 
 `PUT /api/v4/organizations/:organization_id/members/add`
 
-**Parameters**
-
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| organization_id | integer | 组织id |
-| member_ids | array | 成员id |
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| organization_id | integer | 是 | 组织 id |
+| member_ids | integer[] | 否 | 要加入的用户 id |
 
 ## 移除组织成员
 
 ```http
-PUT /api/v4/organizations/23/members/remove HTTP/1.1
-Authorization: your_authorization
+PUT /api/v4/organizations/1/members/remove HTTP/1.1
+Authorization: example-appid:<encoded_data>
 Content-Type: application/json
 
 {
-  "member_ids": [19]
+  "member_ids": [1]
 }
+```
+
+```http
+HTTP/1.1 200 OK
+
+{
+  "member_ids": [1]
+}
+```
+
+`PUT /api/v4/organizations/:organization_id/members/remove`
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| organization_id | integer | 是 | 组织 id |
+| member_ids | integer[] | 否 | 要移除的用户 id |
+
+# Administrators
+
+scope 为 `manage_organization`。用户对象是后台用户模板，见 Column Explanation。没有 `custom_values`。
+
+## 查询当前组织管理员
+
+```http
+GET /api/v4/organizations/1/administrators HTTP/1.1
+Authorization: example-appid:<encoded_data>
 
 ```
 
 ```http
 HTTP/1.1 200 OK
-Content-Type: application/json
-[19]
 
+[
+  {
+    "id": 1,
+    "user": {
+      "id": 1,
+      "name": "示例用户",
+      "nickname": "示例",
+      "phone": "13800138000",
+      "identifier": "13800138000",
+      "qq": null,
+      "headimgurl": "https://example.com/avatar.png",
+      "openid": "oEXAMPLE",
+      "imported_alias": null,
+      "from_wechat": false,
+      "tags": [
+        {
+          "id": 1,
+          "name": "成员",
+          "full_name": "成员",
+          "color": null,
+          "tag_group_id": 1,
+          "taggings_count": 1
+        }
+      ]
+    },
+    "access": {
+      "id": 1,
+      "name": "管理员",
+      "actions": [1],
+      "founded": false
+    },
+    "organization": {
+      "id": 1,
+      "name": "示例组织",
+      "description": null,
+      "created_at": "2026-01-01T00:00:00.000+08:00"
+    }
+  }
+]
 ```
 
-`PUT /api/v4/organizations/:organization_id/members/remove`
+`GET /api/v4/organizations/:organization_id/administrators`
 
-**Parameters**
-
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| organization_id | integer | 组织id |
-| member_ids | array | 成员id |
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| organization_id | integer | 是 | 组织 id |
 
 ## 增加组织管理员
 
+成功 201，正文与列表中的单条相同。
+
 ```http
-POST /api/v4/organizations/23/administrators HTTP/1.1
-Authorization: your_authorization
+POST /api/v4/organizations/1/administrators HTTP/1.1
+Authorization: example-appid:<encoded_data>
 Content-Type: application/json
 
 {
-  "user_id": 19
+  "user_id": 1,
   "access_id": 1
 }
-
-```
-
-```http
-HTTP/1.1 201 Created
-Content-Type: application/json
-{
-    "id": 33,
-    "user": {
-        "id": 19,
-        "name": "123",
-        "nickname": null,
-        "phone": "19929029450",
-        "identifier": "qwecasca",
-        "qq": null,
-        "headimgurl": "/non-digested-assets/avatars/default.png",
-        "openid": null,
-        "imported_alias": "123",
-        "from_wechat": false,
-        "tags": [],
-        "custom_values": []
-    },
-    "access": {
-        "id": 1,
-        "name": "超级管理员",
-        "actions": [
-            1,
-            3,
-            4
-        ],
-        "founded": false
-    },
-    "organization": {
-        "id": 23,
-        "name": "123123",
-        "description": "123123",
-        "created_at": "2018-12-05T10:41:33.068+08:00"
-    }
-}
-
 ```
 
 `POST /api/v4/organizations/:organization_id/administrators`
 
-**Parameters**
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| organization_id | integer | 是 | 组织 id |
+| user_id | integer | 是 | 用户 |
+| access_id | integer | 是 | 权限 |
 
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| user_id | integer | 成员id |
-| access_id | integer | 权限id |
+## 修改组织管理员权限
+
+```http
+PUT /api/v4/organizations/1/administrators/1 HTTP/1.1
+Authorization: example-appid:<encoded_data>
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "access_id": 1
+}
+```
+
+`PUT /api/v4/organizations/:organization_id/administrators/:id`
+
+`PATCH /api/v4/organizations/:organization_id/administrators/:id`
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| organization_id | integer | 是 | 组织 id |
+| id | integer | 是 | 管理员记录 id |
+| user_id | integer | 是 | 用户 |
+| access_id | integer | 是 | 权限 |
 
 ## 删除组织管理员
 
 ```http
-DELETE /api/v4/organizations/23/administrators/33 HTTP/1.1
-Authorization: your_authorization
+DELETE /api/v4/organizations/1/administrators/1 HTTP/1.1
+Authorization: example-appid:<encoded_data>
 
 ```
 
 ```http
 HTTP/1.1 204 No Content
-
 ```
 
 `DELETE /api/v4/organizations/:organization_id/administrators/:id`
 
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| organization_id | integer | 组织id |
-| id | integer | 关联管理员id |
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| organization_id | integer | 是 | 组织 id |
+| id | integer | 是 | 管理员记录 id |
 
-## 修改组织管理员权限
+## 组织资料结构
+
+scope 为 `default`。
 
 ```http
-PUT /api/v4/organizations/23/administrators/33 HTTP/1.1
-Authorization: your_authorization
-Content-Type: application/json
-
-{
-  "user_id": 19
-  "access_id": 1
-}
+GET /api/v4/organization_profile/schema HTTP/1.1
+Authorization: example-appid:<encoded_data>
 
 ```
 
 ```http
 HTTP/1.1 200 OK
-Content-Type: application/json
+
 {
-  "id": 33,
-  "user": {
-    "id": 19,
-    "name": "123",
-    "nickname": null,
-    "phone": "19929029450",
-    "identifier": "qwecasca",
-    "qq": null,
-    "headimgurl": "/non-digested-assets/avatars/default.png",
-    "openid": null,
-    "imported_alias": "123",
-    "from_wechat": false,
-    "tags": [],
-    "custom_values": []
-  },
-  "access": {
-    "id": 1,
-    "name": "超级管理员",
-    "actions": [
-      1,
-      3,
-      4
-    ],
-    "founded": false
-  },
-  "organization": {
-    "id": 23,
-    "name": "123123",
-    "description": "123123",
-    "created_at": "2018-12-05T10:41:33.068+08:00"
-  }
+  "id": 1,
+  "namespace_id": 1,
+  "fields": []
 }
-
 ```
 
-`PUT /api/v4/organizations/:organization_id/administrators/:id`
-
-**Parameters**
-
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| user_id | integer | 成员id |
-| access_id | integer | 权限id |
-| organization_id | integer | 组织id |
-| id | integer | 关联管理员id |
-
-## 查询当前组织管理员
-
-```http
-GET /api/v4/organizations/:organization_id/administrators HTTP/1.1
-Authorization: your_authorization
-
-```
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-[
-  {
-    "id": 18,
-    "user": {
-      "id": 3,
-      "name": "a11",
-      "nickname": null,
-      "phone": "18828072450",
-      "identifier": "18828072450",
-      "qq": null,
-      "headimgurl": "/non-digested-assets/avatars/default.png",
-      "openid": null,
-      "imported_alias": "a11",
-      "from_wechat": false,
-      "tags": [],
-      "custom_values": []
-    },
-    "access": {
-      "id": 2,
-      "name": "创建者",
-      "actions": [
-        1,
-        3,
-        4
-      ],
-      "founded": true
-    },
-    "organization": {
-      "id": 23,
-      "name": "123123",
-      "description": "123123",
-      "created_at": "2018-12-05T10:41:33.068+08:00"
-    }
-  }
-]
-
-```
-
-`GET /api/v4/organizations/:organization_id/administrators`
-
-**Parameters**
-
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| organization_id | integer | 组织id |
+`GET /api/v4/organization_profile/schema`

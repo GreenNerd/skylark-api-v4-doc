@@ -1,114 +1,164 @@
 # Attachments
 
+`query`、`uptoken`、`base64_file` 需要 `default` scope。`POST /attachments` 与 `POST /attachments/upload` 不校验 JWT。
+
+附件字段见 [Column Explanation](#column-explanation)。`purpose` 目前只能是 `create_responses`。
+
+存储由服务端的写入后端决定。先请求 `uptoken`，再按响应里有没有 `upload_url` 选择上传方式。
+
 ## 查询
 
 ```http
-GET /api/v4/attachments/query?ids[]=:id&ids[]=:id HTTP/1.1
-Authorization: your_authorization
+GET /api/v4/attachments/query?ids[]=1&ids[]=2&fops=&variant= HTTP/1.1
+Authorization: example-appid:<encoded_data>
+
 ```
 
 ```http
 HTTP/1.1 200 OK
+
 [
   {
-    "id": 2474,
-    "name": "test.png",
-    "size": "81702",
+    "id": 1,
+    "name": "example.png",
+    "size": 1024,
     "mime_type": "image/png",
-    "extension": "image",
+    "extension": "png",
     "extra_info": {},
-    "download_url": "http://7xlxax.dl1.z0.glb.clouddn.com/17013-1531909931-49d1c668335fe2fc660e92042431d544-1531909931258?attname=%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7+2018-07-16+%E4%B8%8B%E5%8D%883.40.46.png&e=1532329592&token=WFpC8JEsN77rEZRgdoQgQw-yB82e-j3fpp8dXB8Z:JZFJ7usX7rWZ6hxZgkdkq3WWhXw="
-  },
-  ...
+    "download_url": "https://example.com/attachments/1?signature=placeholder"
+  }
 ]
 ```
 
 `GET /api/v4/attachments/query`
 
-**Parameters**
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| ids | integer[] | 是 | 附件 id |
+| fops | string | 否 | 传给下载地址的图片处理参数 |
+| variant | string | 否 | 传给下载地址的变体名 |
 
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| ids | array | 附件id的集合 |
-| fops | string | 七牛云图片处理的参数，[文档](https://developer.qiniu.com/search?keyword=%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86) |
+## 获取上传凭证
 
-## 获取附件上传的 Token
+`user_id` 和 `purpose` 都必填。
+
+七牛等支持表单直传的后端只返回 `uptoken`。其他后端（包括 MinIO）还返回 `upload_url`，指向上面的上传网关。
 
 ```http
-GET /api/v4/attachments/uptoken?purpose=create_responses HTTP/1.1
-Authorization: your_authorization
+GET /api/v4/attachments/uptoken?purpose=create_responses&user_id=1 HTTP/1.1
+Authorization: example-appid:<encoded_data>
+
 ```
 
 ```http
 HTTP/1.1 200 OK
+
 {
-  "uptoken": "WFpC8JEsN77rEZRgdoQgQw-yB82e-j3fpp8dXB8Z:hQdV5hQ3etWr_MVcMwe8HpHf3bo=:eyJzY29wZSI6InNscC1hdHRhY2htZW50LWJldGEiLCJzYXZlS2V5IjoiMS9jcmVhdGVfcmVzcG9uc2VzLy0xNTk0MDA1ODk0LTFhMmU2ZGVkOGZkMDdiZTM2ZjEzNDI3Yjg4Yzk2MDExLSQoeDprZXkpIiwiY2FsbGJhY2tVcmwiOiJodHRwczovL2JldGEuc2t5bGFya2x5LmNvbS9hdHRhY2htZW50cy5qc29uIiwiY2FsbGJhY2tCb2R5Ijoia2V5PSQoa2V5KVx1MDAyNm5hbWU9JChmbmFtZSlcdTAwMjZzaXplPSQoZnNpemUpXHUwMDI2bWltZV90eXBlPSQobWltZVR5cGUpIiwiZGVhZGxpbmUiOjE1OTQwMDk0OTQsImZzaXplTGltaXQiOjUyNDI4ODAwLCJ1cGhvc3RzIjpbImh0dHA6Ly91cC5xaW5pdS5jb20iLCJodHRwOi8vdXBsb2FkLnFpbml1LmNvbSIsIi1IIHVwLnFpbml1LmNvbSBodHRwOi8vMTgzLjEzMS43LjMiXSwiZ2xvYmFsIjpmYWxzZX0="
+  "uptoken": "<upload-token>"
+}
+```
+
+非表单上传时：
+
+```http
+HTTP/1.1 200 OK
+
+{
+  "uptoken": "<upload-token>",
+  "upload_url": "https://beta.skylarkly.com/api/v4/attachments/upload.json"
 }
 ```
 
 `GET /api/v4/attachments/uptoken`
 
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| purpose | string | 固定为 create_responses |
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| purpose | string | 是 | 目前仅 `create_responses`。其他值 422，`errors` 为 `["未知的上传用途"]` |
+| user_id | integer | 是 | 附件作者 |
 
-## 上传附件到七牛
+## 上传到七牛
+
+响应里没有 `upload_url` 时，把 `uptoken` 作为表单字段 `token` 发到 `https://up.qbox.me/`。`x:key` 是可选的文件名后缀，不需要固定成某个整数。七牛会按 callback 调用下一节的创建接口，body 为表单字段而不是 JSON：`key`、`name`、`size`、`mime_type`、`user_id`。
 
 ```http
 POST https://up.qbox.me/ HTTP/1.1
-Authorization: your_authorization
-```
+Content-Type: multipart/form-data
 
-```http
-HTTP/1.1 200 OK
-{
-  "extension": "image",
-  "extra_info": {},
-  "id": 3258,
-  "mime_type": "image/jpeg",
-  "name": "test.jpg",
-  "size": "41491"
-}
+token=<uptoken>
+file=<binary>
+x:key=optional-suffix
 ```
 
 `POST https://up.qbox.me/`
 
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| token | string | [获取附件上传的 Token] |
-| file | file | 文件 |
-| x:key | integer | 暂时固定为 1593586993541 |
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| token | string | 是 | `uptoken` 返回的凭证 |
+| file | file | 是 | 文件 |
+| x:key | string | 否 | 文件名后缀 |
 
-## 创建附件（作为七牛的 callback）
+## 上传到服务端网关
+
+响应里有 `upload_url` 时，向该地址提交 multipart。这个请求不带 ApiApplication 的 Authorization，凭证在 `token` 里。
+
+```http
+POST /api/v4/attachments/upload HTTP/1.1
+Content-Type: multipart/form-data
+
+token=<uptoken>
+file=<binary>
+x:key=optional-suffix
+```
+
+成功返回附件 JSON。`token` 无效、缺少 `file` 或超过大小限制时 422，`errors` 为 `["invalid token"]`、`["file required"]` 或 `["文件超过大小限制"]`。
+
+`POST /api/v4/attachments/upload`
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| token | string | 是 | `uptoken` 返回的凭证 |
+| file | file | 是 | 文件 |
+| x:key | string | 否 | 对象名后缀。缺省时用随机 UUID |
+
+## 创建附件
+
+这是七牛 callback，不校验 JWT。成功返回附件 JSON，不是空的 200。
 
 ```http
 POST /api/v4/attachments HTTP/1.1
-```
+Content-Type: application/x-www-form-urlencoded
 
-```http
-HTTP/1.1 200 OK
+key=1/create_responses/example-key&name=example.png&size=1024&mime_type=image/png&user_id=1
 ```
 
 `POST /api/v4/attachments`
 
-| Name | Type | Description | Comments |
-| --- | --- | --- | ---- |
-| key | string | 获取文件的 key |
-| name | string | 文件名称 |
-| size | integer | 文件大小 |
-| mime_type | 文件类型 | |
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| key | string | 是 | 对象键 |
+| name | string | 是 | 文件名 |
+| size | integer | 是 | 字节数 |
+| mime_type | string | 是 | MIME |
+| user_id | integer | 是 | 作者 |
 
-## 查询附件以 Base64 编码返回
+## 以 Base64 返回
+
+正文是一个 JSON 字符串，不是对象。路径是附件 id。
 
 ```http
-GET /api/v4/attachments/:id/base64_file HTTP/1.1
-Authorization: your_authorization
+GET /api/v4/attachments/1/base64_file HTTP/1.1
+Authorization: example-appid:<encoded_data>
+
 ```
 
 ```http
 HTTP/1.1 200 OK
-{
-  ***
-}
+
+"aVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQVg="
 ```
-`GET /api/v4/forms/:id`
+
+`GET /api/v4/attachments/:id/base64_file`
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| id | integer | 是 | 附件 id |

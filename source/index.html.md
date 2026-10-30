@@ -9,21 +9,28 @@ toc_footers:
 
 includes:
   - Pagination
+  - errors
+  - ColumnExplanation
   - WechatClient
   - Pushes
-  - Categories
-  - Comments
   - Users
   - Organizations
-  - Forms
-  - Flows
-  - Attachments
+  - Tags
   - Accesses
   - Settings
-  - ColumnExplanation
-  - Tags
+  - Forms
+  - Posts
+  - Comments
+  - Attachments
+  - Categories
+  - CascadedSelects
   - IdentityCertifications
-  - errors
+  - VerifyCodes
+  - ImportRecords
+  - ExportableFiles
+  - RedPackets
+  - Flows
+  - Mapper
 
 search: true
 ---
@@ -33,51 +40,73 @@ search: true
 Welcome to the Skylark API!
 
 域名：
-  
+
   - 测试：https://beta.skylarkly.com
   - 正式：https://skylarkly.com
 
 **注**：
-  
-  - 所有的开发对接工作在Beta https://beta.skylarkly.com 上完成，部署时会给线上环境的配置
+
+  - 对接在测试环境完成。下文示例里的 `Authorization` 使用本节算出的 `example-appid:<encoded_data>`
+  - 除特别声明外，请求体为 JSON，`Content-Type: application/json`
+  - 更新接口同时接受 `PUT` 和 `PATCH`
+  - 列表接口的分页见 [Pagination](#pagination)
 
 # Authentication
 
-1、创建一个ApiApplication，获得`appid`和`appsecret`（由我们提供）
+接口使用 ApiApplication 的 `appid` 与 `appsecret`。应用还必须被授权访问目标空间，并且 `scopes` 包含该接口要求的 scope。
 
-2、获得Namespace的id（由我们提供）
+## 请求头
 
-3、构建Authorization header
+`Authorization` 的形式是 `appid:encoded_data`，中间只有一个冒号。
 
-`header`值的形式：`appid`:`encoded_data`
+`encoded_data` 是用 `appsecret` 做密钥的 JWT，算法 `HS256`。代码只读取 payload 里的 `namespace_id`（整数）。如果 payload 带了 `exp`，过期后 ruby-jwt 会拒绝该令牌。
 
-`appid`：为第一步获取到的`appid`
+示例凭证（假值，可在 [jwt.io](https://jwt.io) 用同一密钥验签）：
 
-`encoded_data`：以`appsecret`为key，用JWT的HS256进行加密，加密payload为`{"namespace_id":id}`（id为Integer）
+`appid: example-appid`
 
-示例：
-
-`appid: 56dc47367f8c775cf2318aa29345af558ad8aa2835bc3cc1d4416abfa94bd721`
-
-`appsecret: 7bb73122837c4befb9c6593287f73a5e915415fe29f5aeb182717b66e873e96b`
+`appsecret: example-appsecret`
 
 `namespace_id: 1`
 
-JWT的
+HEADER：`{"typ":"JWT","alg":"HS256"}`
 
-HEADER为：`{"typ":"JWT","alg":"HS256"}`
-PAYLOAD为：`{"namespace_id":1}`
+PAYLOAD：`{"namespace_id":1}`
 
-计算出`encoded_data`为：
+`encoded_data`：
 
-`eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lc3BhY2VfaWQiOjF9.z-RcFpDiYBXAO8i88M_x1JpJRr6CDMo8sb1rU6dw-0E`
+`eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lc3BhY2VfaWQiOjF9.gd-ziDMMbtTqXiBHs8gOnXRjoDgPuqx0wR-lv8fcXcY`
 
-最终构建出`Authorization` header的值为： 
+`Authorization`：
 
-`56dc47367f8c775cf2318aa29345af558ad8aa2835bc3cc1d4416abfa94bd721:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lc3BhY2VfaWQiOjF9.z-RcFpDiYBXAO8i88M_x1JpJRr6CDMo8sb1rU6dw-0E`
+`example-appid:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lc3BhY2VfaWQiOjF9.gd-ziDMMbtTqXiBHs8gOnXRjoDgPuqx0wR-lv8fcXcY`
 
-可以用[jwt.io](https://jwt.io)进行测试
+带过期时间的 payload：`{"namespace_id":1,"exp":1893456000}`
 
-实际使用中，处于安全的考虑，最好在payload中加入过期时间，如：
+对应 `encoded_data`：
 
-  `{"namespace_id":1,"exp":1535553256}`
+`eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lc3BhY2VfaWQiOjEsImV4cCI6MTg5MzQ1NjAwMH0.JZzCNMa3NlU5FCyHStT-wlGSad0EqedRb6cgwFW_jgs`
+
+## Scope
+
+| scope | 用在 |
+| --- | --- |
+| `default` | 未单独声明的接口 |
+| `organization_user` | 读取、更新、删除组织，以及 `GET /organizations/:id/members` |
+| `manage_organization` | `POST /organizations`、组织成员的增删改与搜索、组织管理员、权限列表、清理挂起成员 |
+| `push` | 微信推送 |
+| `wechat_client` | access_token 与 jsapi_ticket |
+| `identity_certifications` | 人脸核身 |
+| `user_login_token` | 签发用户登录令牌。还要求配置打开 `v4.login.enable` |
+| `verify_code` | 短信验证码 |
+| `import_records` | 导入记录 |
+| `red_packet` | 发红包 |
+
+`namespace_ids` 包含 `0` 时，该应用可以访问全部空间。
+
+## 不校验 JWT 的请求
+
+- `OPTIONS /api/v4/*` 是 CORS 预检，直接返回 200
+- `POST /api/v4/attachments` 与 `POST /api/v4/attachments/upload` 跳过 JWT。上传凭证在 `uptoken` 步骤签发
+
+CORS 允许的方法：`POST, GET, PUT, PATCH, DELETE, OPTIONS`。

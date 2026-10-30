@@ -1,70 +1,52 @@
 # Pushes
 
+scope 为 `push`。成功是空正文的 200。任务异步发送。
+
+`openids` 不能为空。`news_entity` 与 `template_entity` 至少要有一个。若带了 `template_entity`，必须同时有 `template_id` 和 `data`。
+
+当前实现在校验模板是否被拉黑时，总会读取 `template_entity.template_id`。只传 `news_entity` 会出错并返回 500。调用时请同时提供合法的 `template_entity`。模板 id 已被标记为非法时，422 的 `errors` 是字符串：`模版ID不合法，请登录腾讯后台验证模版ID`。
+
 ## 微信推送
 
-```http 
+```http
 POST /api/v4/pushes/wechat HTTP/1.1
+Authorization: example-appid:<encoded_data>
+Content-Type: application/json
 
-```
-
-```http
-HTTP/1.1 200 OK
 {
-  "title":"Happy Day",
-  "description":"Is Really A Happy Day",
-  "url":"URL",
-  "picurl":"PIC_URL"
-}
-
-```
-
-### news_entity 结构
-
-结构固定，以下4个key都是必须的，具体意思参考微信[微信客服消息](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140547)
-
-```http
-HTTP/1.1 200 OK
-{
-  "template_id": "7L5ZG7D0VtqOnKp07bskkJ7XA7veVqIO2VYeY3aYLtY",
-  "url": "http://weixin.qq.com/download",
-  "data": {
-    "first": {
-      "value": "恭喜你购买成功！",
-      "color": "#173177"
-    },
-    "keyword1": {
-      "value": "巧克力",
-      "color": "#173177"
-    },
-    "keyword2": {
-      "value": "39.8元",
-      "color": "#173177"
-    },
-    "remark": {
-      "value": "欢迎再次购买！",
-      "color": "#173177"
+  "openids": ["oEXAMPLE"],
+  "news_entity": {
+    "articles": [
+      {
+        "title": "标题",
+        "description": "摘要",
+        "url": "https://example.com/post/1",
+        "picurl": "https://example.com/cover.png"
+      }
+    ]
+  },
+  "template_entity": {
+    "template_id": "TEMPLATE_ID_EXAMPLE",
+    "url": "https://example.com/post/1",
+    "data": {
+      "first": { "value": "你好", "color": "#173177" },
+      "keyword1": { "value": "示例", "color": "#173177" }
     }
   }
 }
-
 ```
 
-### template_entity 结构
+```http
+HTTP/1.1 200 OK
+```
 
-结构固定，但data的实际结构会根据模板而改变，具体意思参考[微信客服消息](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140547)
+`POST /api/v4/pushes/wechat`
 
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| openids | Array | Required 接收用户的openid的集合 |
-| news_entity | Object | [微信客服消息](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140547) |
-| template_entity | Object | [微信客服消息](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140547) |
-
-`news_entity`、`template_entity` 两者必须有一个。如果都存在，微信推送会先尝试客服消息，当客服消息失败时，再尝试模板消息
-
-### Response
-
-`Status: 200 OK`
-
-**no body**
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| openids | string[] | 是 | 接收人 openid |
+| news_entity | object | 否 | 图文。单独发送时当前实现会出错 |
+| template_entity | object | 否 | 模板消息。若出现，必须含 `template_id` 与 `data` |
+| template_entity.template_id | string | 条件 | 模板 id |
+| template_entity.data | object | 条件 | 模板字段 |
+| template_entity.url | string | 否 | 点击跳转 |
